@@ -55,6 +55,15 @@ that is fun to play and that contains interesting movie trivia so user can learn
 
 ### **User Stories**
 
+* As a user, I want the website to be easy to use.
+* As a user, I would like to know the rules before I start playing.
+* As a user, I would like to be able to chose the level of difficulty.
+* As a user, I would like to know which question I am on, at any given time.
+* As a user, I would like to kow how much time I have to answer the question.
+* As a user, I would like to track my score while playing. 
+* As a user, I expect a variety of questions and no repeated questions.
+* As a user, I would like to know the correct answer when answered incorrectly.
+* As a user, I want to be able to restart the game if I don't like the questions.
 
 <a></a>
 
