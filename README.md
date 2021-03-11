@@ -91,6 +91,14 @@ that is fun to play and that contains interesting movie trivia so user can learn
 <a></a>
 #### Expectations
 
+* When a certain level is chosen, that the correct questions appear
+* Feedback to the users where in the game they are and total amount of questions
+* Time is displayed so user knowes how much time they have left to answer the question
+* To let the user know if their answer was correct 
+* Show correct answer when answered incorrectly
+* To show the final result after playing
+* Show a message after completing the game - message is different depending on the results
+
 
 
 
