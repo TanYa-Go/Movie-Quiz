@@ -42,6 +42,11 @@ that is fun to play and that contains interesting movie trivia so user can learn
 <a></a>
 ### **User Goals**
 
+* The game has to be responsive on various devices like tablets, mobile phones and desktops
+* To have the option to choose the level of difficulty the user would like to play
+* Feedback when wrong answer was chosen
+* To be able to track the score and see how many questions are left in the game
+* To be able to see how much time is left to answer the question
 
 
 [Back to Top](#table-of-contents)
