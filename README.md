@@ -81,6 +81,13 @@ that is fun to play and that contains interesting movie trivia so user can learn
 <a></a>
 #### Requirements
 
+* Appealing homepage
+* Easy to navigate by using only a few buttons
+* Easy to pick difficulty level and start playing
+* Validate the correct answer
+* Keep the score of the user playing
+
+
 <a></a>
 #### Expectations
 
