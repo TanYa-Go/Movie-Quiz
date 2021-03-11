@@ -69,6 +69,10 @@ that is fun to play and that contains interesting movie trivia so user can learn
 
 ### **Site owners Goals**
 
+* To have an appealing website where users want to go to play 
+* For the users to have fun while playing 
+* For the users to learn something while playing 
+
 
 [Back to Top](#table-of-contents)
 
