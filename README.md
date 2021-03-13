@@ -122,12 +122,15 @@ Sans Serif is chosen as the fallback font in case the Google fonts do not load
 <a></a>
 #### Colors
 
+Color palette was generated from the hero image using [Image Color Picker](https://imagecolorpicker.com/en)
+
+![Color Palette](/assets/images/color-palette.JPG)
+
+![Red](/assets/images/red.JPG) #d51e13 Red color was used as a bacgkround for the question container, to contrast the light hero image and also for title\
 
 
 
-
-
-
+![Cream](/assets/images/cream.JPG) #f2d38c Cream color was used for the questions and also for background of the answer choices as contrast to the red
 
 
 <a></a>
