@@ -166,7 +166,13 @@ Wireframes were created using the wireframing tool [Balsamiq](https://balsamiq.c
 <a></a>
 ### **Existing Features**
 
-
+* Use of [open Trivia API](https://opentdb.com/) to populate the questions
+* Ability to choose preferred level of difficulty
+* Instructions for user on how to play the game
+* Validation of answers
+* Feedback when answer was incorrect
+* Tracker for the questions and score
+* Countdown timer for each question
 
 
 <a></a>
