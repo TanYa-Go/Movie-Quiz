@@ -187,14 +187,12 @@ Wireframes were created using the wireframing tool [Balsamiq](https://balsamiq.c
 
 1. [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
 
-1. [Bootstrap 4.4.1:](https://getbootstrap.com/docs/4.4/getting-started/introduction/)
+1. [Bootstrap](https://getbootstrap.com/docs/4.4/getting-started/introduction/)
     - Bootstrap was used to assist with the responsiveness and styling of the website.
 1. [Google Fonts:](https://fonts.google.com/)
     - Google fonts were used to import the 'Acme' font into the style.css file which is used on all pages throughout the project.
 1. [Font Awesome:](https://fontawesome.com/)
     - Font Awesome was used to add icons.
-1. [jQuery:](https://jquery.com/)
-    - jQuery came with Bootstrap to make the navbar responsive.
 1. [Open Trivia Database](https://opentdb.com/)
     - API used to get the questions for the quiz
 1. [Gitpod](https://www.gitpod.io/)
