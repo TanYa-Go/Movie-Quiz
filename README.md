@@ -192,6 +192,8 @@ Sans Serif is chosen as the fallback font in case the Google fonts do not load
     - Font Awesome was used to add icons.
 1. [jQuery:](https://jquery.com/)
     - jQuery came with Bootstrap to make the navbar responsive.
+1. [Open Trivia Database](https://opentdb.com/)
+    - API used to get the questions for the quiz
 1. [Gitpod](https://www.gitpod.io/)
    - Gitpod was used to create the code for the project.
 1. [Git](https://git-scm.com/)
