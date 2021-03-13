@@ -128,8 +128,6 @@ Color palette was generated from the hero image using [Image Color Picker](https
 
 ![Red](/assets/images/red.JPG) #d51e13 Red color was used as a background for the question container, to contrast the light color of the hero image and also for title
 
-
-
 ![Cream](/assets/images/cream.JPG) #f2d38c Cream color was used for the questions and also for the background of the answer choices as contrast to the red
 
 
@@ -145,15 +143,17 @@ Color palette was generated from the hero image using [Image Color Picker](https
 
 ## **Wireframes**
 
+Wireframes were created using the wireframing tool [Balsamiq](https://balsamiq.com/wireframes/)
+
+### Home Page Wireframes
+
+[Home Page](assets/wireframes/home-page.pdf)
 
 
 
+### Quiz Page Wireframes
+[Quiz Page](assets/wireframes/quiz-page.pdf)
 
-### Desktop Wireframes
-
-### Tablet Wireframes
-
-### Mobile Wireframes
 
 
 
