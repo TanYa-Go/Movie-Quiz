@@ -4,8 +4,10 @@
 
 ## **Project Goals** 
 
-Goal of this project was to create an app using HTML, CSS and JavaScript. I've deciced to create a movie quiz 
-that is fun to play and that contains interesting movie trivia so user can learn something new while playing. 
+Goal of this project was to create an app using HTML, CSS and JavaScript, focusing on JavaScript. 
+I've deciced to create a movie quiz using an API. Idea for the project is to create a quiz that is fun 
+to play and also contains interesting movie trivia so user can learn something new while playing. 
+ 
 
 
 
