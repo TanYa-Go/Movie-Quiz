@@ -107,11 +107,15 @@ that is fun to play and that contains interesting movie trivia so user can learn
 <a></a>
 ### **Design Choices**
 
+The design was guided by a vintage movies and cinema look, inspired by the hero image. 
 
 
 <a></a>
 #### Fonts
 
+Font "Oswald" was chosen for the title, the movie quote and the answer choices\
+Font "Bungee Inline" was chosen for the question and the buttons\
+Sans Serif is chosen as the fallback font in case the Google fonts do not load
 
 <a></a>
 #### Colors
