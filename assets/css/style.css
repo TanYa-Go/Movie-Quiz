@@ -46,3 +46,45 @@ body {
     display: flex;
     justify-content: center;
 }
+
+.controls-container {
+   margin-top: 80px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.controls {
+    background-color: black ;
+    color: #f2d38c;
+    font-family: Bungee Inline, sans-serif;
+    height: 70px;
+    width: 170px;
+    font-size: larger;
+    border-radius: 5px;
+    border: none
+}
+
+.controls:hover{
+    background-color: #d51e13;
+}
+/* =================================== Media Queries ============================================ */
+
+/* For button controls on start */
+
+
+@media (min-width: 200px) and (max-width: 576px){
+    .controls {
+     display: flex;
+     margin: auto;
+     margin-bottom: 50px;
+     text-align: center;
+     align-items: center;
+     justify-content: center;
+       
+    }
+       
+    
+}
+
+
