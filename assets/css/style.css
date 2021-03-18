@@ -55,14 +55,15 @@ body {
 }
 
 .controls {
-    background-color: black ;
+    background-color: rgb(31, 24, 24, 0.9) ;
     color: #f2d38c;
     font-family: Bungee Inline, sans-serif;
     height: 70px;
     width: 170px;
     font-size: larger;
     border-radius: 5px;
-    border: none
+    border: none;
+    
 }
 
 .controls:hover{
