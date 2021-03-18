@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Inline&family=Oswald:wght@200;300;400&display=swap');
+
+* {
+     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+   
+body, html {
+    height: 100vh;
+}
+
+body {
+    background-image: url(/assets/images/hero.jpg);
+    height: 100%;
+    background-repeat: repeat;
+    background-position: center;
+    background-size: cover;
+}
