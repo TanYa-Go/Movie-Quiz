@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Bungee+Inline&family=Oswald:wght@200;300;400&display=swap');
 
 * {
-     margin: 0;
+    margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
@@ -16,4 +16,33 @@ body {
     background-repeat: repeat;
     background-position: center;
     background-size: cover;
+}
+
+#title {
+    font-family: Oswald, sans-serif;
+    color: #d51e13;
+    text-align: center;
+    margin-top: 115px;
+    font-weight: 600;
+    font-size: 5rem;
+    text-shadow: 3px 2px #f2d38c;
+}
+
+#quote {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    font-family: Oswald, sans-serif; 
+    font-weight: 700;
+    font-size: 2.7rem;
+    font-style: italic;
+    
+}
+
+#movie {
+    font-family: Oswald, sans-serif;
+    font-size: 2.2rem;
+    font-style: italic; 
+    display: flex;
+    justify-content: center;
 }
