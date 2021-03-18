@@ -147,12 +147,12 @@ Wireframes were created using the wireframing tool [Balsamiq](https://balsamiq.c
 
 ### Home Page Wireframes
 
-[Home Page](assets/wireframes/home-page.pdf)
+[Home Page](wireframes/home-page.pdf)
 
 
 
 ### Quiz Page Wireframes
-[Quiz Page](assets/wireframes/quiz-page.pdf)
+[Quiz Page](wireframes/quiz-page.pdf)
 
 
 
