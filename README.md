@@ -187,32 +187,38 @@ Wireframes were created using the wireframing tool [Balsamiq](https://balsamiq.c
 ## **Technologies used**
 <a></a>
 
+### Languages
+
 1. [HTML](https://en.wikipedia.org/wiki/HTML#:~:text=Hypertext%20Markup%20Language%20(HTML)%20is,scripting%20languages%20such%20as%20JavaScript.)
 
 1. [CSS](https://en.wikipedia.org/wiki/CSS)
 
 1. [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
 
+### Libraries and Frameworks
+
 1. [Bootstrap](https://getbootstrap.com/docs/4.4/getting-started/introduction/)
-    - Bootstrap was used to assist with the responsiveness and styling of the website.
+    
 1. [Google Fonts:](https://fonts.google.com/)
-    - Google fonts were used to import the 'Acme' font into the style.css file which is used on all pages throughout the project.
+    
 1. [Font Awesome:](https://fontawesome.com/)
-    - Font Awesome was used to add icons.
+
+### Tools
+    
 1. [Open Trivia Database](https://opentdb.com/)
-    - API used to get the questions for the quiz
+   
 1. [Gitpod](https://www.gitpod.io/)
-   - Gitpod was used to create the code for the project.
+   
 1. [Git](https://git-scm.com/)
-    - Git was used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub.
+    
 1. [GitHub:](https://github.com/)
-    - GitHub is used to store the project's code after being pushed from Git.
+    
 1. [Balsamiq:](https://balsamiq.com/)
-    - Balsamiq was used to create the wireframes during the design process.
+   
 1. [TinyPNG](https://tinypng.com/)
-    - TinyPNG was used to reduce the overall total image size
+   
 1. [Chrome Developer Tools](https://developers.google.com/web/tools/chrome-devtools)
- - Used during the process of creating the website to help with design and debugging some issues
+ 
 
 [Back to Top](#table-of-contents)
 
