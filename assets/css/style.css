@@ -133,14 +133,24 @@ body {
     .controls {
      display: flex;
      margin: auto;
-     margin-bottom: 50px;
+     margin-bottom: 20px;
      text-align: center;
      align-items: center;
      justify-content: center;
-       
+     height: 50px;
     }
-       
     
+    #title {
+    font-size: 3.5rem;
+    }
+    
+    #quote {
+    font-size: 2rem;
+    }
+    #movie {
+    font-size: 1.8rem;
+    }
 }
+
 
 
