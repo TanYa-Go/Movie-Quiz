@@ -150,6 +150,17 @@ body {
     #movie {
     font-size: 1.8rem;
     }
+
+    #time-cont, #question-cont, #score-cont{
+    font-size: 1.5rem;  
+    margin-top: 5px; 
+    }
+    #question{
+    font-size: 1.5rem;
+    }
+    .btn-answer {
+       font-size: 1.2rem; 
+    }
 }
 
 
