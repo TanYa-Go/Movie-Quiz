@@ -14,6 +14,7 @@
 
 <body>
 
+<article id="welcome-screen">
     <div class="container title-container">
             <div class="row">
                 <div class="col-12">
@@ -37,12 +38,14 @@
                 <button class="controls">Choose Level</button>
             </div>
            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-                <button class="controls">Start Quiz</button>
+                <button class="controls" id="start-btn">Start Quiz</button>
            </div>
         </div>
     </div>
+</article>
 
-<div class="container quote-container">
+<article id="game-screen" class="hidden">
+ <div class="container quote-container">
     <div class="row">
         <div class="col">
             <div class="col-12">
@@ -103,7 +106,7 @@
             </div>
         </div>
      </div>     
-
+</article>
  <script src="assets/js/app.js"></script>
  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
