@@ -28,23 +28,27 @@ body {
     text-shadow: 3px 2px #f2d38c;
 }
 
-#quote {
-    margin-top: 40px;
+.quote {
+    margin-top: 60px;
     display: flex;
     justify-content: center;
     font-family: Oswald, sans-serif; 
     font-weight: 700;
     font-size: 2.7rem;
     font-style: italic;
+    text-shadow: 3px 2px #f2d38c;
+    
+
     
 }
 
-#movie {
+.movie {
     font-family: Oswald, sans-serif;
     font-size: 2.2rem;
     font-style: italic; 
     display: flex;
     justify-content: center;
+    text-shadow: 3px 2px #f2d38c;
 }
 
 .controls-container {
@@ -70,8 +74,11 @@ body {
     background-color: #d51e13;
 }
 
+.quote-container {
+    height: 15rem;
+    
+}
 .tracking-container {
-    margin-top: 60px;
     background-color: rgba(213, 30, 19, 0.5)
 }
 
@@ -104,8 +111,8 @@ body {
     font-size: 2rem;
     text-shadow: 3px 4px black;
     word-spacing: 4px;
-    margin-bottom: 50px;
-    margin-top: 30px;
+    margin-bottom: 20px;
+    margin-top: 10px;
 }
 
 #time-cont, #question-cont, #score-cont{
@@ -114,15 +121,22 @@ body {
     font-size: 2rem;
     font-weight: 800;
     text-align: center;
-    margin-top: 30px;
+    margin-top: 10px;
     
 }
 
+#question-text, #score-text{
+    margin-bottom: 0;
+}
 #restart-btn {
     margin-top: 30px;
     margin-bottom: 30px;
+    
 }
 
+#restart {
+    background-color: rgba(213, 30, 19, 0.5)
+}
 
 /* =================================== Media Queries ============================================ */
 
@@ -144,10 +158,10 @@ body {
     font-size: 3.5rem;
     }
     
-    #quote {
+    .quote {
     font-size: 2rem;
     }
-    #movie {
+    .movie {
     font-size: 1.8rem;
     }
 
@@ -157,6 +171,8 @@ body {
     }
     #question{
     font-size: 1.5rem;
+    margin-top: 5px;
+    margin-bottom: 5px;
     }
     .btn-answer {
        font-size: 1.2rem; 
