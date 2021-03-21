@@ -70,6 +70,9 @@ body {
     background-color: #d51e13;
 }
 
+.tracking-container {
+    margin-top: 60px;
+}
 
 .btn-answer {
   height: 60px;
@@ -87,10 +90,10 @@ body {
   margin-left: 10px;
 }
 
-.question-container {
+.questions-container {
     background-color: rgba(213, 30, 19, 0.5)  ;
     height: 80%;
-    margin-top: 400px;
+    margin-top: 5px;
 }
 
 #question {
@@ -98,14 +101,22 @@ body {
     font-family: Bungee Inline,sans-serif;
     text-align: center;
     font-size: 2rem;
-    margin-top: 50px;
+    margin-top: 20px;
     text-shadow: 3px 4px black;
     word-spacing: 4px;
     margin-bottom: 50px;
-    margin-top: 100px;
+    margin-top: 70px;
 }
 
-
+#time-cont, #question-cont, #score-cont{
+    font-family: Oswald,sans-serif;
+    color: black;
+    font-size: 2rem;
+    font-weight: 800;
+    text-align: center;
+    margin-top: 30px;
+    
+}
 
 
 
