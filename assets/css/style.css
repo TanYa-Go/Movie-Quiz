@@ -46,7 +46,7 @@ body {
     display: flex;
     justify-content: center;
     text-shadow: 3px 2px #f2d38c;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
 }
 
 .controls-container {

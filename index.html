@@ -32,7 +32,7 @@
     <div class="container controls-container">
         <div class="row ">
             <div class=" col-xs-12 col-sm-4 col-md-4 col-lg-4">
-                <button class="controls">How to Play</button>
+                <button class="controls" data-toggle="modal" data-target="#rulesModal">How to Play</button>
             </div>
             <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
                 <div class="dropdown">
@@ -114,6 +114,37 @@
         </div>
      </div>     
 </article>
+
+<!-- Modal -->
+<!-- Taken from Bootstrap and amened to fit the design of the quiz-->
+
+<div class="modal fade" id="rulesModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">How To Play</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+       <ul>
+              <li>Select the difficulty level and click Start Quiz</li>
+              <li>A question will be displayed on the screen with four possible answers</li>
+              <li>Select the answer you belive is correct</li>
+              <li>After you selected your answer, you will see if your answer was correct or not</li>
+              <li>For a correct answer you will get 10 points and for an incorrect answer you won't get any points</li>
+              <li>A new question will automatically be loaded until you have answered all the questions</li>
+          </ul>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn start-btn" id="close-modal" data-dismiss="modal">Got it!</button>
+       
+      </div>
+    </div>
+  </div>
+</div>
+
  <script src="assets/js/app.js"></script>
  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

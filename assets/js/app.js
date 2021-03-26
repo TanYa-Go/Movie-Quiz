@@ -18,8 +18,8 @@ chooseLevelRef.addEventListener('click', function (){
 });
 
 const questionRef = document.getElementById('question');
-const answers = Array.from(document.getElementsByClassName('btn-answer'));
-console.log(questionRef );
+const answersRef = Array.from(document.getElementsByClassName('btn-answer'));
+
 
 let currentQuestion = {};
 let acceptingAnswers = true;
@@ -31,7 +31,6 @@ const CORRECT_BONUS = 10;
 const MAX_QUESTIONS = 10;
 
  
-//Fetch questions from API 
 fetch("https://opentdb.com/api.php?amount=10&category=11&difficulty=easy&type=multiple")
     .then((response) => {
         if (response.ok) {
@@ -54,7 +53,7 @@ function displayQuestions(data) {
     const questionRef = document.getElementById('question');
 
     questions.forEach(questions => {
-        questionRef.innerHTML = questions.question
+       const formattedQuestion = questionRef.innerHTML = questions.question
     })
 
 }
