@@ -179,6 +179,36 @@ body {
 .hidden {
     display: none;
 }
+
+/* Modal */
+
+.modal-body {
+   color: black;
+   background-color: #f2d38c;
+}
+
+#exampleModalLongTitle {
+    font-family: Bungee Inline, sans-serif;
+    color: #f2d38c;
+    font-size: x-large;
+}
+.modal-header {
+    background-color: #d51e13;
+}
+
+.modal-footer {
+    background-color: #d51e13;
+}
+
+.modal-body li {
+    font-family: Oswald, sans-serif;
+    font-size: larger;
+}
+
+
+.modal-body ul {
+ padding: 20px;
+}
 /* =================================== Media Queries ============================================ */
 
 /* For button controls on start */
