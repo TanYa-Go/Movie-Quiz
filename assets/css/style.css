@@ -235,6 +235,11 @@ body {
     .movie {
     font-size: 1.8rem;
     }
+    
+    
+    #levelChoice{
+    margin-bottom: 200px;
+    }
 
     #time-cont, #question-cont, #score-cont{
     font-size: 1.5rem;  
