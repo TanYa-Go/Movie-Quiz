@@ -25,6 +25,10 @@ const question = document.getElementById('question');
 const answers = Array.from(document.getElementsByClassName('btn-answer'));
 console.log(answers);
 
+// default easy difficulty
+let difficultyLevel = 'easy';
+
+
 let currentQuestion = {};
 let acceptingAnswers = true;
 let score = 0;
@@ -35,13 +39,27 @@ const CORRECT_BONUS = 10;
 const MAX_QUESTIONS = 10;
 
 
+const initializeEventListeners = () => {
+  const difficultyOptions = Array.from(document.getElementsByClassName('difficulty-option'));
+  difficultyOptions.forEach((option) => {
+    option.addEventListener('click', (e) => {
+      difficultyLevel = e.currentTarget.dataset.value;
+      levelChoiceRef.classList.toggle("show");
+    });
+  });
+}
 
-fetch("https://opentdb.com/api.php?amount=10&category=11&difficulty=easy&type=multiple")
-.then((res) => {
-        return res.json();
+initializeEventListeners();
+
+// Fetch questions from API and set available questions variable
+const getQuestions = () => {
+  return (
+    fetch("https://opentdb.com/api.php?amount=10&category=11&difficulty=" + difficultyLevel + "&type=multiple")
+    .then((res) => {
+      return res.json();
     })
     .then((loadedQuestions) => {
-        questions = loadedQuestions.results.map((loadedQuestion) => {
+      availableQuestions = loadedQuestions.results.map((loadedQuestion) => {
             const formattedQuestion = {
                 question: loadedQuestion.question,
             };
@@ -60,61 +78,27 @@ fetch("https://opentdb.com/api.php?amount=10&category=11&difficulty=easy&type=mu
 
             return formattedQuestion;
         });
-        startGame();
     })
     .catch((err) => {
         console.error(err);
-    });
+    })
+  );
+}
 
-startGame = () => {
-    questionCounter = 0;
-    score = 0;
-    availableQuesions = [...questions];
-    getNewQuestion();
-};
 
-getNewQuestion = () => {
-    if (availableQuesions.length === 0 || questionCounter >= MAX_QUESTIONS) {
-        localStorage.setItem('mostRecentScore', score);
-        //go to the end page
-        return window.location.assign('/end.html');
-    }
-    questionCounter++;
-    
-    //Update the progress bar
-    
+const getNewQuestion = () => {
+    const currentQuestion = availableQuestions[questionCounter];
 
-    const questionIndex = Math.floor(Math.random() * availableQuesions.length);
-    currentQuestion = availableQuesions[questionIndex];
-    question.innerHTML = currentQuestion.question;
-
-    answers.forEach((choice) => {
-        const number = choice.dataset['number'];
-        choice.innerHTML = currentQuestion['choice' + number];
-    });
-
-    availableQuesions.splice(questionIndex, 1);
-    acceptingAnswers = true;
-};
-
-answers.forEach((choice) => {
-    choice.addEventListener('click', (e) => {
-        if (!acceptingAnswers) return;
-
-        acceptingAnswers = false;
-        const selectedChoice = e.target;
-        const selectedAnswer = selectedChoice.dataset['number'];
-
-         const classToApply =
-            selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect';
-
+    if (currentQuestion == null) {
       
+    }
+    else {
+      questionCounter += 1;
+      question.innerHTML = currentQuestion.question;
 
-        selectedChoice.parentElement.classList.add(classToApply);
-
-        setTimeout(() => {
-            selectedChoice.parentElement.classList.remove(classToApply);
-            getNewQuestion();
-        }, 1000);
-    });
-});
+      answers.forEach((choice) => {
+          const number = choice.dataset['number'];
+          choice.innerHTML = currentQuestion['choice' + number];
+      });
+    }
+};
