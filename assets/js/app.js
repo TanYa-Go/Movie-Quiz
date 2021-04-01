@@ -4,8 +4,11 @@ const startGameRef = document.getElementById('start-btn');
 
 /* Function to show game screen and hide welcome screen on click */
 startGameRef.addEventListener('click', function() {
-  welcomeScreenRef.classList.add('hidden');
-  gameScreenRef.classList.remove('hidden');
+  getQuestions().then((result) => {
+    getNewQuestion();
+    welcomeScreenRef.classList.add('hidden');
+    gameScreenRef.classList.remove('hidden');
+  });
 });
 
 /* Function to show difficulty level on button click */
@@ -21,9 +24,9 @@ chooseLevelRef.addEventListener('click', function (){
 
 
 
-const question = document.getElementById('question');
-const answers = Array.from(document.getElementsByClassName('btn-answer'));
-console.log(answers);
+const questionRef = document.getElementById('question');
+const answersRef = Array.from(document.getElementsByClassName('btn-answer'));
+console.log(answersRef);
 
 // default easy difficulty
 let difficultyLevel = 'easy';
@@ -40,11 +43,26 @@ const MAX_QUESTIONS = 10;
 
 
 const initializeEventListeners = () => {
+  // Event listeners for difficulty option
   const difficultyOptions = Array.from(document.getElementsByClassName('difficulty-option'));
   difficultyOptions.forEach((option) => {
     option.addEventListener('click', (e) => {
       difficultyLevel = e.currentTarget.dataset.value;
       levelChoiceRef.classList.toggle("show");
+    });
+  });
+
+  // Event listeners for selecting answers
+  answersRef.forEach((choice) => {
+    choice.addEventListener('click', (e) => {
+      const answerChoice = e.currentTarget.dataset.number;
+        const currentQuestion = availableQuestions[questionCounter - 1];
+      if (currentQuestion.answer == answerChoice) {
+        alert("correct answer!");
+      }
+      else {
+        alert("incorrect answer!");
+      }
     });
   });
 }
@@ -94,9 +112,9 @@ const getNewQuestion = () => {
     }
     else {
       questionCounter += 1;
-      question.innerHTML = currentQuestion.question;
+      questionRef.innerHTML = currentQuestion.question;
 
-      answers.forEach((choice) => {
+      answersRef.forEach((choice) => {
           const number = choice.dataset['number'];
           choice.innerHTML = currentQuestion['choice' + number];
       });

@@ -209,6 +209,16 @@ body {
 .modal-body ul {
  padding: 20px;
 }
+
+.btn-answer.correct {
+  background-color: green;
+}
+
+.btn-answer.incorrect {
+  background-color: red;
+}
+
+
 /* =================================== Media Queries ============================================ */
 
 /* For button controls on start */
