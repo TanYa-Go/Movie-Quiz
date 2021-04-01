@@ -53,20 +53,37 @@ const initializeEventListeners = () => {
   });
 
   // Event listeners for selecting answers
+
   answersRef.forEach((choice) => {
     choice.addEventListener('click', (e) => {
-      const answerChoice = e.currentTarget.dataset.number;
-        const currentQuestion = availableQuestions[questionCounter - 1];
+      const answerRef = e.currentTarget;
+      const answerChoice = answerRef.dataset.number;
+      const currentQuestion = availableQuestions[questionCounter - 1];
       if (currentQuestion.answer == answerChoice) {
-        alert("correct answer!");
+        answerRef.classList.add('correct');
+
+        // Update the score
+        score += 10;
       }
       else {
-        alert("incorrect answer!");
+        answerRef.classList.add('incorrect');
       }
+
+      // Move to the next question after one second to allow the user to see if the answer was correct
+      setTimeout(() => {
+        // Reset the button coloring
+        answerRef.classList.remove('incorrect');
+        answerRef.classList.remove('correct');
+
+        getNewQuestion();
+
+        // Update the question count and score on page
+        document.getElementById('question-count').innerText = questionCounter + "/" + availableQuestions.length;
+        document.getElementById('score').innerText = score;
+      }, 1000)
     });
   });
 }
-
 initializeEventListeners();
 
 // Fetch questions from API and set available questions variable
@@ -119,4 +136,4 @@ const getNewQuestion = () => {
           choice.innerHTML = currentQuestion['choice' + number];
       });
     }
-};
+}
