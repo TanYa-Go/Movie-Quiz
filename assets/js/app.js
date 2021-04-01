@@ -17,9 +17,13 @@ chooseLevelRef.addEventListener('click', function (){
  levelChoiceRef.classList.toggle("show");
 });
 
-const questionRef = document.getElementById('question');
-const answersRef = Array.from(document.getElementsByClassName('btn-answer'));
 
+
+
+
+const question = document.getElementById('question');
+const answers = Array.from(document.getElementsByClassName('btn-answer'));
+console.log(answers);
 
 let currentQuestion = {};
 let acceptingAnswers = true;
@@ -30,30 +34,87 @@ let availableQuestions = [];
 const CORRECT_BONUS = 10;
 const MAX_QUESTIONS = 10;
 
- 
+
+
 fetch("https://opentdb.com/api.php?amount=10&category=11&difficulty=easy&type=multiple")
-    .then((response) => {
-        if (response.ok) {
-            return response.json();
-        } else {
-            throw new Error("NETWORK RESPONSE NOT OK");
-        }
+.then((res) => {
+        return res.json();
     })
-    .then(function (data) {
-        console.log(data);
-        displayQuestions(data);
+    .then((loadedQuestions) => {
+        questions = loadedQuestions.results.map((loadedQuestion) => {
+            const formattedQuestion = {
+                question: loadedQuestion.question,
+            };
+
+            const answerChoices = [...loadedQuestion.incorrect_answers];
+            formattedQuestion.answer = Math.floor(Math.random() * 4) + 1;
+            answerChoices.splice(
+                formattedQuestion.answer - 1,
+                0,
+                loadedQuestion.correct_answer
+            );
+
+            answerChoices.forEach((choice, index) => {
+                formattedQuestion['choice' + (index + 1)] = choice;
+            });
+
+            return formattedQuestion;
+        });
+        startGame();
     })
-    .catch((error) => {
-        console.error("FETCH ERROR:", error);
+    .catch((err) => {
+        console.error(err);
     });
 
-// Function thay displays questions on the DOM
-function displayQuestions(data) {
-    const questions = data.results;
-    const questionRef = document.getElementById('question');
+startGame = () => {
+    questionCounter = 0;
+    score = 0;
+    availableQuesions = [...questions];
+    getNewQuestion();
+};
 
-    questions.forEach(questions => {
-       const formattedQuestion = questionRef.innerHTML = questions.question
-    })
+getNewQuestion = () => {
+    if (availableQuesions.length === 0 || questionCounter >= MAX_QUESTIONS) {
+        localStorage.setItem('mostRecentScore', score);
+        //go to the end page
+        return window.location.assign('/end.html');
+    }
+    questionCounter++;
+    
+    //Update the progress bar
+    
 
-}
+    const questionIndex = Math.floor(Math.random() * availableQuesions.length);
+    currentQuestion = availableQuesions[questionIndex];
+    question.innerHTML = currentQuestion.question;
+
+    answers.forEach((choice) => {
+        const number = choice.dataset['number'];
+        choice.innerHTML = currentQuestion['choice' + number];
+    });
+
+    availableQuesions.splice(questionIndex, 1);
+    acceptingAnswers = true;
+};
+
+answers.forEach((choice) => {
+    choice.addEventListener('click', (e) => {
+        if (!acceptingAnswers) return;
+
+        acceptingAnswers = false;
+        const selectedChoice = e.target;
+        const selectedAnswer = selectedChoice.dataset['number'];
+
+         const classToApply =
+            selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect';
+
+      
+
+        selectedChoice.parentElement.classList.add(classToApply);
+
+        setTimeout(() => {
+            selectedChoice.parentElement.classList.remove(classToApply);
+            getNewQuestion();
+        }, 1000);
+    });
+});
