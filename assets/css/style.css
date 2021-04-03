@@ -18,7 +18,7 @@ body {
     background-size: cover;
 }
 
-#title {
+.title {
     font-family: Oswald, sans-serif;
     color: #d51e13;
     text-align: center;
@@ -28,6 +28,13 @@ body {
     text-shadow: 3px 2px #f2d38c;
 }
 
+#title {
+    margin-top: -20px
+}
+
+#movie {
+    margin-top: 30px;
+}
 .quote {
     margin-top: 60px;
     display: flex;

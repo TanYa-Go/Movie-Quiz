@@ -3,6 +3,9 @@ const welcomeScreenRef = document.getElementById('welcome-screen');
 const gameScreenRef = document.getElementById('game-screen');
 const startGameRef = document.getElementById('start-btn');
 const restartButtonRef = document.getElementById('restart-btn');
+
+
+
 /* Function to show game screen and hide welcome screen on click */
 startGameRef.addEventListener('click', function() {
   getQuestions().then((result) => {
@@ -60,6 +63,8 @@ const initializeEventListeners = () => {
       const answerRef = e.currentTarget;
       const answerChoice = answerRef.dataset.number;
       const currentQuestion = availableQuestions[questionCounter - 1];
+      let correctAnswerRef = null;
+
       if (currentQuestion.answer == answerChoice) {
         answerRef.classList.add('correct');
 
@@ -68,6 +73,9 @@ const initializeEventListeners = () => {
       }
       else {
         answerRef.classList.add('incorrect');
+     // If the user selects the wrong answer, we want the correct answer to show as well
+      correctAnswerRef = document.querySelectorAll('.btn-answer[data-number="' + currentQuestion.answer + '"]')[0]; 
+      correctAnswerRef.classList.add('correct');
       }
 
       // Move to the next question after one second to allow the user to see if the answer was correct
@@ -75,7 +83,10 @@ const initializeEventListeners = () => {
         // Reset the button coloring
         answerRef.classList.remove('incorrect');
         answerRef.classList.remove('correct');
-
+        
+        if (correctAnswerRef != null) {
+       correctAnswerRef.classList.remove('correct');
+        }
         getNewQuestion();
 
         // Update the question count and score on page
@@ -86,13 +97,13 @@ const initializeEventListeners = () => {
   });
 
     // Event handling for when "START OVER" is clicked
-    restartButtonRef.addEventListener('click', (e) => {
+        restartButtonRef.addEventListener('click', (e) => {
         // Reset the score and questionCounter and get the first question again  
         score = 0;
         questionCounter = 0;
         getNewQuestion();
 
-        // Update the display of the question an  d score
+        // Update the display of the question and score
         document.getElementById('question-count').innerText = questionCounter + "/" + availableQuestions.length;
         document.getElementById('score').innerText = score;
     });
