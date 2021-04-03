@@ -150,7 +150,7 @@ const getNewQuestion = () => {
     const currentQuestion = availableQuestions[questionCounter];
 
     if (currentQuestion == null) {
-      
+      finishQuiz();
     }
     else {
       questionCounter += 1;
@@ -163,3 +163,8 @@ const getNewQuestion = () => {
     }
 }
 
+const finishQuiz = () => {
+  localStorage.setItem('mostRecentScore', score);
+  // go to the end page
+  return window.location.assign('/end.html');
+};
