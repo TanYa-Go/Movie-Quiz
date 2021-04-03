@@ -1,7 +1,8 @@
+
 const welcomeScreenRef = document.getElementById('welcome-screen');
 const gameScreenRef = document.getElementById('game-screen');
 const startGameRef = document.getElementById('start-btn');
-
+const restartButtonRef = document.getElementById('restart-btn');
 /* Function to show game screen and hide welcome screen on click */
 startGameRef.addEventListener('click', function() {
   getQuestions().then((result) => {
@@ -83,6 +84,19 @@ const initializeEventListeners = () => {
       }, 1000)
     });
   });
+
+    // Event handling for when "START OVER" is clicked
+    restartButtonRef.addEventListener('click', (e) => {
+        // Reset the score and questionCounter and get the first question again  
+        score = 0;
+        questionCounter = 0;
+        getNewQuestion();
+
+        // Update the display of the question an  d score
+        document.getElementById('question-count').innerText = questionCounter + "/" + availableQuestions.length;
+        document.getElementById('score').innerText = score;
+    });
+
 }
 initializeEventListeners();
 
@@ -137,3 +151,4 @@ const getNewQuestion = () => {
       });
     }
 }
+
