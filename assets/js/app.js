@@ -67,6 +67,12 @@ const initializeEventListeners = () => {
 
   answersRef.forEach((choice) => {
     choice.addEventListener('click', (e) => {
+            if (!acceptingAnswers) {
+      return false;
+    }
+
+    // Disable accepting answers
+    acceptingAnswers = false;
       const answerRef = e.currentTarget;
       const answerChoice = answerRef.dataset.number;
       const currentQuestion = availableQuestions[questionCounter - 1];
@@ -99,6 +105,9 @@ const initializeEventListeners = () => {
         // Update the question count and score on page
         document.getElementById('question-count').innerText = questionCounter + "/" + availableQuestions.length;
         document.getElementById('score').innerText = score;
+
+         // Allow accepting answers again
+      acceptingAnswers = true;
       }, 1000)
     });
   });
