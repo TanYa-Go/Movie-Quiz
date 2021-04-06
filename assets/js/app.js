@@ -3,7 +3,7 @@ const welcomeScreenRef = document.getElementById('welcome-screen');
 const gameScreenRef = document.getElementById('game-screen');
 const startGameRef = document.getElementById('start-btn');
 const restartButtonRef = document.getElementById('restart-btn');
-
+const questionsContainerRef = document.getElementById('questions-container');
 
 
 
@@ -172,12 +172,22 @@ const getNewQuestion = () => {
       questionCounter += 1;
       questionRef.innerHTML = currentQuestion.question;
 
+      questionsContainerRef.classList.remove('smaller-text');
+      questionsContainerRef.classList.remove('very-small-text');
       answersRef.forEach((choice) => {
           const number = choice.dataset['number'];
-          choice.innerHTML = currentQuestion['choice' + number];
+          const answerString = currentQuestion['choice' + number];
+          choice.innerHTML = answerString;
+
+          if (answerString.length > 70) {
+            questionsContainerRef.classList.add('very-small-text');
+          }
+          else if (answerString.length > 50) {
+            questionsContainerRef.classList.add('smaller-text');
+          }
       });
     }
-}
+};
 
 const finishQuiz = () => {
   localStorage.setItem('mostRecentScore', score);
