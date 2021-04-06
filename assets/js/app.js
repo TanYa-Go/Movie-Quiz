@@ -6,13 +6,19 @@ const restartButtonRef = document.getElementById('restart-btn');
 
 
 
+
 /* Function to show game screen and hide welcome screen on click */
 startGameRef.addEventListener('click', function() {
-  getQuestions().then((result) => {
-    getNewQuestion();
-    welcomeScreenRef.classList.add('hidden');
-    gameScreenRef.classList.remove('hidden');
-  });
+  if (difficultyLevel == null) {
+    alert("Please select a difficulty level.");
+  }
+  else {
+    getQuestions().then((result) => {
+      getNewQuestion();
+      welcomeScreenRef.classList.add('hidden');
+      gameScreenRef.classList.remove('hidden');
+    });
+  }
 });
 
 /* Function to show difficulty level on button click */
@@ -32,8 +38,8 @@ const questionRef = document.getElementById('question');
 const answersRef = Array.from(document.getElementsByClassName('btn-answer'));
 console.log(answersRef);
 
-// default easy difficulty
-let difficultyLevel = 'easy';
+// difficulty level has to be chosen
+let difficultyLevel = null;
 
 
 let currentQuestion = {};
