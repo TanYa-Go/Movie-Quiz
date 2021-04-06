@@ -59,6 +59,7 @@ const initializeEventListeners = () => {
     option.addEventListener('click', (e) => {
       difficultyLevel = e.currentTarget.dataset.value;
       levelChoiceRef.classList.toggle("show");
+      chooseLevelRef.innerText = difficultyLevel.toUpperCase();
     });
   });
 
