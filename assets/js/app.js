@@ -9,6 +9,12 @@ const questionsContainerRef = document.getElementById('questions-container');
 const alertModalRef = document.getElementById('alert-modal');
 const alertModalTextRef = document.getElementById('alert-modal-text');
 const alertModalCancelRef = document.getElementById('alert-modal-cancel');
+//timer
+const currentTimerTextRef = document.getElementById('current-timer-text');
+const DEFAULT_TIMER = 15;
+let endTimerFlag = false;
+const CORRECT_BONUS = 10;
+const MAX_QUESTIONS = 10;
 
 
 /* Function to show game screen and hide welcome screen on click */
@@ -52,8 +58,7 @@ let score = 0;
 let questionCounter = 0;
 let availableQuestions = [];
 
-const CORRECT_BONUS = 10;
-const MAX_QUESTIONS = 10;
+
 
 
 const difficultyEventListeners = () => {
@@ -77,6 +82,9 @@ const difficultyEventListeners = () => {
 
     // Disable accepting answers
     acceptingAnswers = false;
+    
+   // Stop the timer
+    endTimerFlag = true;  
       const answerRef = e.currentTarget;
       const answerChoice = answerRef.dataset.number;
       const currentQuestion = availableQuestions[questionCounter - 1];
@@ -196,6 +204,8 @@ const getNewQuestion = () => {
           }
       });
     }
+
+    restartTimer();
 };
 
 const finishQuiz = () => {
@@ -207,4 +217,29 @@ const finishQuiz = () => {
 const customAlert = (message) => {
   alertModalRef.hidden = false;
   alertModalTextRef.innerText = message;
+};
+
+const restartTimer = () => {
+  currentTimer = DEFAULT_TIMER;
+  endTimerFlag = false;
+  timerCallback();
+}
+
+const timerCallback = () => {
+  currentTimerTextRef.innerText = currentTimer;
+  if (currentTimer == 0) {
+    // Get next question
+    getNewQuestion();
+    // Update the question count on page
+    document.getElementById('question-count').innerText = questionCounter + "/" + availableQuestions.length;
+  }
+  else if (endTimerFlag) {
+    // The user has selected an answer and gotten to the next question
+  }
+  else {
+    setTimeout(() => {
+      currentTimer -= 1;
+      timerCallback();
+    }, 1000);
+  }
 }
