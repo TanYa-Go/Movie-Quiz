@@ -5,12 +5,16 @@ const startGameRef = document.getElementById('start-btn');
 const restartButtonRef = document.getElementById('restart-btn');
 const questionsContainerRef = document.getElementById('questions-container');
 
+//alert modal
+const alertModalRef = document.getElementById('alert-modal');
+const alertModalTextRef = document.getElementById('alert-modal-text');
+const alertModalCancelRef = document.getElementById('alert-modal-cancel');
 
 
 /* Function to show game screen and hide welcome screen on click */
 startGameRef.addEventListener('click', function() {
   if (difficultyLevel == null) {
-    alert("Please select a difficulty level.");
+    customAlert("Please select a difficulty level.");
   }
   else {
     getQuestions().then((result) => {
@@ -52,7 +56,7 @@ const CORRECT_BONUS = 10;
 const MAX_QUESTIONS = 10;
 
 
-const initializeEventListeners = () => {
+const difficultyEventListeners = () => {
   // Event listeners for difficulty option
   const difficultyOptions = Array.from(document.getElementsByClassName('difficulty-option'));
   difficultyOptions.forEach((option) => {
@@ -109,6 +113,11 @@ const initializeEventListeners = () => {
          // Allow accepting answers again
       acceptingAnswers = true;
       }, 1000)
+});
+      // Event handling for custom alert modal
+     alertModalCancelRef.addEventListener('click', (e) => {
+     alertModalRef.hidden = true
+  
     });
   });
 
@@ -125,7 +134,7 @@ const initializeEventListeners = () => {
     });
 
 }
-initializeEventListeners();
+difficultyEventListeners();
 
 // Fetch questions from API and set available questions variable
 const getQuestions = () => {
@@ -194,3 +203,8 @@ const finishQuiz = () => {
   // go to the end page
   return window.location.assign('/end.html');
 };
+
+const customAlert = (message) => {
+  alertModalRef.hidden = false;
+  alertModalTextRef.innerText = message;
+}
