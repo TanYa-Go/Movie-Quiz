@@ -297,3 +297,6 @@ The test has passed all the criteria and works as planned.
 
 ## **Credits**
 
+### Media 
+
+Hero image borrowed from [Pixabay](https://pixabay.com/illustrations/cinema-demolition-map-popcorn-3700545/)
