@@ -297,6 +297,15 @@ The test has passed all the criteria and works as planned.
 
 ## **Credits**
 
-### Media 
+### Images 
 
 Hero image borrowed from [Pixabay](https://pixabay.com/illustrations/cinema-demolition-map-popcorn-3700545/)
+
+
+### Code
+
+Took inspiration from the [James Q Quick YouToube tutorial](https://www.youtube.com/watch?v=u98ROZjBWy8&list=PLDlWc9AfQBfZIkdVaOQXi1tizJeNJipEx)
+
+Learned more about fetch from [John Linatoc](https://medium.com/@johnwadelinatoc/manipulating-the-dom-with-fetch-7bfddf9c526b)
+
+Borrowed idea for how to remove hover on touch devices from [Stefan Judis](https://www.stefanjudis.com/today-i-learned/the-hover-media-query-can-help-to-remove-hover-styles-on-touch/)
