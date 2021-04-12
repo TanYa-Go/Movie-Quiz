@@ -226,6 +226,28 @@ Wireframes were created using the wireframing tool [Balsamiq](https://balsamiq.c
 
 ## **Testing**
 
+### **How to play**
+
+#### As a user, I would like to know the rules before I start playing.
+
+* **Plan**  
+If a user doesn't know how to play the game, they should be able to click a 'How to Play' button to read the instructions. 
+
+* **Implementation**  
+On the welcome screen I've added a 'How to Play' button that triggers a modal. 
+When the modal opens you can see the steps on how to play the quiz. 
+When you've read the instructions you can close the modal by clicking the "Got it!" button at the bottom or the "X" button at the top.
+When clicking either button, the modal closes and the user can start playing the game. 
+
+* **Test**  
+I have tested the modal on various browsers and devices. 
+ 
+
+* **Result**  
+The modal works as planned and contributes to a better overall user experience.
+
+* **Verdict**  
+The test has passed all the criteria and works as planned.
 
 
 
