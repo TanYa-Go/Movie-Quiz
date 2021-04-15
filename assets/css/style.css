@@ -257,16 +257,17 @@ body {
 #alert-modal-close {
     margin-top: 65px;
     background-color: black;
-    font-family: Oswald,sans-serif;
+    font-family: Bungee Inline,sans-serif;
     border-radius: 5px;
     border: none;
-    color: #d51e13;
-    font-weight: 700;
+    color: #f2d38c;
     width: 20%;
     height: 20%;
     
 }
 
+
+  
 /* =================================== Media Queries ============================================ */
 
 

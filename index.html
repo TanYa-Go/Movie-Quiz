@@ -1,37 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
     <title>Movie Quiz</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 
 <body>
-
     <article id="welcome-screen">
         <div class="modal fade" id="alertModal" tabindex="-1" role="dialog">
             <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div id="alert-modal-text" class="modal-body">Custom Message</div>
+                    <div class="modal-footer justify-content-center">
+                        <button id="alert-modal-close" type="button" class="btn btn-secondary" data-dismiss="modal">
+                            OK
+                        </button>
+                    </div>
                 </div>
-                <div id="alert-modal-text" class="modal-body">
-                  Custom Message
-                </div>
-                <div class="modal-footer justify-content-center">
-                  <button id="alert-modal-close" type="button" class="btn btn-secondary" data-dismiss="modal">OK</button>
-                </div>
-              </div>
             </div>
-          </div>
+        </div>
 
         <div class="container title-container">
             <div class="row">
@@ -48,9 +47,11 @@
         </div>
 
         <div class="container controls-container">
-            <div class="row ">
-                <div class=" col-xs-12 col-sm-4 col-md-4 col-lg-4">
-                    <button class="controls" data-toggle="modal" data-target="#rulesModal">How to Play</button>
+            <div class="row">
+                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                    <button class="controls" data-toggle="modal" data-target="#rulesModal">
+                        How to Play
+                    </button>
                 </div>
                 <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
                     <div class="dropdown">
@@ -59,7 +60,6 @@
                             <a class="difficulty-option" data-value="easy">Easy</a>
                             <a class="difficulty-option" data-value="medium">Medium</a>
                             <a class="difficulty-option" data-value="hard">Hard</a>
-
                         </div>
                     </div>
                 </div>
@@ -85,7 +85,9 @@
         <div class="container tracking-container">
             <div class="row">
                 <div class="col-6 col-xs-12" id="question-cont">
-                    <p id="question-text">Question: <span id="question-count">1/10</span></p>
+                    <p id="question-text">
+                        Question: <span id="question-count">1/10</span>
+                    </p>
                 </div>
                 <div class="col-6 col-xs-12" id="score-cont">
                     <p id="score-text">Score: <span id="score">0</span></p>
@@ -93,33 +95,35 @@
             </div>
             <div class="row">
                 <div class="col-12" id="time-cont">
-                    <p id="time-text">Time: <span id="current-timer-text">15</span> sec<span id="time"></span></p>
+                    <p id="time-text">
+                        Time: <span id="current-timer-text">15</span> sec<span id="time"></span>
+                    </p>
                 </div>
             </div>
         </div>
 
-
-
         <div class="container questions-container" id="questions-container">
             <div class="row">
                 <div class="col-12">
-                    <div id="question">Who played the lead role in the movie Legend?</div>
+                    <div id="question">
+                        Who played the lead role in the movie Legend?
+                    </div>
                     <div id="answer-buttons" class="btn-grid"></div>
                 </div>
             </div>
-            <div class="row ">
-                <div class="col-12 col-md-6 ">
+            <div class="row">
+                <div class="col-12 col-md-6">
                     <button class="btn-answer" data-number="1">George Clooney</button>
                 </div>
-                <div class="col-12 col-md-6 ">
+                <div class="col-12 col-md-6">
                     <button class="btn-answer" data-number="2">Brad Pitt</button>
                 </div>
             </div>
-            <div class="row ">
-                <div class="col-12 col-md-6 ">
+            <div class="row">
+                <div class="col-12 col-md-6">
                     <button class="btn-answer" data-number="3">Tom Hardy</button>
                 </div>
-                <div class="col-12 col-md-6 ">
+                <div class="col-12 col-md-6">
                     <button class="btn-answer" data-number="4">Jason Momoa</button>
                 </div>
             </div>
@@ -128,7 +132,7 @@
         <div class="container">
             <div class="row text-center" id="restart">
                 <div class="col-12">
-                    <button id="restart-btn" class="controls btn ">Start Over</button>
+                    <button id="restart-btn" class="controls btn">Start Over</button>
                 </div>
             </div>
         </div>
@@ -147,20 +151,38 @@
                 </div>
                 <div class="modal-body">
                     <ul>
-                        <li>You must choose the difficulty level first and then click "Start Quiz"</li>
-                        <li>A question will be displayed on the screen with four possible answers</li>
+                        <li>
+                            You must choose the difficulty level first and then click "Start
+                            Quiz"
+                        </li>
+                        <li>
+                            A question will be displayed on the screen with four possible
+                            answers
+                        </li>
                         <li>You have 15 seconds to answer each question</li>
                         <li>Select the answer you belive is correct</li>
-                        <li>If the time runs out, you lose points for this question and move on to the next one</li>
-                        <li>After you selected your answer, you will see if your answer was correct or not</li>
-                        <li>For a correct answer you will get 10 points and for incorrect answer you will not get points
+                        <li>
+                            If the time runs out, you lose points for this question and move
+                            on to the next one
                         </li>
-                        <li>A new question will automatically be loaded until you have answered all the questions</li>
+                        <li>
+                            After you selected your answer, you will see if your answer was
+                            correct or not
+                        </li>
+                        <li>
+                            For a correct answer you will get 10 points and for incorrect
+                            answer you will not get points
+                        </li>
+                        <li>
+                            A new question will automatically be loaded until you have
+                            answered all the questions
+                        </li>
                     </ul>
                 </div>
                 <div class="modal-footer justify-content-center">
-                    <button type="button" class="btn controls" id="close-modal" data-dismiss="modal">Got it!</button>
-
+                    <button type="button" class="btn controls" id="close-modal" data-dismiss="modal">
+                        Got it!
+                    </button>
                 </div>
             </div>
         </div>
