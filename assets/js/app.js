@@ -6,7 +6,7 @@ const restartButtonRef = document.getElementById('restart-btn');
 const questionsContainerRef = document.getElementById('questions-container');
 
 //alert modal
-const alertModalRef = document.getElementById('alert-modal');
+const alertModalRef = document.getElementById('alertModal');
 const alertModalTextRef = document.getElementById('alert-modal-text');
 const alertModalCancelRef = document.getElementById('alert-modal-close');
 //timer
@@ -123,8 +123,9 @@ const difficultyEventListeners = () => {
       }, 1000)
 });
       // Event handling for custom alert modal
-     alertModalCancelRef.addEventListener('click', (e) => {
-     alertModalRef.hidden = true
+        alertModalCancelRef.addEventListener('click', (e) => {
+      // hidden = true
+         $(alertModalRef).modal('hide');
   
     });
   });
@@ -208,14 +209,11 @@ const getNewQuestion = () => {
     restartTimer();
 };
 
-const finishQuiz = () => {
-  localStorage.setItem('mostRecentScore', score);
-  // go to the end page
-  return window.location.assign('/end.html');
-};
 
 const customAlert = (message) => {
-  alertModalRef.hidden = false;
+  
+// hidden = false
+$(alertModalRef).modal('show');
   alertModalTextRef.innerText = message;
 };
 
