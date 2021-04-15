@@ -8,7 +8,7 @@ const questionsContainerRef = document.getElementById('questions-container');
 //alert modal
 const alertModalRef = document.getElementById('alert-modal');
 const alertModalTextRef = document.getElementById('alert-modal-text');
-const alertModalCancelRef = document.getElementById('alert-modal-cancel');
+const alertModalCancelRef = document.getElementById('alert-modal-close');
 //timer
 const currentTimerTextRef = document.getElementById('current-timer-text');
 const DEFAULT_TIMER = 15;
@@ -20,7 +20,7 @@ const MAX_QUESTIONS = 10;
 /* Function to show game screen and hide welcome screen on click */
 startGameRef.addEventListener('click', function() {
   if (difficultyLevel == null) {
-    customAlert("Please select a difficulty level.");
+    customAlert("Please choose difficulty level");
   }
   else {
     getQuestions().then((result) => {
@@ -243,3 +243,10 @@ const timerCallback = () => {
     }, 1000);
   }
 }
+
+const finishQuiz = () => {
+  localStorage.setItem('mostRecentScore', score);
+  // go to the end page
+  const endGamePath = window.location.protocol + "//" + window.location.host + window.location.pathname + '/' + 'end.html';
+  return window.location.assign(endGamePath);
+};
