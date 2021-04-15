@@ -208,7 +208,7 @@ body {
    background-color: #f2d38c;
 }
 
-#exampleModalLongTitle {
+#modalTitle {
     font-family: Bungee Inline, sans-serif;
     color: #f2d38c;
     font-size: x-large;
@@ -239,10 +239,37 @@ body {
   background-color: #d51e13;
 }
 
+#alertModal {
+    text-align: center;
+   }
+   
+#alert-modal-text {
+   font-family: Oswald,sans-serif;
+   color: black;
+   font-weight: bold;
+   font-size: x-large;
+   width: 100%;
+   position: absolute;
+   top: 25%;
+        
+   }
+   
+#alert-modal-close {
+    margin-top: 65px;
+    background-color: black;
+    font-family: Oswald,sans-serif;
+    border-radius: 5px;
+    border: none;
+    color: #d51e13;
+    font-weight: 700;
+    width: 20%;
+    height: 20%;
+    
+}
 
 /* =================================== Media Queries ============================================ */
 
-/* For button controls on start */
+
 
 
 @media (min-width: 200px) and (max-width: 576px){
@@ -251,7 +278,7 @@ body {
     margin-top: 10px;
 }
     .dropdown-content{
-        margin-top: -17px;
+        margin-top: -18px;
     }
     .controls {
      display: flex;
@@ -313,41 +340,3 @@ body {
 }
 }
 
-#alert-modal {
-  margin: auto;
-  position: absolute;
-  z-index: 100;
-  width: 60%;
-  height: 12%;
-  border: 1px solid black;
-  border-radius: 5px;
-  left: 50%;
-  transform: translateX(-50%);
-  top: 52%;
-  background-color: #d51e13;
-  text-align: center
-}
-
-#alert-modal-text {
-     font-family: Oswald,sans-serif;
-     color: black;
-     font-weight: bold;
-     font-size: x-large;
-     width: 100%;
-     position: absolute;
-     top: 25%;
-     left: 3%;
-}
-
-#alert-modal-close {
-    margin-top: 65px;
-    background-color: black;
-    font-family: Oswald,sans-serif;
-    border-radius: 5px;
-    border: none;
-    color: #d51e13;
-    font-weight: 700;
-    width: 10%;
-    height: 20%;
-
-}
