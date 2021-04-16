@@ -8,6 +8,7 @@
    
 body, html {
     height: 100vh;
+    overflow-y: hidden;
 }
 
 body {
@@ -26,7 +27,7 @@ body {
     font-family: Oswald, sans-serif;
     color: #d51e13;
     text-align: center;
-    margin-top: 85px;
+    margin-top: 135px;
     font-weight: 600;
     font-size: 5rem;
     text-shadow: 3px 2px #f2d38c;
@@ -276,7 +277,7 @@ body {
 @media (min-width: 200px) and (max-width: 576px){
 
     .title-container{
-    margin-top: 10px;
+    margin-top: 30px;
 }
     .dropdown-content{
         margin-top: -18px;
@@ -291,8 +292,9 @@ body {
      height: 50px;
     }
     
-    #title {
+    .title {
     font-size: 3.5rem;
+    margin-top: 80px;
     }
     
     .quote {
@@ -304,7 +306,7 @@ body {
     
     
     #levelChoice{
-    margin-bottom: 200px;
+    margin-bottom: 5px;
     }
 
     #time-cont, #question-cont, #score-cont{
@@ -330,6 +332,12 @@ body {
     }
 }
 
+@media (min-width: 577px) and (max-width: 768px){
+
+    .title{
+        margin-top: 200px;
+    }
+}
 
 @media (hover: hover) {
   .btn-answer:hover {
