@@ -2,11 +2,11 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
     <title>Movie Quiz</title>
     <link rel="icon" type="image/png" href="assets/images/favicon.png">
@@ -14,6 +14,7 @@
 </head>
 
 <body>
+     
     <article id="welcome-screen">
         <div class="modal fade" id="alertModal" tabindex="-1" role="dialog">
             <div class="modal-dialog" role="document">
@@ -72,6 +73,7 @@
     </article>
 
     <article id="game-screen" class="hidden">
+               
         <div class="container d-sm-none d-md-none quote-container">
             <div class="row">
                 <div class="col">
@@ -132,8 +134,11 @@
 
         <div class="container">
             <div class="row text-center" id="restart">
-                <div class="col-12">
+                <div class="col-6">
                     <button id="restart-btn" class="controls btn">Start Over</button>
+                </div>
+                <div class="col-6">
+                    <button id="musicOn" class="controls btn"><i class="fas fa-music"></i></button>
                 </div>
             </div>
         </div>

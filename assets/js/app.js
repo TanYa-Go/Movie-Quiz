@@ -1,4 +1,4 @@
-const startSound = new Audio("assets/music/start-sound.mp3");
+
 const welcomeScreenRef = document.getElementById("welcome-screen");
 const gameScreenRef = document.getElementById("game-screen");
 const startGameRef = document.getElementById("start-btn");
@@ -15,24 +15,38 @@ let endTimerFlag = false;
 const CORRECT_BONUS = 10;
 const MAX_QUESTIONS = 10;
 
-//when page loads play sound
-window.addEventListener("load", (event) => {
-  startSound.play();
-});
-
+const startSound = new Audio("assets/music/start-sound.mp3");
 const backgroundMusic = new Audio("assets/music/background-music.mp3");
 const lowScoreSound = new Audio("assets/music/low-score.mp3");
 const highScoreSound = new Audio("assets/music/high-score.mp3");
+const musicOn = true;
+const musicOnRef = document.getElementById('musicOn');
+const musicOffRef = document.getElementById('musicOff');
 
-startGameRef.addEventListener("click", () => {
-  backgroundMusic.play();
+//when page loads play sound
+// window.addEventListener("DOMContentLoaded", (event) => {
+//   startSound.play();
+// });
+/*------------------------------------------------------------------------------------------*/
+
+
+musicOnRef.addEventListener("click", function(){
+    if(backgroundMusic.paused){
+    backgroundMusic.play();
+    musicOnRef.innerHTML = `<i class="fas fa-pause"></i>`;
+  } else {
+    backgroundMusic.pause();
+    musicOnRef.innerHTML = `<i class="fas fa-play"></i>`;
+  }
 });
 
+/*-----------------------------------------------------------------------------------------------------------------*/
 /* Function to show game screen and hide welcome screen on click */
 startGameRef.addEventListener("click", function () {
   if (difficultyLevel == null) {
     customAlert("Please choose difficulty level");
   } else {
+    backgroundMusic.play();
     getQuestions().then((result) => {
       getNewQuestion();
       welcomeScreenRef.classList.add("hidden");
@@ -253,4 +267,5 @@ const finishQuiz = () => {
     "/" +
     "end.html";
   return window.location.assign(endGamePath);
-};
+}
+
