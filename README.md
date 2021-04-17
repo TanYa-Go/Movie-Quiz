@@ -5,7 +5,7 @@
 ## **Project Goals** 
 
 The goal of this project was to create an app using HTML, CSS and JavaScript, focusing on JavaScript. 
-I've decided to create a movie quiz using an API. The idea for the project is to create a quiz that is fun to play and also contains interesting movie trivia so user can learn something new while playing. 
+I've decided to create a movie quiz using an API. The idea was to create a quiz that is fun to play and also contains interesting movie trivia so user can learn something new while playing. 
  
 
 
@@ -225,7 +225,7 @@ Wireframes were created using the wireframing tool [Balsamiq](https://balsamiq.c
 
 ## **Testing**
 
-### **How to play**
+### **How to play button**
 
 #### As a user, I would like to know the rules before I start playing.
 
