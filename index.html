@@ -74,7 +74,7 @@
 
     <article id="game-screen" class="hidden">
                
-        <div class="container d-sm-none d-md-none quote-container">
+        <!-- <div class="container d-sm-none d-md-none quote-container">
             <div class="row">
                 <div class="col">
                     <div class="col-12">
@@ -83,25 +83,23 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
 
         <div class="container tracking-container">
             <div class="row">
-                <div class="col-6 col-xs-12" id="question-cont">
+                <div class="col-4 col-xs-12" id="question-cont">
                     <p id="question-text">
-                        Question: <span id="question-count">1/10</span>
+                        <i class="fas fa-question"></i> <span id="question-count">1/10</span>
                     </p>
                 </div>
-                <div class="col-6 col-xs-12" id="score-cont">
-                    <p id="score-text">Score: <span id="score">0</span></p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12" id="time-cont">
-                    <p id="time-text">
-                        Time: <span id="current-timer-text">15</span> sec<span id="time"></span>
+                <div class="col-4 col-xs-12" id="time-cont">
+                    <p id="time-text"><i class="fas fa-stopwatch"></i> <span id="current-timer-text">15</span> sec<span id="time"></span>
                     </p>
                 </div>
+                <div class="col-4 col-xs-12" id="score-cont">
+                    <p id="score-text"><i class="fas fa-check"></i> <span id="score">0</span></p>
+                </div>
+               
             </div>
         </div>
 

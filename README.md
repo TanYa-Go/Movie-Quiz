@@ -4,9 +4,8 @@
 
 ## **Project Goals** 
 
-Goal of this project was to create an app using HTML, CSS and JavaScript, focusing on JavaScript. 
-I've deciced to create a movie quiz using an API. Idea for the project is to create a quiz that is fun 
-to play and also contains interesting movie trivia so user can learn something new while playing. 
+The goal of this project was to create an app using HTML, CSS and JavaScript, focusing on JavaScript. 
+I've decided to create a movie quiz using an API. The idea for the project is to create a quiz that is fun to play and also contains interesting movie trivia so user can learn something new while playing. 
  
 
 
@@ -46,7 +45,7 @@ to play and also contains interesting movie trivia so user can learn something n
 
 * The game has to be responsive on various devices like tablets, mobile phones and desktops
 * To have the option to choose the level of difficulty the user would like to play
-* Feedback when wrong answer was chosen
+* Feedback when the wrong answer was chosen
 * To be able to track the score and see how many questions are left in the game
 * To be able to see how much time is left to answer the question
 
@@ -59,13 +58,13 @@ to play and also contains interesting movie trivia so user can learn something n
 
 * As a user, I want the website to be easy to use.
 * As a user, I would like to know the rules before I start playing.
-* As a user, I would like to be able to chose the level of difficulty.
+* As a user, I would like to be able to choose the level of difficulty.
 * As a user, I would like to know which question I am on and how many questions are left.
-* As a user, I would like to kow how much time I have to answer the question.
+* As a user, I would like to know how much time I have to answer the question.
 * As a user, I would like to track my score while playing. 
 * As a user, I expect a variety of questions and no repeated questions.
 * As a user, I would like to know the correct answer when answered incorrectly.
-* As a user, I want to be able to restart the game if I don't like my answers.
+* As a user, I want to be able to restart the game if Im'm not happy with my answers.
 
 <a></a>
 
@@ -85,7 +84,7 @@ to play and also contains interesting movie trivia so user can learn something n
 
 * Appealing homepage
 * Easy to navigate by using only a few buttons
-* Easy to pick difficulty level and start playing
+* Easy to pick a difficulty level and start playing
 * Validate the correct answer
 * Keep the score of the user playing
 
@@ -94,12 +93,12 @@ to play and also contains interesting movie trivia so user can learn something n
 #### Expectations
 
 * When a certain level is chosen, that the correct questions appear
-* Feedback to the users where in the game they are and total amount of questions
-* Time is displayed so user knowes how much time they have left to answer the question
+* Feedback to the users wherein the game they are and the total amount of questions
+* Time is displayed so the user knows how much time they have left to answer the question
 * To let the user know if their answer was correct 
 * Show correct answer when answered incorrectly
 * To show the final result after playing
-* Show a message after completing the game - message is different depending on the results
+
 
 
 
@@ -109,7 +108,7 @@ to play and also contains interesting movie trivia so user can learn something n
 <a></a>
 ### **Design Choices**
 
-The design was guided by a vintage movies and cinema look, inspired by the hero image. 
+The design was guided by vintage movies and cinema look, inspired by the hero image. 
 
 
 <a></a>
@@ -128,12 +127,12 @@ Color palette was generated from the hero image using [Image Color Picker](https
 
 ![Red](/assets/images/red.JPG) #d51e13 Red color was used as a background for the question container, to contrast the light color of the hero image and also for title
 
-![Cream](/assets/images/cream.JPG) #f2d38c Cream color was used for the questions and also for the background of the answer choices as contrast to the red
+![Cream](/assets/images/cream.JPG) #f2d38c Cream color was used for the questions and also for the background of the answer choices in contrast to the red
 
 
 <a></a>
 
-#### Structure
+# **Structure**
 
 
 [Back to Top](#table-of-contents)
@@ -168,9 +167,9 @@ Wireframes were created using the wireframing tool [Balsamiq](https://balsamiq.c
 
 * Use of [open Trivia API](https://opentdb.com/) to populate the questions
 * Ability to choose preferred level of difficulty
-* Instructions for user on how to play the game
+* Instructions for the user on how to play the game
 * Validation of answers
-* Feedback when answer was incorrect
+* Feedback when the answer was incorrect
 * Tracker for the questions and score
 * Countdown timer for each question
 
@@ -234,7 +233,7 @@ Wireframes were created using the wireframing tool [Balsamiq](https://balsamiq.c
 If a user doesn't know how to play the game, they should be able to click a 'How to Play' button to read the instructions. 
 
 * **Implementation**  
-On the welcome screen I've added a 'How to Play' button that triggers a modal. 
+On the welcome screen, I've added a 'How to Play' button that triggers a modal. 
 When the modal opens you can see the steps on how to play the quiz. 
 When you've read the instructions you can close the modal by clicking the "Got it!" button at the bottom or the "X" button at the top.
 When clicking either button, the modal closes and the user can start playing the game. 
@@ -250,6 +249,31 @@ The modal works as planned and contributes to a better overall user experience.
 The test has passed all the criteria and works as planned.
 
 
+### **Choosing difficulty level**
+
+#### User story:  As a user, I would like to be able to choose the level of difficulty.
+
+* **Plan**  
+When the page is loaded, the user should have the option to choose the difficulty level they want to play - Easy, Medium or Hard.\
+The user shouldn't be able to proceed if no level is chosen.
+
+* **Implementation**  
+I created a dropdown "Choose Level" button on the welcome screen that user can click and select their option. In javascript, I set the default difficulty level to null so the user has to choose the level before proceeding to play.
+
+* **Test**  
+I have tested whether the hover is working when you hover over each option.
+I have tried selecting different levels to make sure the correct level is being chosen.\
+I have checked whether the questions from the selected level are being displayed.
+
+
+* **Result**  
+When you hover over each option, the background color changes, so the hover is working. I have disabled hover on touch devices.\
+When you click on each level, the button text changes to that particular level name, so user can see what they've chosen.\
+When you choose your level, you get the correct questions from the chosen difficulty level.
+
+
+* **Verdict**    
+The test has passed all the criteria and works as planned.
 
 [Back to Top](#table-of-contents)
 
@@ -286,7 +310,7 @@ The test has passed all the criteria and works as planned.
 1. Navigate to the GitHub [Repository](https://github.com/TanYa-Go/Movie-Quiz)
 1. Click the Code drop down menu.
 1. Either Download the ZIP file, unpackage locally and open with IDE (This route ends here) OR Copy Git URL from the HTTPS dialogue box.
-1. Open your developement editor of choice and open a terminal window in a directory of your choice.
+1. Open your development editor of choice and open a terminal window in a directory of your choice.
 1. Use the 'git clone' command in terminal followed by the copied git URL.
 1. A clone of the project will be created locally on your machine.
 
