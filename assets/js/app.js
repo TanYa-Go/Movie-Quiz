@@ -259,11 +259,9 @@ const timerCallback = () => {
   currentTimerTextRef.innerText = currentTimer;
   if (currentTimer == 0) {
     // Get next question
-    getNewQuestion();
+    finishQuiz();
     // Update the question count on page
-    document.getElementById("question-count").innerText =
-      questionCounter + "/" + availableQuestions.length;
-  } else if (endTimerFlag) {
+    } else if (endTimerFlag) {
     // The user has selected an answer and gotten to the next question
   } else {
     setTimeout(() => {
