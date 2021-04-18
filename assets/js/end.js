@@ -19,9 +19,9 @@ window.addEventListener("DOMContentLoaded", () => {
 
 
 playAgainButtonRef.addEventListener("click", (e) => {
-const playAgainPath = window.location.protocol + "//" + window.location.host;
-return window.location.assign(playAgainPath);
+   let playAgainPath = window.location.protocol + "//" + window.location.host + window.location.pathname;
+   playAgainPath = playAgainPath.replace('/end.html', '');
+   return window.location.assign(playAgainPath);
+ });
 
-
-});
-});
+})
