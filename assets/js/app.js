@@ -21,8 +21,8 @@ const backgroundMusic = new Audio("assets/music/background-music.mp3");
 const lowScoreSound = new Audio("assets/music/low-score.mp3");
 const highScoreSound = new Audio("assets/music/high-score.mp3");
 const musicOn = true;
-const musicOnRef = document.getElementById('musicOn');
-const musicOffRef = document.getElementById('musicOff');
+const musicOnRef = document.getElementById("musicOn");
+const musicOffRef = document.getElementById("musicOff");
 
 backgroundMusic.loop = true;
 
@@ -150,24 +150,28 @@ const difficultyEventListeners = () => {
 
   // Event handling for when "Restart Level" button is clicked - Quiz starts over from question 1 of same level
   restartButtonRef.addEventListener("click", (e) => {
-  //   Reset the score and questionCounter and get the first question again
-   score = 0;
+    // Reset the score and questionCounter and get the first question again
+    score = 0;
     questionCounter = 0;
-    getNewQuestion()
-      
+    // Stop the timer
+    endTimerFlag = true;
 
+      setTimeout(function() {
+      getNewQuestion();
+      // Update the display of the question and score
+      document.getElementById("question-count").innerText =  questionCounter + "/" + availableQuestions.length;
+      document.getElementById("score").innerText = score;
+    }, 1000);
+  });
+      
+  }
+  
     //Event handling for when "Restart Quiz" button is clicked - Quiz goes back to the index page
-    startOverButtonRef.addEventListener("click", (e)=> {
-      window.location.reload();
+    startOverButtonRef.addEventListener("click", ()=> {
+    window.location.reload();
     })
 
-    // Update the display of the question and score
-    document.getElementById("question-count").innerText =  questionCounter + "/" + availableQuestions.length;
-    document.getElementById("score").innerText = score;
-  }
-  )}
-
-difficultyEventListeners();
+    difficultyEventListeners();
 
 // Fetch questions from API and set available questions variable
 const getQuestions = () => {
