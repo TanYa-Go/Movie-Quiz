@@ -15,14 +15,14 @@ const DEFAULT_TIMER = 15;
 let endTimerFlag = false;
 const CORRECT_BONUS = 10;
 const MAX_QUESTIONS = 10;
-
+let timerLength = null;
 
 const backgroundMusic = new Audio("assets/music/background-music.mp3");
 const lowScoreSound = new Audio("assets/music/low-score.mp3");
 const highScoreSound = new Audio("assets/music/high-score.mp3");
 const musicOn = true;
 const musicOnRef = document.getElementById("musicOn");
-const musicOffRef = document.getElementById("musicOff");
+
 
 backgroundMusic.loop = true;
 
@@ -86,6 +86,16 @@ const difficultyEventListeners = () => {
       difficultyLevel = e.currentTarget.dataset.value;
       levelChoiceRef.classList.toggle("show");
       chooseLevelRef.innerText = difficultyLevel.toUpperCase();
+
+      if (difficultyLevel == 'easy') {
+        timerLength = DEFAULT_TIMER + 5;
+      }
+      else if (difficultyLevel == 'medium') {
+        timerLength = DEFAULT_TIMER;
+      }
+      else if (difficultyLevel == 'hard') {
+        timerLength = DEFAULT_TIMER - 5;
+      }
     });
   });
 
@@ -240,7 +250,7 @@ const customAlert = (message) => {
 };
 
 const restartTimer = () => {
-  currentTimer = DEFAULT_TIMER;
+  currentTimer = timerLength;
   endTimerFlag = false;
   timerCallback();
 };
