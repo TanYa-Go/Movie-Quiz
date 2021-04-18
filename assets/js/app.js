@@ -1,47 +1,48 @@
-
 const welcomeScreenRef = document.getElementById("welcome-screen");
 const gameScreenRef = document.getElementById("game-screen");
 const startGameRef = document.getElementById("start-btn");
 const restartButtonRef = document.getElementById("restart-btn");
 const startOverButtonRef = document.getElementById("start-over-btn");
+const dropdownsRef = document.getElementsByClassName("dropdown-content");
+const chooseLevelRef = document.getElementById("drop");
+const levelChoiceRef = document.getElementById("levelChoice");
 const questionsContainerRef = document.getElementById("questions-container");
-//alert modal
+const questionRef = document.getElementById("question");
+const answersRef = Array.from(document.getElementsByClassName("btn-answer"));
 const alertModalRef = document.getElementById("alertModal");
 const alertModalTextRef = document.getElementById("alert-modal-text");
 const alertModalCancelRef = document.getElementById("alert-modal-close");
-//timer
 const currentTimerTextRef = document.getElementById("current-timer-text");
-const DEFAULT_TIMER = 15;
-let endTimerFlag = false;
-const CORRECT_BONUS = 10;
-const MAX_QUESTIONS = 10;
-let timerLength = null;
-
 const backgroundMusic = new Audio("assets/music/background-music.mp3");
 const lowScoreSound = new Audio("assets/music/low-score.mp3");
 const highScoreSound = new Audio("assets/music/high-score.mp3");
-const musicOn = true;
 const musicOnRef = document.getElementById("musicOn");
-
-
+const musicOn = true;
 backgroundMusic.loop = true;
+const CORRECT_BONUS = 10;
+const DEFAULT_TIMER = 15;
+let endTimerFlag = false;
+let timerLength = null;
+let difficultyLevel = null;
+let acceptingAnswers = true;
+let score = 0;
+let questionCounter = 0;
+let availableQuestions = [];
 
-
- /*------------------------------------------------------------------------------------------*/
-
-
-musicOnRef.addEventListener("click", function(){
-    if(backgroundMusic.paused){
-    backgroundMusic.play();
-    musicOnRef.innerHTML = `<i class="fas fa-pause"></i>`;
-  } else {
-    backgroundMusic.pause();
-    musicOnRef.innerHTML = `<i class="fas fa-play"></i>`;
-  }
+// Function to show difficulty level on button click 
+chooseLevelRef.addEventListener("click", function () {
+  levelChoiceRef.classList.toggle("show");
 });
 
-/*-----------------------------------------------------------------------------------------------------------------*/
-/* Function to show game screen and hide welcome screen on click */
+// Modal that shows warning if difficulty level is not chosen
+const customAlert = (message) => {
+  // hidden = false
+  $(alertModalRef).modal("show");
+  alertModalTextRef.innerText = message;
+};
+
+
+// Function to show game screen and hide welcome screen on "Start button" click 
 startGameRef.addEventListener("click", function () {
   if (difficultyLevel == null) {
     customAlert("Please choose difficulty level");
@@ -55,52 +56,43 @@ startGameRef.addEventListener("click", function () {
   }
 });
 
-/* Function to show difficulty level on button click */
-const dropdownsRef = document.getElementsByClassName("dropdown-content");
-const chooseLevelRef = document.getElementById("drop");
-const levelChoiceRef = document.getElementById("levelChoice");
 
-chooseLevelRef.addEventListener("click", function () {
-  levelChoiceRef.classList.toggle("show");
+// Function that pauses and plays background music 
+musicOnRef.addEventListener("click", function () {
+  if (backgroundMusic.paused) {
+    backgroundMusic.play();
+    musicOnRef.innerHTML = `<i class="fas fa-pause"></i>`;
+  } else {
+    backgroundMusic.pause();
+    musicOnRef.innerHTML = `<i class="fas fa-play"></i>`;
+  }
 });
 
-const questionRef = document.getElementById("question");
-const answersRef = Array.from(document.getElementsByClassName("btn-answer"));
-console.log(answersRef);
-
-// difficulty level has to be chosen
-let difficultyLevel = null;
-let currentQuestion = {};
-let acceptingAnswers = true;
-let score = 0;
-let questionCounter = 0;
-let availableQuestions = [];
-
 const difficultyEventListeners = () => {
-  // Event listeners for difficulty option
+  // Event listeners for choosing difficulty option
   const difficultyOptions = Array.from(
     document.getElementsByClassName("difficulty-option")
   );
+
+  // Button text changes when level is chosen 
   difficultyOptions.forEach((option) => {
     option.addEventListener("click", (e) => {
       difficultyLevel = e.currentTarget.dataset.value;
       levelChoiceRef.classList.toggle("show");
       chooseLevelRef.innerText = difficultyLevel.toUpperCase();
-
-      if (difficultyLevel == 'easy') {
+      // Setting different available time for each level
+      if (difficultyLevel == "easy") {
         timerLength = DEFAULT_TIMER + 5;
-      }
-      else if (difficultyLevel == 'medium') {
+      } else if (difficultyLevel == "medium") {
         timerLength = DEFAULT_TIMER;
-      }
-      else if (difficultyLevel == 'hard') {
+      } else if (difficultyLevel == "hard") {
         timerLength = DEFAULT_TIMER - 5;
       }
     });
   });
-
+  
+  /*------------------------------------------------------------------------*/
   // Event listeners for selecting answers
-
   answersRef.forEach((choice) => {
     choice.addEventListener("click", (e) => {
       if (!acceptingAnswers) {
@@ -121,7 +113,7 @@ const difficultyEventListeners = () => {
         answerRef.classList.add("correct");
 
         // Update the score
-        score += 10;
+        score += CORRECT_BONUS;
       } else {
         answerRef.classList.add("incorrect");
         // If the user selects the wrong answer, we want the correct answer to show as well
@@ -157,6 +149,7 @@ const difficultyEventListeners = () => {
       $(alertModalRef).modal("hide");
     });
   });
+  /*------------------------------------------------------------------------------*/
 
   // Event handling for when "Restart Level" button is clicked - Quiz starts over from question 1 of same level
   restartButtonRef.addEventListener("click", (e) => {
@@ -166,27 +159,30 @@ const difficultyEventListeners = () => {
     // Stop the timer
     endTimerFlag = true;
 
-      setTimeout(function() {
+    setTimeout(function () {
       getNewQuestion();
       // Update the display of the question and score
-      document.getElementById("question-count").innerText =  questionCounter + "/" + availableQuestions.length;
+      document.getElementById("question-count").innerText =
+        questionCounter + "/" + availableQuestions.length;
       document.getElementById("score").innerText = score;
     }, 1000);
   });
-      
-  }
-  
-    //Event handling for when "Restart Quiz" button is clicked - Quiz goes back to the index page
-    startOverButtonRef.addEventListener("click", ()=> {
-    window.location.reload();
-    })
 
-    difficultyEventListeners();
+  //Event handling for when "Restart Game" button is clicked - Quiz goes back to the index page
+  startOverButtonRef.addEventListener("click", () => {
+    window.location.reload();
+  });
+};
+
+difficultyEventListeners();
 
 // Fetch questions from API and set available questions variable
 const getQuestions = () => {
   return fetch(
-    "https://opentdb.com/api.php?amount=10&category=11&difficulty=" + difficultyLevel +"&type=multiple" )
+    "https://opentdb.com/api.php?amount=10&category=11&difficulty=" +
+    difficultyLevel +
+    "&type=multiple"
+  )
     .then((res) => {
       return res.json();
     })
@@ -218,13 +214,13 @@ const getQuestions = () => {
 // Load the next question from the available questions
 const getNewQuestion = () => {
   const currentQuestion = availableQuestions[questionCounter];
-
+   // If there is no more questions, finish the quiz
   if (currentQuestion == null) {
     finishQuiz();
-    } else {
+  } else {
     questionCounter += 1;
     questionRef.innerHTML = currentQuestion.question;
- // Adjust font size for the possible answers if the text it too long 
+    // Adjust font size for the possible answers if the text it too long
     questionsContainerRef.classList.remove("smaller-text");
     questionsContainerRef.classList.remove("very-small-text");
     answersRef.forEach((choice) => {
@@ -243,11 +239,6 @@ const getNewQuestion = () => {
   restartTimer();
 };
 
-const customAlert = (message) => {
-  // hidden = false
-  $(alertModalRef).modal("show");
-  alertModalTextRef.innerText = message;
-};
 
 const restartTimer = () => {
   currentTimer = timerLength;
@@ -258,10 +249,9 @@ const restartTimer = () => {
 const timerCallback = () => {
   currentTimerTextRef.innerText = currentTimer;
   if (currentTimer == 0) {
-    // Get next question
+    // Finish the game
     finishQuiz();
-    // Update the question count on page
-    } else if (endTimerFlag) {
+  } else if (endTimerFlag) {
     // The user has selected an answer and gotten to the next question
   } else {
     setTimeout(() => {
@@ -271,13 +261,17 @@ const timerCallback = () => {
   }
 };
 
+// Finishing the quiz and going to the end page
 const finishQuiz = () => {
-      localStorage.setItem("mostRecentScore", score);
-          // go to the end page
-        const endGamePath =
-    window.location.protocol + "//" + window.location.host + window.location.pathname + "/" + "end.html";
-  return window.location.assign(endGamePath);
-
+  localStorage.setItem("mostRecentScore", score);
   
+  // go to the end page
+  const endGamePath =
+    window.location.protocol +
+    "//" +
+    window.location.host +
+    window.location.pathname +
+    "/" +
+    "end.html";
+  return window.location.assign(endGamePath);
 };
-
