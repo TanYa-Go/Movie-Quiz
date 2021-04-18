@@ -8,7 +8,7 @@
    
 body, html {
     height: 100vh;
-    /*overflow-y: hidden;*/
+    overflow-y: hidden;
 }
 
 body {
@@ -177,8 +177,8 @@ body {
 #time-cont, #question-cont, #score-cont{
     font-family: Bungee Inline,sans-serif;
     color: black;
+    font-weight: 700;
     font-size: 2rem;
-    font-weight: 800;
     text-align: center;
 }
 
@@ -278,6 +278,10 @@ body {
 
 @media (min-width: 200px) and (max-width: 576px){
 
+    body {
+        overflow-y: scroll;
+    }
+
     .title-container{
     margin-top: 30px;
 }
@@ -339,13 +343,15 @@ body {
     .tracking-container {
         margin-top: 20px;
     }
-    #restart-btn {
+    #restart-btn, #start-over-btn {
         font-size: smaller;
     }
 }
 
 @media (min-width: 577px) and (max-width: 768px){
-
+    body {
+        overflow-y: scroll;
+    }
     .title{
         margin-top: 40px;
     }
