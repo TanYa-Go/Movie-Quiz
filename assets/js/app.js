@@ -3,6 +3,7 @@ const welcomeScreenRef = document.getElementById("welcome-screen");
 const gameScreenRef = document.getElementById("game-screen");
 const startGameRef = document.getElementById("start-btn");
 const restartButtonRef = document.getElementById("restart-btn");
+const startOverButtonRef = document.getElementById("start-over-btn");
 const questionsContainerRef = document.getElementById("questions-container");
 //alert modal
 const alertModalRef = document.getElementById("alertModal");
@@ -147,13 +148,18 @@ const difficultyEventListeners = () => {
     });
   });
 
-  // Event handling for when "START OVER" is clicked
+  // Event handling for when "Restart Level" button is clicked - Quiz starts over from question 1 of same level
   restartButtonRef.addEventListener("click", (e) => {
   //   Reset the score and questionCounter and get the first question again
    score = 0;
     questionCounter = 0;
     getNewQuestion()
       
+
+    //Event handling for when "Restart Quiz" button is clicked - Quiz goes back to the index page
+    startOverButtonRef.addEventListener("click", (e)=> {
+      window.location.reload();
+    })
 
     // Update the display of the question and score
     document.getElementById("question-count").innerText =  questionCounter + "/" + availableQuestions.length;

@@ -193,7 +193,7 @@ body {
 .fa-music, .fa-pause, .fa-play {
     color: #f2d38c;
 }
-#restart-btn, #musicOn {
+#restart-btn, #musicOn, #start-over-btn {
     margin-top: 30px;
     margin-bottom: 30px;
     color: #f2d38c;
