@@ -15,7 +15,7 @@ let endTimerFlag = false;
 const CORRECT_BONUS = 10;
 const MAX_QUESTIONS = 10;
 
-const startSound = new Audio("assets/music/start-sound.mp3");
+
 const backgroundMusic = new Audio("assets/music/background-music.mp3");
 const lowScoreSound = new Audio("assets/music/low-score.mp3");
 const highScoreSound = new Audio("assets/music/high-score.mp3");
@@ -23,11 +23,10 @@ const musicOn = true;
 const musicOnRef = document.getElementById('musicOn');
 const musicOffRef = document.getElementById('musicOff');
 
-//when page loads play sound
-// window.addEventListener("DOMContentLoaded", (event) => {
-//   startSound.play();
-// });
-/*------------------------------------------------------------------------------------------*/
+backgroundMusic.loop = true;
+
+
+ /*------------------------------------------------------------------------------------------*/
 
 
 musicOnRef.addEventListener("click", function(){
@@ -150,26 +149,24 @@ const difficultyEventListeners = () => {
 
   // Event handling for when "START OVER" is clicked
   restartButtonRef.addEventListener("click", (e) => {
-    // Reset the score and questionCounter and get the first question again
-    score = 0;
+  //   Reset the score and questionCounter and get the first question again
+   score = 0;
     questionCounter = 0;
-    getNewQuestion();
+    getNewQuestion()
+      
 
     // Update the display of the question and score
-    document.getElementById("question-count").innerText =
-      questionCounter + "/" + availableQuestions.length;
+    document.getElementById("question-count").innerText =  questionCounter + "/" + availableQuestions.length;
     document.getElementById("score").innerText = score;
-  });
-};
+  }
+  )}
+
 difficultyEventListeners();
 
 // Fetch questions from API and set available questions variable
 const getQuestions = () => {
   return fetch(
-    "https://opentdb.com/api.php?amount=10&category=11&difficulty=" +
-    difficultyLevel +
-    "&type=multiple"
-  )
+    "https://opentdb.com/api.php?amount=10&category=11&difficulty=" + difficultyLevel +"&type=multiple" )
     .then((res) => {
       return res.json();
     })
@@ -198,16 +195,16 @@ const getQuestions = () => {
       console.error(err);
     });
 };
-
+// Load the next question from the available questions
 const getNewQuestion = () => {
   const currentQuestion = availableQuestions[questionCounter];
 
   if (currentQuestion == null) {
     finishQuiz();
-  } else {
+    } else {
     questionCounter += 1;
     questionRef.innerHTML = currentQuestion.question;
-
+ // Adjust font size for the possible answers if the text it too long 
     questionsContainerRef.classList.remove("smaller-text");
     questionsContainerRef.classList.remove("very-small-text");
     answersRef.forEach((choice) => {
@@ -257,15 +254,12 @@ const timerCallback = () => {
 };
 
 const finishQuiz = () => {
-  localStorage.setItem("mostRecentScore", score);
-  // go to the end page
-  const endGamePath =
-    window.location.protocol +
-    "//" +
-    window.location.host +
-    window.location.pathname +
-    "/" +
-    "end.html";
+      localStorage.setItem("mostRecentScore", score);
+          // go to the end page
+        const endGamePath =
+    window.location.protocol + "//" + window.location.host + window.location.pathname + "/" + "end.html";
   return window.location.assign(endGamePath);
-}
+
+  
+};
 

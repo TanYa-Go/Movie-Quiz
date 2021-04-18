@@ -8,7 +8,7 @@
    
 body, html {
     height: 100vh;
-    overflow-y: hidden;
+    /*overflow-y: hidden;*/
 }
 
 body {
@@ -190,7 +190,7 @@ body {
     color: #d51e13;
 } 
 
-.fa-music {
+.fa-music, .fa-pause, .fa-play {
     color: #f2d38c;
 }
 #restart-btn, #musicOn {
