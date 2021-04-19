@@ -230,10 +230,10 @@ Wireframes were created using the wireframing tool [Balsamiq](https://balsamiq.c
 #### As a user, I would like to know the rules before I start playing.
 
 * **Plan**  
-If a user doesn't know how to play the game, they should be able to click a 'How to Play' button to read the instructions. 
+If a user doesn't know how to play the game, they should be able to click a 'Rules' button to read the instructions. 
 
 * **Implementation**  
-On the welcome screen, I've added a 'How to Play' button that triggers a modal. 
+On the welcome screen, I've added a 'Rules' button that triggers a modal. 
 When the modal opens you can see the steps on how to play the quiz. 
 When you've read the instructions you can close the modal by clicking the "Got it!" button at the bottom or the "X" button at the top.
 When clicking either button, the modal closes and the user can start playing the game. 
@@ -258,7 +258,7 @@ When the page is loaded, the user should have the option to choose the difficult
 The user shouldn't be able to proceed if no level is chosen.
 
 * **Implementation**  
-I created a dropdown "Choose Level" button on the welcome screen that user can click and select their option. In javascript, I set the default difficulty level to null so the user has to choose the level before proceeding to play.
+I created a dropdown "Level" button on the welcome screen that user can click and select their option. In javascript, I set the default difficulty level to null so the user has to choose the level before proceeding to play.
 
 * **Test**  
 I have tested whether the hover is working when you hover over each option.
