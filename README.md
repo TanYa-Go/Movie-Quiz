@@ -217,6 +217,8 @@ Wireframes were created using the wireframing tool [Balsamiq](https://balsamiq.c
 1. [TinyPNG](https://tinypng.com/)
    
 1. [Chrome Developer Tools](https://developers.google.com/web/tools/chrome-devtools)
+
+1. [Favicon Maker](https://favicon.io/)
  
 
 [Back to Top](#table-of-contents)
@@ -350,13 +352,25 @@ The test has passed all the criteria and works as planned.
 
 ### Images 
 
-Hero image borrowed from [Pixabay](https://pixabay.com/illustrations/cinema-demolition-map-popcorn-3700545/)
+* Hero image was taken from [Pixabay](https://pixabay.com/illustrations/cinema-demolition-map-popcorn-3700545/)
+* Favicon image was taken from [Pixabay](https://pixabay.com/illustrations/popcorn-cinema-caf%C3%A9-movie-4268489/)
 
+### Music
+
+* Backround music was taken from [Zapsplat](https://www.zapsplat.com/sound-effect-category/tv-show-and-themes/page/2/
+)
+* Sound effects for different score sounds were taken from [YouTube](https://www.youtube.com/watch?v=7DwPU-Vs2qI)
 
 ### Code
 
-Took inspiration from the [James Q Quick YouToube tutorial](https://www.youtube.com/watch?v=u98ROZjBWy8&list=PLDlWc9AfQBfZIkdVaOQXi1tizJeNJipEx)
+* Took inspiration from the [James Q Quick YouToube tutorial](https://www.youtube.com/watch?v=u98ROZjBWy8&list=PLDlWc9AfQBfZIkdVaOQXi1tizJeNJipEx)
 
-Learned more about fetch from [John Linatoc](https://medium.com/@johnwadelinatoc/manipulating-the-dom-with-fetch-7bfddf9c526b)
+* I learned a lot doing the Javascript complete guide course with [Maximillian Schwarzmuller](https://www.udemy.com/course/javascript-the-complete-guide-2020-beginner-advanced/)
 
-Borrowed idea for how to remove hover on touch devices from [Stefan Judis](https://www.stefanjudis.com/today-i-learned/the-hover-media-query-can-help-to-remove-hover-styles-on-touch/)
+* Learned more about fetch from [John Linatoc](https://medium.com/@johnwadelinatoc/manipulating-the-dom-with-fetch-7bfddf9c526b)
+
+* Borrowed idea for how to remove hover on touch devices from [Stefan Judis](https://www.stefanjudis.com/today-i-learned/the-hover-media-query-can-help-to-remove-hover-styles-on-touch/)
+
+* Learned more about timers [here](https://www.tutorialrepublic.com/javascript-tutorial/javascript-timers.php)
+
+* Learned about dynamic routing and relative URL paths on [Stack Overflow](https://stackoverflow.com/questions/1655065/redirecting-to-a-relative-url-in-javascript)
