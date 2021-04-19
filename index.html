@@ -52,12 +52,12 @@
             <div class="row">
                 <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
                     <button class="controls" data-toggle="modal" data-target="#rulesModal">
-                        How to Play
+                        Rules
                     </button>
                 </div>
                 <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
                     <div class="dropdown">
-                        <button id="drop" class="dropbtn controls">Choose Level</button>
+                        <button id="drop" class="dropbtn controls">Level</button>
                         <div id="levelChoice" class="dropdown-content">
                             <a class="difficulty-option" data-value="easy">Easy</a>
                             <a class="difficulty-option" data-value="medium">Medium</a>
@@ -66,7 +66,7 @@
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-                    <button class="controls" id="start-btn">Start Quiz</button>
+                    <button class="controls" id="start-btn">Play</button>
                 </div>
             </div>
         </div>
@@ -159,30 +159,29 @@
                 <div class="modal-body">
                     <ul>
                         <li>
-                            You must choose the difficulty level first and then click "Start
-                            Quiz"
+                            Choose the difficulty level first and then click Play
                         </li>
                         <li>
-                            A question will be displayed on the screen with four possible
-                            answers
-                        </li>
-                        <li>You have 15 seconds to answer each question</li>
-                        <li>Select the answer you belive is correct</li>
-                        <li>
-                            If the time runs out, you lose points for this question and move
-                            on to the next one
+                            You will get a question with four possible answers
                         </li>
                         <li>
                             After you selected your answer, you will see if your answer was
                             correct or not
                         </li>
+                        <li>On Easy level you have 20 seconds to answer, on Medium 15 and on Hard 10.</li>
                         <li>
-                            For a correct answer you will get 10 points and for incorrect
-                            answer you will not get points
+                            If the timer runs out, game is over!
+                        </li>
+                        <li>
+                            For correct answer you will get 10 points and for incorrect you get no points
+    
                         </li>
                         <li>
                             A new question will automatically be loaded until you have
                             answered all the questions
+                        </li>
+                        <li>
+                            There are 10 questions per level
                         </li>
                     </ul>
                 </div>
