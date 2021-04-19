@@ -1,80 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+    />
     <title>Movie Quiz</title>
-    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    <link rel="icon" type="image/png" href="assets/images/favicon.png" />
     <link rel="stylesheet" href="assets/css/style.css" />
-</head>
+  </head>
 
-<body>
-     
-    <article id="welcome-screen">
-        <div class="modal fade" id="alertModal" tabindex="-1" role="dialog">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div id="alert-modal-text" class="modal-body">Custom Message</div>
-                    <div class="modal-footer justify-content-center">
-                        <button id="alert-modal-close" type="button" class="btn btn-secondary" data-dismiss="modal">
-                            OK
-                        </button>
-                    </div>
-                </div>
+  <body>
+    <section id="welcome-screen">
+      <div class="modal fade" id="alertModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
             </div>
+            <div id="alert-modal-text" class="modal-body">Custom Message</div>
+            <div class="modal-footer justify-content-center">
+              <button
+                id="alert-modal-close"
+                type="button"
+                class="btn btn-secondary"
+                data-dismiss="modal"
+              >
+                OK
+              </button>
+            </div>
+          </div>
         </div>
+      </div>
 
-        <div class="container title-container">
-            <div class="row">
-                <div class="col-12">
-                    <h1 class="title">Movie Quiz</h1>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12">
-                    <h2 class="quote">May the Force Be With You!</h2>
-                    <h3 class="movie">-Star Wars, 1977.</h3>
-                </div>
-            </div>
+      <div class="container title-container">
+        <div class="row">
+          <div class="col-12">
+            <h1 class="title">Movie Quiz</h1>
+          </div>
         </div>
-
-        <div class="container controls-container">
-            <div class="row">
-                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-                    <button class="controls" data-toggle="modal" data-target="#rulesModal">
-                        Rules
-                    </button>
-                </div>
-                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-                    <div class="dropdown">
-                        <button id="drop" class="dropbtn controls">Level</button>
-                        <div id="levelChoice" class="dropdown-content">
-                            <a class="difficulty-option" data-value="easy">Easy</a>
-                            <a class="difficulty-option" data-value="medium">Medium</a>
-                            <a class="difficulty-option" data-value="hard">Hard</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-                    <button class="controls" id="start-btn">Play</button>
-                </div>
-            </div>
+        <div class="row">
+          <div class="col-12">
+            <h2 class="quote">May the Force Be With You!</h2>
+            <h3 class="movie">-Star Wars, 1977.</h3>
+          </div>
         </div>
-    </article>
+      </div>
 
-    <article id="game-screen" class="hidden">
-               
-        <!-- <div class="container d-sm-none d-md-none quote-container">
+      <div class="container controls-container">
+        <div class="row">
+          <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+            <button
+              class="controls"
+              data-toggle="modal"
+              data-target="#rulesModal"
+            >
+              Rules
+            </button>
+          </div>
+          <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+            <div class="dropdown">
+              <button id="drop" class="dropbtn controls">Level</button>
+              <div id="levelChoice" class="dropdown-content">
+                <a class="difficulty-option" data-value="easy">Easy</a>
+                <a class="difficulty-option" data-value="medium">Medium</a>
+                <a class="difficulty-option" data-value="hard">Hard</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+            <button class="controls" id="start-btn">Play</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="game-screen" class="hidden">
+      <!-- <div class="container d-sm-none d-md-none quote-container">
             <div class="row">
                 <div class="col">
                     <div class="col-12">
@@ -85,127 +101,149 @@
             </div>
         </div> -->
 
-        <div class="container tracking-container">
-            <div class="row">
-                <div class="col-4 col-xs-12" id="question-cont">
-                    <p id="question-text">
-                        <i class="fas fa-question"></i> <span id="question-count">1/10</span>
-                    </p>
-                </div>
-                <div class="col-4 col-xs-12" id="time-cont">
-                    <p id="time-text"><i class="fas fa-stopwatch"></i> <span id="current-timer-text">15</span><span id="time"></span>
-                    </p>
-                </div>
-                <div class="col-4 col-xs-12" id="score-cont">
-                    <p id="score-text"><i class="fas fa-check"></i> <span id="score">0</span></p>
-                </div>
-               
-            </div>
+      <div class="container tracking-container">
+        <div class="row">
+          <div class="col-4 col-xs-12" id="question-cont">
+            <p id="question-text">
+              <i class="fas fa-question"></i>
+              <span id="question-count">1/10</span>
+            </p>
+          </div>
+          <div class="col-4 col-xs-12" id="time-cont">
+            <p id="time-text">
+              <i class="fas fa-stopwatch"></i>
+              <span id="current-timer-text">15</span><span id="time"></span>
+            </p>
+          </div>
+          <div class="col-4 col-xs-12" id="score-cont">
+            <p id="score-text">
+              <i class="fas fa-check"></i> <span id="score">0</span>
+            </p>
+          </div>
         </div>
+      </div>
 
-        <div class="container questions-container" id="questions-container">
-            <div class="row">
-                <div class="col-12">
-                    <div id="question">
-                        Who played the lead role in the movie Legend?
-                    </div>
-                    <div id="answer-buttons" class="btn-grid"></div>
-                </div>
+      <div class="container questions-container" id="questions-container">
+        <div class="row">
+          <div class="col-12">
+            <div id="question">
+              Who played the lead role in the movie Legend?
             </div>
-            <div class="row">
-                <div class="col-12 col-md-6">
-                    <button class="btn-answer" data-number="1">George Clooney</button>
-                </div>
-                <div class="col-12 col-md-6">
-                    <button class="btn-answer" data-number="2">Brad Pitt</button>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12 col-md-6">
-                    <button class="btn-answer" data-number="3">Tom Hardy</button>
-                </div>
-                <div class="col-12 col-md-6">
-                    <button class="btn-answer" data-number="4">Jason Momoa</button>
-                </div>
-            </div>
+            <div id="answer-buttons" class="btn-grid"></div>
+          </div>
         </div>
+        <div class="row">
+          <div class="col-12 col-md-6">
+            <button class="btn-answer" data-number="1">George Clooney</button>
+          </div>
+          <div class="col-12 col-md-6">
+            <button class="btn-answer" data-number="2">Brad Pitt</button>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 col-md-6">
+            <button class="btn-answer" data-number="3">Tom Hardy</button>
+          </div>
+          <div class="col-12 col-md-6">
+            <button class="btn-answer" data-number="4">Jason Momoa</button>
+          </div>
+        </div>
+      </div>
 
-        <div class="container">
-            <div class="row text-center" id="restart">
-                <div class="col-4">
-                    <button id="restart-btn" class="controls btn">Restart Level</button>
-                </div>
-                <div class="col-4">
-                    <button id="musicOn" class="controls btn"><i class="fas fa-music"></i></button>
-                </div>
-                <div class="col-4">
-                    <button id="start-over-btn" class="controls btn">Restart Game</button>
-                </div>
-            </div>
+      <div class="container">
+        <div class="row text-center" id="restart">
+          <div class="col-4">
+            <button id="restart-btn" class="controls btn">Restart Level</button>
+          </div>
+          <div class="col-4">
+            <button id="musicOn" class="controls btn">
+              <i class="fas fa-music"></i>
+            </button>
+          </div>
+          <div class="col-4">
+            <button id="start-over-btn" class="controls btn">
+              Restart Game
+            </button>
+          </div>
         </div>
-    </article>
+      </div>
+    </section>
 
     <!-- Modal -->
-    <div class="modal fade" id="rulesModal" tabindex="-1" role="dialog" aria-label="exampleModalCenterTitle"
-        aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="modalTitle">How To Play</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <ul>
-                        <li>
-                            Choose the difficulty level first and then click Play
-                        </li>
-                        <li>
-                            You will get a question with four possible answers
-                        </li>
-                        <li>
-                            After you selected your answer, you will see if your answer was
-                            correct or not
-                        </li>
-                        <li>On Easy level you have 20 seconds to answer, on Medium 15 and on Hard 10.</li>
-                        <li>
-                            If the timer runs out, game is over!
-                        </li>
-                        <li>
-                            For correct answer you will get 10 points and for incorrect you get no points
-    
-                        </li>
-                        <li>
-                            A new question will automatically be loaded until you have
-                            answered all the questions
-                        </li>
-                        <li>
-                            There are 10 questions per level
-                        </li>
-                    </ul>
-                </div>
-                <div class="modal-footer justify-content-center">
-                    <button type="button" class="btn controls" id="close-modal" data-dismiss="modal">
-                        Got it!
-                    </button>
-                </div>
-            </div>
+    <div
+      class="modal fade"
+      id="rulesModal"
+      tabindex="-1"
+      role="dialog"
+      aria-label="exampleModalCenterTitle"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalTitle">How To Play</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <ul>
+              <li>Choose the difficulty level first and then click Play</li>
+              <li>You will get a question with four possible answers</li>
+              <li>
+                After you selected your answer, you will see if your answer was
+                correct or not
+              </li>
+              <li>
+                On Easy level you have 20 seconds to answer, on Medium 15 and on
+                Hard 10.
+              </li>
+              <li>If the timer runs out, game is over!</li>
+              <li>
+                For correct answer you will get 10 points and for incorrect you
+                get no points
+              </li>
+              <li>
+                A new question will automatically be loaded until you have
+                answered all the questions
+              </li>
+              <li>There are 10 questions per level</li>
+            </ul>
+          </div>
+          <div class="modal-footer justify-content-center">
+            <button
+              type="button"
+              class="btn controls"
+              id="close-modal"
+              data-dismiss="modal"
+            >
+              Got it!
+            </button>
+          </div>
         </div>
+      </div>
     </div>
 
-   
-
     <script src="assets/js/app.js"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
-</body>
-
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
