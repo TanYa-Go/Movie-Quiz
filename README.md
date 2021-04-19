@@ -225,7 +225,7 @@ Wireframes were created using the wireframing tool [Balsamiq](https://balsamiq.c
 
 ## **Testing**
 
-### **How to play button**
+### **Rules button**
 
 #### As a user, I would like to know the rules before I start playing.
 
@@ -241,6 +241,7 @@ When clicking either button, the modal closes and the user can start playing the
 * **Test**  
 I have tested the modal on various browsers and devices. 
  
+ ![Rules Modal image](image)
 
 * **Result**  
 The modal works as planned and contributes to a better overall user experience.
@@ -265,6 +266,7 @@ I have tested whether the hover is working when you hover over each option.
 I have tried selecting different levels to make sure the correct level is being chosen.\
 I have checked whether the questions from the selected level are being displayed.
 
+![Level Button image](image)
 
 * **Result**  
 When you hover over each option, the background color changes, so the hover is working. I have disabled hover on touch devices.\
@@ -277,10 +279,35 @@ The test has passed all the criteria and works as planned.
 
 [Back to Top](#table-of-contents)
 
+
+### **Question Counter**
+
+#### User story: As a user, I would like to know which question I am on and how many questions are left.
+
+* **Plan**
+When user starts the quiz they can clearly see what question they are on, out of how many questions.
+
+* **Implementation** 
+I've added the question counter above the question container so it is easy for user to see it. 
+It is displayed in 1/10 format so user can quickly tell how many questions are left till the end.
+
+* **Test** 
+When user answers the first question, the next question appears and the question counter increases by one. 
+Once the user has answered all 10 questions, the end screen appears. 
+
+* **Result**  
+Question counter works as planned across various devices and browsers. 
+
+* **Verdict**   
+The test has passed all the criteria and works as planned.
+
+
 ## **Bugs**
 
-
-
+* **Choosing difficulty level** - 
+ The game is intended to be played in portrait mode on mobile devices. Should the user wish to play in landscape mode, it is possible, but they will need to scroll down to choose level and then back up to play the game which is not user friendly. 
+* **Question Counter** -
+ On mobile screen size question 10/10 was overflowing its container and displaying underneath the rest of the row. To avoid that I have reduced font size for the tracking container 
 
 
 
