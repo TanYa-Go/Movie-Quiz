@@ -14,13 +14,11 @@ const alertModalTextRef = document.getElementById("alert-modal-text");
 const alertModalCancelRef = document.getElementById("alert-modal-close");
 const currentTimerTextRef = document.getElementById("current-timer-text");
 const backgroundMusic = new Audio("assets/music/background-music.mp3");
-const lowScoreSound = new Audio("assets/music/low-score.mp3");
-const highScoreSound = new Audio("assets/music/high-score.mp3");
 const musicOnRef = document.getElementById("musicOn");
-const musicOn = true;
 backgroundMusic.loop = true;
 const CORRECT_BONUS = 10;
 const DEFAULT_TIMER = 15;
+let currentTimer;
 let endTimerFlag = false;
 let timerLength = null;
 let difficultyLevel = null;
@@ -33,6 +31,19 @@ let availableQuestions = [];
 chooseLevelRef.addEventListener("click", function () {
   levelChoiceRef.classList.toggle("show");
 });
+
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+  
+       for (let i = 0; i < dropdownsRef.length; i++) {
+      let openDropdown = dropdownsRef[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+};
 
 // Modal that shows warning if difficulty level is not chosen
 const customAlert = (message) => {
@@ -224,7 +235,7 @@ const getNewQuestion = () => {
     questionsContainerRef.classList.remove("smaller-text");
     questionsContainerRef.classList.remove("very-small-text");
     answersRef.forEach((choice) => {
-      const number = choice.dataset["number"];
+      const number = choice.dataset.number;
       const answerString = currentQuestion["choice" + number];
       choice.innerHTML = answerString;
 
