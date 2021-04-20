@@ -1,0 +1,16 @@
+{
+  "movieQuotes":[{
+    
+      "quote": "'Hasta La Vista Baby!'",
+      "movie": "- Terminator II, 1991"
+    },
+    {
+      "quote": "'Yo Adrian! I did it!'",
+      "movie": "- Rocky II, 1979"
+    },
+    {
+      "quote": "'Im the King of the World!'",
+      "movie": "- Titanic, 1997"
+    }
+  ]
+}
