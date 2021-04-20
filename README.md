@@ -230,10 +230,11 @@ Wireframes were created using the wireframing tool [Balsamiq](https://balsamiq.c
 
 * [HTML validator](https://validator.w3.org/) 
 
-  - index.html - Passing without errors
-  - end.html - Returns an empty heading warning. This heading element is peing populated by javacript, its a result of the game
+  - index.html - Document checking completed. No errors or warnings to show.
+  - end.html - Document checking completed. No errors or warnings to show.
 
-* [CSS Validator](https://jigsaw.w3.org/css-validator/) Passing without errors
+* [CSS Validator](https://jigsaw.w3.org/css-validator/) - 
+Passing without errors but giving warnings about vendor extensions.
 
 * [JSHint](jshint.com) 
   - app.js\
