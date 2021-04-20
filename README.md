@@ -311,9 +311,14 @@ The test has passed all the criteria and works as planned.
 * **Question Counter** -
  On mobile screen size question 10/10 was overflowing its container and displaying underneath the rest of the row. To avoid that I have reduced font size for the tracking container 
 
+* **Adding quotes from a local json file** - 
+The function works as intended, however the console throws the following error: "Uncaught SyntaxError: Unexpected token ':'".
+I have validated the json file with two different online validators and the result was - valid. Please see images. 
+Application works despite the error. 
 
+![JSON Error](screenshots/json-validator.jpg)
 
-
+![JSON Error](screenshots/json-validator-b.jpg)
 
 
 [Back to Top](#table-of-contents)
@@ -365,7 +370,7 @@ The test has passed all the criteria and works as planned.
 
 * Took inspiration from the [James Q Quick YouToube tutorial](https://www.youtube.com/watch?v=u98ROZjBWy8&list=PLDlWc9AfQBfZIkdVaOQXi1tizJeNJipEx)
 
-* I learned a lot doing the Javascript complete guide course with [Maximillian Schwarzmuller](https://www.udemy.com/course/javascript-the-complete-guide-2020-beginner-advanced/)
+* Learned a lot doing the Javascript complete guide course with [Maximillian Schwarzmuller](https://www.udemy.com/course/javascript-the-complete-guide-2020-beginner-advanced/)
 
 * Learned more about fetch from [John Linatoc](https://medium.com/@johnwadelinatoc/manipulating-the-dom-with-fetch-7bfddf9c526b)
 
@@ -373,4 +378,4 @@ The test has passed all the criteria and works as planned.
 
 * Learned more about timers [here](https://www.tutorialrepublic.com/javascript-tutorial/javascript-timers.php)
 
-* Learned about dynamic routing and relative URL paths on [Stack Overflow](https://stackoverflow.com/questions/1655065/redirecting-to-a-relative-url-in-javascript)
+* Learned about routing and relative URL paths on [Stack Overflow](https://stackoverflow.com/questions/1655065/redirecting-to-a-relative-url-in-javascript)
