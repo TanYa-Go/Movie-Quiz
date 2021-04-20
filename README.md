@@ -40,7 +40,16 @@ I've decided to create a movie quiz using an API. The idea was to create a quiz 
 
 <a name="ux"></a>
 ## **UX**
+
+## **Strategy**
 <a></a>
+
+### **Site owners Goals**
+
+* To have an appealing website where users want to go to play 
+* For the users to have fun while playing 
+* For the users to learn something while playing 
+
 ### **User Goals**
 
 * The game has to be responsive on various devices like tablets, mobile phones and desktops
@@ -68,16 +77,12 @@ I've decided to create a movie quiz using an API. The idea was to create a quiz 
 
 <a></a>
 
-### **Site owners Goals**
-
-* To have an appealing website where users want to go to play 
-* For the users to have fun while playing 
-* For the users to learn something while playing 
-
-
 [Back to Top](#table-of-contents)
 
+# **Scope**
+## **Features**
 <a></a>
+
 ### **User Requirements and Expectations**
 <a></a>
 #### Requirements
@@ -99,6 +104,19 @@ I've decided to create a movie quiz using an API. The idea was to create a quiz 
 * Show correct answer when answered incorrectly
 * To show the final result after playing
 
+### **Existing Features**
+
+* Use of [open Trivia API](https://opentdb.com/) to populate the questions
+* Ability to choose preferred level of difficulty
+* Instructions for the user on how to play the game
+* Validation of answers
+* Feedback when the answer was incorrect
+* Tracker for the questions and score
+* Countdown timer for each question
+
+
+<a></a>
+### **Features to be implemented**
 
 
 
@@ -106,6 +124,7 @@ I've decided to create a movie quiz using an API. The idea was to create a quiz 
 [Back to Top](#table-of-contents)
 
 <a></a>
+# **Surface**
 ### **Design Choices**
 
 The design was guided by vintage movies and cinema look, inspired by the hero image. 
@@ -123,16 +142,16 @@ Font **Bungee Inline** was chosen for the question and the buttons\
 
 Color palette was generated from the hero image using [Image Color Picker](https://imagecolorpicker.com/en)
 
-![Color Palette](/assets/images/color-palette.JPG)
+![Color Palette](images/color-palette.jpg)
 
-![Red](/assets/images/red.JPG) #d51e13 Red color was used as a background for the question container, to contrast the light color of the hero image and also for title
+![Red](/assets/images/red.JPG) #d51e13 Red color was used as the question container background image, to contrast the light color of the hero image and also for title and score
 
 ![Cream](/assets/images/cream.JPG) #f2d38c Cream color was used for the questions and also for the background of the answer choices in contrast to the red
 
 
 <a></a>
 
-# **Structure**
+# **Skeleton**
 
 
 [Back to Top](#table-of-contents)
@@ -160,28 +179,6 @@ Wireframes were created using the wireframing tool [Balsamiq](https://balsamiq.c
 
 ---
 
-<a></a>
-## **Features**
-<a></a>
-### **Existing Features**
-
-* Use of [open Trivia API](https://opentdb.com/) to populate the questions
-* Ability to choose preferred level of difficulty
-* Instructions for the user on how to play the game
-* Validation of answers
-* Feedback when the answer was incorrect
-* Tracker for the questions and score
-* Countdown timer for each question
-
-
-<a></a>
-### **Features to be implemented**
-
-
-
-[Back to Top](#table-of-contents)
-
-<a></a>
 
 ## **Technologies used**
 <a></a>
@@ -223,9 +220,31 @@ Wireframes were created using the wireframing tool [Balsamiq](https://balsamiq.c
 
 [Back to Top](#table-of-contents)
 
-<a></a>
+<p>&nbsp;</p><p>&nbsp;</p>
 
-## **Testing**
+# **Testing**
+
+<p>&nbsp;</p>
+
+## **Code Validation**
+
+* [HTML validator](https://validator.w3.org/) 
+
+  - index.html - Passing without errors
+  - end.html - Returns an empty heading warning. This heading element is peing populated by javacript, its a result of the game
+
+* [CSS Validator](https://jigsaw.w3.org/css-validator/) Passing without errors
+
+* [JSHint](jshint.com) 
+  - app.js\
+  ![app.js](screenshots/jshint-appjs.jpg)
+  - end.js\
+  ![end.js](screenshots/jshint-endjs.jpg)
+
+<p>&nbsp;</p>
+
+## **User Stories Testing** 
+<p>&nbsp;</p>
 
 ### **Rules button**
 
@@ -243,7 +262,7 @@ When clicking either button, the modal closes and the user can start playing the
 * **Test**  
 I have tested the modal on various browsers and devices. 
  
- ![Rules Modal image](image)
+   ![Rules Modal image](screenshots/rules-modal.jpg)
 
 * **Result**  
 The modal works as planned and contributes to a better overall user experience.
@@ -251,6 +270,7 @@ The modal works as planned and contributes to a better overall user experience.
 * **Verdict**  
 The test has passed all the criteria and works as planned.
 
+<p>&nbsp;</p>
 
 ### **Choosing difficulty level**
 
@@ -268,7 +288,7 @@ I have tested whether the hover is working when you hover over each option.
 I have tried selecting different levels to make sure the correct level is being chosen.\
 I have checked whether the questions from the selected level are being displayed.
 
-![Level Button image](image)
+    ![Level Button image](screenshots/level-button.jpg)
 
 * **Result**  
 When you hover over each option, the background color changes, so the hover is working. I have disabled hover on touch devices.\
@@ -280,7 +300,7 @@ When you choose your level, you get the correct questions from the chosen diffic
 The test has passed all the criteria and works as planned.
 
 [Back to Top](#table-of-contents)
-
+<p>&nbsp;</p>
 
 ### **Question Counter**
 
@@ -303,11 +323,13 @@ Question counter works as planned across various devices and browsers.
 * **Verdict**   
 The test has passed all the criteria and works as planned.
 
+<p>&nbsp;</p><p>&nbsp;</p>
 
 ## **Bugs**
 
 * **Choosing difficulty level** - 
- The game is intended to be played in portrait mode on mobile devices. Should the user wish to play in landscape mode, it is possible, but they will need to scroll down to choose level and then back up to play the game which is not user friendly. 
+ The game is intended to be played in portrait mode on mobile devices. Should the user wish to play in landscape mode, it is still possible, but they will need to scroll down to choose level and then back up to play the game which is not user friendly. 
+ 
 * **Question Counter** -
  On mobile screen size question 10/10 was overflowing its container and displaying underneath the rest of the row. To avoid that I have reduced font size for the tracking container 
 
@@ -316,23 +338,26 @@ The function works as intended, however the console throws the following error: 
 I have validated the json file with two different online validators and the result was - valid. Please see images. 
 Application works despite the error. 
 
-![JSON Error](screenshots/json-validator.jpg)
+<p>&nbsp;</p>
 
-![JSON Error](screenshots/json-validator-b.jpg)
+  ![JSON Error](screenshots/json-validator.jpg)
+
+  ![JSON Error](screenshots/json-validator-b.jpg)
 
 
 [Back to Top](#table-of-contents)
 
 <a></a>
+<p>&nbsp;</p>
 
 ## **Deployment**
-### Project Creation
+### **Project Creation**
 
 1. A local project was created in GitHub with a new repository called 'Movie Quiz'
 1. During the creation of the project regular commits were added 
 1. Commits were then pushed to the GitHub website before deployment
 
-### Using Github Pages
+### **Using Github Pages**
 1. Navigate to the GitHub [Repository](https://github.com/TanYa-Go/Movie-Quiz)
 1. Click the 'Settings' Tab.
 1. Scroll Down to the Git Hub Pages Heading.
@@ -340,7 +365,7 @@ Application works despite the error.
 1. Click the Save button.
 1. Click on the link to go to the live deployed page.
 
-### Run Locally
+### **Run Locally**
 1. Navigate to the GitHub [Repository](https://github.com/TanYa-Go/Movie-Quiz)
 1. Click the Code drop down menu.
 1. Either Download the ZIP file, unpackage locally and open with IDE (This route ends here) OR Copy Git URL from the HTTPS dialogue box.
@@ -350,23 +375,23 @@ Application works despite the error.
 
 
 [Back to Top](#table-of-contents)
-
+<p>&nbsp;</p>
 <a></a>
 
 ## **Credits**
 
-### Images 
+### **Images**
 
 * Hero image was taken from [Pixabay](https://pixabay.com/illustrations/cinema-demolition-map-popcorn-3700545/)
 * Favicon image was taken from [Pixabay](https://pixabay.com/illustrations/popcorn-cinema-caf%C3%A9-movie-4268489/)
 
-### Music
+### **Music**
 
 * Backround music was taken from [Zapsplat](https://www.zapsplat.com/sound-effect-category/tv-show-and-themes/page/2/
 )
 * Sound effects for different score sounds were taken from [YouTube](https://www.youtube.com/watch?v=7DwPU-Vs2qI)
 
-### Code
+### **Code**
 
 * Took inspiration from the [James Q Quick YouToube tutorial](https://www.youtube.com/watch?v=u98ROZjBWy8&list=PLDlWc9AfQBfZIkdVaOQXi1tizJeNJipEx)
 
