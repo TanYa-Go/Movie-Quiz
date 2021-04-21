@@ -263,7 +263,7 @@ const timerCallback = () => {
     // Finish the game
     finishQuiz();
   } else if (endTimerFlag) {
-    // The user has selected an answer and gotten to the next question
+       // The user has selected an answer and gotten to the next question
   } else {
     setTimeout(() => {
       currentTimer -= 1;
