@@ -272,14 +272,14 @@ The test has passed all the criteria and works as planned.
 #### User story:  As a user, I would like to be able to choose the level of difficulty.
 
 * **Plan**  
-When the page is loaded, the user should have the option to choose the difficulty level they want to play - Easy, Medium or Hard.\
-The user shouldn't be able to proceed if no level is chosen.
+When the page is loaded, the user should have the option to choose the difficulty level they want to play - Easy, Normal or Hard.\
+The user shouldn't be able to proceed if the difficutly level is not chosen.
 
 * **Implementation**  
 I created a dropdown "Difficulty" button on the welcome screen that user can click and select their option. In javascript, I set the default difficulty level to null so the user has to choose the level before proceeding to play.
 
 * **Test**  
-I have tested whether the hover is working when you hover over each option.
+I have tested whether the hover is working when you hover over each option.\
 I have tried selecting different levels to make sure the correct level is being chosen.\
 I have checked whether the questions from the selected level are being displayed.
 
@@ -346,7 +346,7 @@ Application works despite the error.
 ## **Deployment**
 ### **Project Creation**
 
-1. A local project was created in GitHub with a new repository called 'Movie Quiz'
+1. A local project was created in GitHub with a new repository called 'Movie Trivia'
 1. During the creation of the project regular commits were added 
 1. Commits were then pushed to the GitHub website before deployment
 
