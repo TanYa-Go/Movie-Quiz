@@ -26,7 +26,7 @@ let acceptingAnswers = true;
 let score = 0;
 let questionCounter = 0;
 let availableQuestions = [];
-let MAX_POINTS = 100;
+
 
 // Function to show difficulty level on button click 
 chooseLevelRef.addEventListener("click", function () {
@@ -93,11 +93,11 @@ const difficultyEventListeners = () => {
       levelChoiceRef.classList.toggle("show");
       chooseLevelRef.innerText = e.currentTarget.innerText.toUpperCase();
       // Setting different available time for each level
-      if (difficultyLevel == "easy") {
+      if (difficultyLevel === "easy") {
         timerLength = DEFAULT_TIMER + 10;
-      } else if (difficultyLevel == "normal") {
+      } else if (difficultyLevel === "medium") {
         timerLength = DEFAULT_TIMER + 5;
-      } else if (difficultyLevel == "hard") {
+      } else if (difficultyLevel === "hard") {
         timerLength = DEFAULT_TIMER;
       }
     });
