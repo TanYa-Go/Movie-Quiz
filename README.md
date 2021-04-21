@@ -1,4 +1,4 @@
-# **Movies Quiz**
+# **Movie Trivia**
 
 
 
@@ -11,23 +11,21 @@ I've decided to create a movie quiz using an API. The idea was to create a quiz 
 
 
 ---
-<a></a>
+
 ## Table of contents 
-* [UX](#ux)
-    * [User Goals](#user-goals)
-    * [User Stories](#user-stories)
-    * [Site Owners Goals](#site-owners-goals)
-    * [User Requirements and Expectations](#user-requirements-and-expectations)
-        * [Requirements](#requirements)
-        * [Expectations](#expectations)
-    * [Design Choices](#design-choices)
-        * [Fonts](#fonts)
-        * [Colors](#colors)
-        * [Structure](#structure)
-* [Wireframes](#wireframes)
-* [Features](#features)
-    * [Existing Features](#existing-features)
-    * [Features to be implemented](#features-to-be-implemented)
+* [User Experience Design](#user-experience-design)
+     * [The Strategy Plane](#the-strategy-plane)
+         * [User Stories](#user-stories)
+    * [The Scope Plane](#the-scope-plane)
+         * [Existing Features](#existing-features)
+        * [Features to be implemented](#features-to-be-implemented)
+    * [The Structure Plane](#the-structure-plane)
+    * [The Skeleton Plane](#the-skeleton-plane)
+       * [Wireframes](#wireframes)
+    * [The Surface Plane](#the-surface-plane)
+      * [Design Choices](#design-choices)
+          * [Typography](#typography)
+          * [Colors](#colors)
 * [Technologies used](#technologies-used)
     * [Languages](#languages)
     * [Libraries and Frameworks](#libraries-and-frameworks)
@@ -35,28 +33,30 @@ I've decided to create a movie quiz using an API. The idea was to create a quiz 
 * [Testing](#testing)
 * [Deployment](#deployment)
 * [Credits](#credits)
+* [Acknowledgments](#acknowledgments)
 
 
 
 <a name="ux"></a>
-## **UX**
+# **User Experience Design**
 
-## **Strategy**
+## **The Strategy Plane**
 <a></a>
 
 ### **Site owners Goals**
 
 * To have an appealing website where users want to go to play 
 * For the users to have fun while playing 
-* For the users to learn something while playing 
+* For the users to learn something new while playing 
 
 ### **User Goals**
 
-* The game has to be responsive on various devices like tablets, mobile phones and desktops
-* To have the option to choose the level of difficulty the user would like to play
-* Feedback when the wrong answer was chosen
+* To understand the game easily and to have fun playing
+* To be able to play the game on various devices, tablets, mobile phones and desktops
+* To have the option to choose the level of difficulty 
+* To find out the correct answer if I answer incorrectly
 * To be able to track the score and see how many questions are left in the game
-* To be able to see how much time is left to answer the question
+* To be able to see how much time I have to answer the question
 
 
 [Back to Top](#table-of-contents)
@@ -79,7 +79,7 @@ I've decided to create a movie quiz using an API. The idea was to create a quiz 
 
 [Back to Top](#table-of-contents)
 
-# **Scope**
+# **The Scope Plane**
 ## **Features**
 <a></a>
 
@@ -91,18 +91,18 @@ I've decided to create a movie quiz using an API. The idea was to create a quiz 
 * Easy to navigate by using only a few buttons
 * Easy to pick a difficulty level and start playing
 * Validate the correct answer
-* Keep the score of the user playing
+* Keep the score while playing
 
 
 <a></a>
 #### Expectations
 
 * When a certain level is chosen, that the correct questions appear
-* Feedback to the users wherein the game they are and the total amount of questions
-* Time is displayed so the user knows how much time they have left to answer the question
+* Feedback given to the users what stage in the game they are and the total amount of questions
+* Time is displayed so the user knows how much time they have to answer the question
 * To let the user know if their answer was correct 
 * Show correct answer when answered incorrectly
-* To show the final result after playing
+* To show the final result when game is finished
 
 ### **Existing Features**
 
@@ -117,41 +117,11 @@ I've decided to create a movie quiz using an API. The idea was to create a quiz 
 
 <a></a>
 ### **Features to be implemented**
-
-
-
-
-[Back to Top](#table-of-contents)
-
 <a></a>
-# **Surface**
-### **Design Choices**
-
-The design was guided by vintage movies and cinema look, inspired by the hero image. 
+# **The Structure Plane**
 
 
-<a></a>
-#### Fonts
-
-Font **Oswald** was chosen for the title, the movie quote and the answer choices\
-Font **Bungee Inline** was chosen for the question and the buttons\
-**Sans Serif** is chosen as the fallback font in case the Google fonts do not load
-
-<a></a>
-#### Colors
-
-Color palette was generated from the hero image using [Image Color Picker](https://imagecolorpicker.com/en)
-
-![Color Palette](images/color-palette.jpg)
-
-![Red](/assets/images/red.JPG) #d51e13 Red color was used as the question container background image, to contrast the light color of the hero image and also for title and score
-
-![Cream](/assets/images/cream.JPG) #f2d38c Cream color was used for the questions and also for the background of the answer choices in contrast to the red
-
-
-<a></a>
-
-# **Skeleton**
+# **The Skeleton Plane**
 
 
 [Back to Top](#table-of-contents)
@@ -163,19 +133,43 @@ Color palette was generated from the hero image using [Image Color Picker](https
 
 Wireframes were created using the wireframing tool [Balsamiq](https://balsamiq.com/wireframes/)
 
-### Home Page Wireframes
-
-[Home Page](wireframes/home-page.pdf)
+### Home Page Wireframes [Home Page](wireframes/home-page.pdf)
 
 
 
-### Quiz Page Wireframes
-[Quiz Page](wireframes/quiz-page.pdf)
+### Quiz Page Wireframes [Quiz Page](wireframes/quiz-page.pdf)
 
-
-
+<br></br>
 
 [Back to Top](#table-of-contents)
+
+<a></a>
+# **The Surface Plane** 
+<a></a>
+### **Design Choices**
+
+The design was guided by vintage movies and cinema look, inspired by the hero image. 
+
+
+<a></a>
+### **Typography**
+
+Font **Oswald** was chosen for the title, the movie quote and the answer choices\
+Font **Bungee Inline** was chosen for the question and the buttons\
+**Sans Serif** is chosen as the fallback font in case the Google fonts do not load
+
+<a></a>
+### **Color Scheme**
+
+Color palette was generated from the hero image using [Image Color Picker](https://imagecolorpicker.com/en)
+
+![Color Palette](assets/images/color-palette.jpg)
+
+Red color ![Red](assets/images/red.jpg) #d51e13  was used as the question container background image, to contrast the light color of the hero image and also for title and score
+
+Cream color ![Cream](assets/images/cream.jpg) #f2d38c  was used for the questions and also for the background of the answer choices in contrast to the red
+
+
 
 ---
 
@@ -220,11 +214,11 @@ Wireframes were created using the wireframing tool [Balsamiq](https://balsamiq.c
 
 [Back to Top](#table-of-contents)
 
-<p>&nbsp;</p><p>&nbsp;</p>
+<br></br>
 
 # **Testing**
 
-<p>&nbsp;</p>
+<br></br>
 
 ## **Code Validation**
 
@@ -263,15 +257,15 @@ When clicking either button, the modal closes and the user can start playing the
 * **Test**  
 I have tested the modal on various browsers and devices. 
  
-   ![Rules Modal image](screenshots/rules-modal.jpg)
-
+   
 * **Result**  
+![Rules Modal image](screenshots/rules-modal.jpg)
 The modal works as planned and contributes to a better overall user experience.
 
 * **Verdict**  
 The test has passed all the criteria and works as planned.
 
-<p>&nbsp;</p>
+<br></br>
 
 ### **Choosing difficulty level**
 
@@ -282,26 +276,26 @@ When the page is loaded, the user should have the option to choose the difficult
 The user shouldn't be able to proceed if no level is chosen.
 
 * **Implementation**  
-I created a dropdown "Level" button on the welcome screen that user can click and select their option. In javascript, I set the default difficulty level to null so the user has to choose the level before proceeding to play.
+I created a dropdown "Difficulty" button on the welcome screen that user can click and select their option. In javascript, I set the default difficulty level to null so the user has to choose the level before proceeding to play.
 
 * **Test**  
 I have tested whether the hover is working when you hover over each option.
 I have tried selecting different levels to make sure the correct level is being chosen.\
 I have checked whether the questions from the selected level are being displayed.
 
-    ![Level Button image](screenshots/level-button.jpg)
+    
 
 * **Result**  
 When you hover over each option, the background color changes, so the hover is working. I have disabled hover on touch devices.\
 When you click on each level, the button text changes to that particular level name, so user can see what they've chosen.\
 When you choose your level, you get the correct questions from the chosen difficulty level.
 
-
+  ![Level Button image](screenshots/level-button.jpg)
 * **Verdict**    
 The test has passed all the criteria and works as planned.
 
 [Back to Top](#table-of-contents)
-<p>&nbsp;</p>
+<br></br>
 
 ### **Question Counter**
 
@@ -324,7 +318,7 @@ Question counter works as planned across various devices and browsers.
 * **Verdict**   
 The test has passed all the criteria and works as planned.
 
-<p>&nbsp;</p><p>&nbsp;</p>
+<br></br>
 
 ## **Bugs**
 
@@ -339,8 +333,6 @@ The function works as intended, however the console throws the following error: 
 I have validated the json file with two different online validators and the result was - valid. Please see images. 
 Application works despite the error. 
 
-<p>&nbsp;</p>
-
   ![JSON Error](screenshots/json-validator.jpg)
 
   ![JSON Error](screenshots/json-validator-b.jpg)
@@ -348,8 +340,8 @@ Application works despite the error.
 
 [Back to Top](#table-of-contents)
 
-<a></a>
-<p>&nbsp;</p>
+
+<br></br>
 
 ## **Deployment**
 ### **Project Creation**
@@ -376,8 +368,8 @@ Application works despite the error.
 
 
 [Back to Top](#table-of-contents)
-<p>&nbsp;</p>
-<a></a>
+<br></br>
+
 
 ## **Credits**
 
