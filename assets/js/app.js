@@ -88,16 +88,16 @@ const difficultyEventListeners = () => {
   // Button text changes when level is chosen 
   difficultyOptions.forEach((option) => {
     option.addEventListener("click", (e) => {
-      difficultyLevel = e.currentTarget.dataset.value;
+      difficultyLevel = e.currentTarget.innerHTML;
       levelChoiceRef.classList.toggle("show");
       chooseLevelRef.innerText = difficultyLevel.toUpperCase();
       // Setting different available time for each level
-      if (difficultyLevel == "easy") {
+      if (difficultyLevel == "easy rider") {
+        timerLength = DEFAULT_TIMER + 10;
+      } else if (difficultyLevel == "normal") {
         timerLength = DEFAULT_TIMER + 5;
-      } else if (difficultyLevel == "medium") {
+      } else if (difficultyLevel == "die hard") {
         timerLength = DEFAULT_TIMER;
-      } else if (difficultyLevel == "hard") {
-        timerLength = DEFAULT_TIMER - 5;
       }
     });
   });
