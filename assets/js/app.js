@@ -26,6 +26,7 @@ let acceptingAnswers = true;
 let score = 0;
 let questionCounter = 0;
 let availableQuestions = [];
+let MAX_POINTS = 100;
 
 // Function to show difficulty level on button click 
 chooseLevelRef.addEventListener("click", function () {
@@ -275,7 +276,7 @@ const timerCallback = () => {
 // Finishing the quiz and going to the end page
 const finishQuiz = () => {
   localStorage.setItem("mostRecentScore", score);
-  
+   
   // go to the end page
   const endGamePath =
     window.location.protocol +
