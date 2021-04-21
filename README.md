@@ -232,9 +232,9 @@ Passing without errors but giving warnings about vendor extensions.
 
 * [JSHint](jshint.com) 
   - app.js\
-  ![app.js](screenshots/jshint-appjs.jpg)
+  ![app.js](wireframes/testing/jshint-appjs.jpg)
   - end.js\
-  ![end.js](screenshots/jshint-endjs.jpg)
+  ![end.js](wireframes/testing/jshint-endjs.jpg)
 
 <p>&nbsp;</p>
 
@@ -259,7 +259,7 @@ I have tested the modal on various browsers and devices.
  
    
 * **Result**  
-![Rules Modal image](screenshots/rules-modal.jpg)
+![Rules Modal image](wireframes/testing/rules-modal.jpg)
 The modal works as planned and contributes to a better overall user experience.
 
 * **Verdict**  
@@ -290,7 +290,7 @@ When you hover over each option, the background color changes, so the hover is w
 When you click on each level, the button text changes to that particular level name, so user can see what they've chosen.\
 When you choose your level, you get the correct questions from the chosen difficulty level.
 
-  ![Level Button image](screenshots/level-button.jpg)
+  ![Level Button image](wireframes/testing/level-button.jpg)
 * **Verdict**    
 The test has passed all the criteria and works as planned.
 
@@ -333,9 +333,9 @@ The function works as intended, however the console throws the following error: 
 I have validated the json file with two different online validators and the result was - valid. Please see images. 
 Application works despite the error. 
 
-  ![JSON Error](screenshots/json-validator.jpg)
+  ![JSON Error](wireframes/testing/json-validator.jpg)
 
-  ![JSON Error](screenshots/json-validator-b.jpg)
+  ![JSON Error](wireframes/testing/json-validator-b.jpg)
 
 
 [Back to Top](#table-of-contents)
