@@ -1,10 +1,10 @@
-# **Movie Trivia**
+# **Movie Trivia Extravaganza**
 
 
 
 ## **Project Goals** 
 
-The goal of this project was to create an app using HTML, CSS and JavaScript with focus on JavaScript. 
+The goal of this project was to create an app using HTML, CSS and JavaScript with a focus on JavaScript. 
 I've decided to create a movie quiz using the questions from an API. The idea was to create a game that is fun to play and that  contains interesting movie trivia so user can learn something new while playing. 
  
 
@@ -59,8 +59,6 @@ I've decided to create a movie quiz using the questions from an API. The idea wa
 * To be able to see how much time I have to answer the question
 
 
-[Back to Top](#table-of-contents)
-
 <a></a>
 
 ### **User Stories**
@@ -79,7 +77,7 @@ I've decided to create a movie quiz using the questions from an API. The idea wa
 
 [Back to Top](#table-of-contents)
 
-# **The Scope Plane**
+## **The Scope Plane**
 ## **Features**
 <a></a>
 
@@ -117,8 +115,81 @@ I've decided to create a movie quiz using the questions from an API. The idea wa
 
 <a></a>
 ### **Features to be implemented**
+
+[Back to Top](#table-of-contents)
+
 <a></a>
-# **The Structure Plane**
+## **The Structure Plane**
+<a></a>
+
+* **User Story**    
+  >As a user, I want the website to be easy to use.
+
+* **Description:**<br>
+The website will contain clear instructions and will be intuitive for the user. There will be a title describing the game and the 
+heading inviting user to play. The buttons will have descriptive names so that the user can easily navigate the site even if 
+visiting for the first time.
+
+
+* **User Story**
+  >As a user, I would like to know the rules before I start playing.
+
+* **Description:**<br>
+On the welcome screen there will be a button called **Rules** that will display the rules of the game when user clicks on it.
+
+* **User Story**
+  >As a user, I would like to be able to choose the level of difficulty.
+
+* **Description:**<br>
+On the welcome screen there will be a button that the user can click to choose their preffered difficulty level before they start playing.
+
+* **User Story**
+  > As a user, I would like to know which question I am on and how many questions are left.
+
+* **Description:**<br>
+  By reading the rules the user has already seen the information that each level has 10 questions. In case they did not read the rules,
+  when the game starts, the current question number will be displayed on the screen, along with the maximum number of questions, 
+  in the 1/10 format. This will update on each following question until they reach the end/score page.  
+
+* **User Story**
+  >As a user, I would like to know how much time I have to answer the question.
+
+* **Description:**<br> 
+Each level will have different amount of time available to select your answer. The **Easy** level will have 15 seconds, 
+the **Normal** level will have 20 seconds and the **Hard** level will have 25 seconds. Timer will be clearly dispalyed on the screen so user can 
+easily see how much time is left until the timer runs out.
+
+
+* **User Story**
+  >As a user, I would like to track my score while playing.
+* **Description:**<br>
+The score will be clearly displayed on the screen on each question so user can track their progress. When the game finishes the user will 
+see their final score out of maximum 100 points. 
+
+
+* **User Story**
+
+  >As a user, I expect a variety of questions and no repeated questions.
+
+* **Description:**<br>
+Questions will be populated from an API that has lots of different questions available, so there won't be any repeat questions.
+
+
+* **User Story**
+  >As a user, I would like to know the correct answer when answered incorrectly.
+
+* **Description:**<br>
+When the user selects their answer, if the answer is correct, it will flash green. In case the answer is incorrect, it will flash red
+ and the correct answer will flash green so the user will be able to see which answer was correct.   
+
+* **User Story**
+  >As a user, I want to be able to restart the game if I'm not happy with my answers.
+
+* **Description:**<br>
+There will be a button added on the screen under the questions, with an option to restart the game. The user can choose different 
+diffculty level if they wish. There will also be an option for the user to restart the level they are on from the beggining,
+ if they dont like their answers. 
+
 
 [Back to Top](#table-of-contents)
 
@@ -170,6 +241,7 @@ Color palette was generated from the hero image using [Image Color Picker](https
 **Cream color** ![Cream](assets/images/cream.jpg) #f2d38c  was used for the questions and also for the background of the answer choices in contrast to the red
 
 
+[Back to Top](#table-of-contents)
 
 ---
 
@@ -234,7 +306,7 @@ Passing without errors but giving warnings about vendor extensions and about imp
 
 * [JSHint](jshint.com)\
  I've tested both javascript files with the jshint and received warnings about missing semicolons and unused or undefined variables. I also received warnings about arrow function, about declaring let and const variables which are available in ES6.\
- Once those were dealt with I received the following report: 
+ Once those were dealt with I received the following reports: 
 
   - app.js   
   ![app.js](wireframes/testing/jshint-appjs.jpg)
@@ -288,11 +360,13 @@ I created a dropdown **Difficult** button on the welcome screen that user can cl
 * **Test**  
 I have tested whether the hover is working when you hover over each option.\
 I have tried selecting different levels to make sure the correct level is being chosen.\
-I have checked whether the questions from the selected level are being displayed.
+I have checked whether the questions from the selected level are being displayed.\
+I have tried clicking **Play** without choosing the difficutly level.
 
     
 
 * **Result**  
+If you click **Play** without choosing the difficulty level, the warning modal will open to warn the user to choose preffered level.\
 When you hover over each level option, the background color changes, so the hover is working. I have disabled hover on touch devices.\
 When you select the level, the button text changes to that particular level name, so user can see what they've chosen.\
 When you choose your level, you get the correct questions from the chosen difficulty level.
@@ -313,7 +387,7 @@ When user starts the quiz they can clearly see what question they are on, out of
 
 * **Implementation**   
 I've added the question counter above the question container so it is easy for user to see it. 
-It is displayed in 1/10 format so user can quickly tell how many questions are left till the end.
+It is displayed in 1/10 format so user can quickly tell how many questions are left untill the end.
 
 * **Test**  
 When user answers the first question, the next question appears and the question counter increases by one. 
@@ -325,6 +399,8 @@ Question counter works as planned across various devices and browsers.
 * **Verdict**   
 The test has passed all the criteria and works as planned.
 
+<br></br>
+[Back to Top](#table-of-contents)
 <br></br>
 
 ## **Bugs**
@@ -427,3 +503,7 @@ After more researching and testing through the browser console, I realized I nee
 * Learned more about timers [here](https://www.tutorialrepublic.com/javascript-tutorial/javascript-timers.php)
 
 * Learned about routing and relative URL paths on [Stack Overflow](https://stackoverflow.com/questions/1655065/redirecting-to-a-relative-url-in-javascript)
+
+
+<br></br>
+[Back to Top](#table-of-contents)
