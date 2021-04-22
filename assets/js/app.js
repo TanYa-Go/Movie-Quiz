@@ -1,21 +1,20 @@
 const welcomeScreenRef = document.getElementById("welcome-screen");
 const gameScreenRef = document.getElementById("game-screen");
 const startGameRef = document.getElementById("start-btn");
-const restartButtonRef = document.getElementById("restart-btn");
+const restartLevelButtonRef = document.getElementById("restart-level-btn");
 const startOverButtonRef = document.getElementById("start-over-btn");
-const dropdownsRef = document.getElementsByClassName("dropdown-content");
 const chooseLevelRef = document.getElementById("drop");
 const levelChoiceRef = document.getElementById("levelChoice");
 const questionsContainerRef = document.getElementById("questions-container");
 const questionRef = document.getElementById("question");
-const answersRef = Array.from(document.getElementsByClassName("btn-answer"));
+const musicOnRef = document.getElementById("musicOn");
 const alertModalRef = document.getElementById("alertModal");
 const alertModalTextRef = document.getElementById("alert-modal-text");
 const alertModalCancelRef = document.getElementById("alert-modal-close");
 const currentTimerTextRef = document.getElementById("current-timer-text");
+const dropdownsRef = document.getElementsByClassName("dropdown-content");
+const answersRef = Array.from(document.getElementsByClassName("btn-answer"));
 const backgroundMusic = new Audio("assets/music/background-music.mp3");
-const musicOnRef = document.getElementById("musicOn");
-backgroundMusic.loop = true;
 const CORRECT_BONUS = 10;
 const DEFAULT_TIMER = 15;
 let currentTimer;
@@ -26,7 +25,7 @@ let acceptingAnswers = true;
 let score = 0;
 let questionCounter = 0;
 let availableQuestions = [];
-
+backgroundMusic.loop = true;
 
 // Function to show difficulty level on button click 
 chooseLevelRef.addEventListener("click", function () {
@@ -161,10 +160,10 @@ const difficultyEventListeners = () => {
       $(alertModalRef).modal("hide");
     });
   });
-  /*------------------------------------------------------------------------------*/
+ 
 
   // Event handling for when "Restart Level" button is clicked - Quiz starts over from question 1 of same level
-  restartButtonRef.addEventListener("click", (e) => {
+  restartLevelButtonRef.addEventListener("click", (e) => {
     // Reset the score and questionCounter and get the first question again
     score = 0;
     questionCounter = 0;
