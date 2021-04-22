@@ -131,13 +131,18 @@ I've decided to create a movie quiz using an API. The idea was to create a quiz 
 
 ## **Wireframes**
 
-Wireframes were created using the wireframing tool [Balsamiq](https://balsamiq.com/wireframes/)
+Wireframes were created using [Balsamiq](https://balsamiq.com/wireframes/)
 
-### Home Page Wireframes [Home Page](workspace/Movie-Quiz/wireframes/home-page.pdf)
+### **Home Page Wireframes**
 
+[Home Page Desktop](wireframes/home-dektop.png)\
+[Home Page Tablet](wireframes/home-tablet.png)\
+[Home Page Desktop](wireframes/home-mobile.png)
 
-
-### Quiz Page Wireframes [Quiz Page](workspace/Movie-Quiz/wireframes/quiz-page.pdf)
+### **Quiz Page Wireframes** 
+[Quiz Page Desktop](/wireframes/quiz-desktop.png)\
+[Quiz Page Tablet](/wireframes/quiz-desktop.png)\
+[Quiz Page Mobile](/wireframes/quiz-desktop.png)
 <br></br>
 
 [Back to Top](#table-of-contents)
