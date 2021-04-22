@@ -13,7 +13,7 @@ let quotesArray = [];
 
 
 async function getData() {
-   const response = await fetch("movieQuotes.json");
+   const response = await fetch("assets/data/movieQuotes.json");
       //.then(res => {
       console.log(response);
       const loadedQuotes = await response.json();
