@@ -28,10 +28,10 @@ body {
 }
 
 .title-container {
-  margin-top: 150px;
+  margin-top: 60px;
 }
 
-.title {
+.title-home, .title-end {
   font-family: Oswald, sans-serif;
   color: #d51e13;
   text-align: center;
@@ -40,15 +40,9 @@ body {
   text-shadow: 3px 2px #f2d38c;
 }
 
-.movie {
-  margin-top: 30px;
-}
 
-#score {
-  margin-top: -10px;
-}
 .quote {
-  margin-top: 40px;
+  margin-top: 60px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -57,14 +51,14 @@ body {
           justify-content: center;
   font-family: Oswald, sans-serif;
   font-weight: 700;
-  font-size: 2.7rem;
+  font-size: 2.3rem;
   font-style: italic;
   text-shadow: 3px 2px #f2d38c;
 }
 
 .movie {
   font-family: Oswald, sans-serif;
-  font-size: 2.2rem;
+  font-size: 1.8rem;
   font-style: italic;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -74,8 +68,45 @@ body {
           justify-content: center;
   text-shadow: 3px 2px #f2d38c;
   margin-bottom: 20px;
+  margin-top: 20px;
+ 
+}
+.heading{
+  margin-top: 80px;
+  font-family: "Bungee Inline", sans-serif;
+  font-size: 2.8rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
+.max-score {
+  font-family: Oswald, sans-serif;
+  color: #d51e13;
+  text-align: center;
+  font-weight: 600;
+  font-size: 5rem;
+  text-shadow: 3px 2px #f2d38c;
+  }
+  #end-score{
+    font-size: 4rem;
+    margin-bottom: 20px;
+    font-family: Oswald, sans-serif;
+    color: #d51e13;
+    text-align: center;
+    font-weight: 600;
+    font-size: 5rem;
+    text-shadow: 3px 2px #f2d38c;
+  
+  }
+  #movie-quote-end{
+     margin-top: 30px;
+     
+    
+   }
 .controls-container {
   margin-top: 30px;
   display: -webkit-box;
@@ -291,12 +322,22 @@ body {
   height: 20%;
 }
 
+#play-again-btn{
+  margin-top: -20px;
+}
+
 /* =================================== Media Queries ============================================ */
 
 @media (min-width: 200px) and (max-width: 576px) {
   body {
     overflow-y: scroll;
   }
+
+  .heading{
+    font-size: 1.2em;
+    display: flex;
+    justify-content: center;
+}
 
   .title-container {
     margin-top: 30px;
@@ -321,11 +362,14 @@ body {
     width: 100%;
   }
 
-  .title {
-    font-size: 3.5rem;
-    margin-top: 40px;
+  .title-end {
+    font-size: 5rem;
+    margin-top: 70px;
   }
-
+  .title-home {
+    font-size: 3rem;
+    margin-top: 70px;
+  }
   .quote {
     font-size: 1.8rem;
   }
@@ -333,10 +377,17 @@ body {
     font-size: 1.5rem;
     margin-top: 10px;
   }
-
+  
+  #movie-quote-end{
+   padding-left: 60px;
+   padding-right: 30px;
+   margin-top: 20px;
+   
+  }
   #movie {
     margin-top: 20px;
   }
+  
 
   #levelChoice {
     margin-bottom: 5px;
@@ -374,29 +425,111 @@ body {
   #play-again-btn {
     width: 170px;
   }
+  .max-score {
+    font-family: Oswald, sans-serif;
+    color: #d51e13;
+    text-align: center;
+    font-weight: 600;
+    font-size: 4rem;
+    text-shadow: 3px 2px #f2d38c;
+    }
+
+    #score{
+      font-size: 4rem;
+    }
 }
 
 @media (min-width: 577px) and (max-width: 768px) {
   body {
     overflow-y: scroll;
   }
-  .title {
-    margin-top: 40px;
+  .title-end {
+    margin-top: 50px;
+    font-size: 5rem;
   }
-
-  .quote {
-    margin-top: 10px;
+  .title-home {
+    font-size: 4.5rem;
+    margin-top: 70px;
   }
-
+    .quote {
+    margin-top: 50px;
+    font-size: 1.8rem ;
+  }
+  .heading{
+    font-size: 1.9rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  #movie {
+    margin-top: 20px;
+  }
+  
+  .movie{
+    font-size: 1.5rem;
+  }
   #question {
     font-size: 1.5rem;
   }
+  .max-score {
+  font-family: Oswald, sans-serif;
+  color: #d51e13;
+  text-align: center;
+  font-weight: 600;
+  font-size: 4rem;
+  text-shadow: 3px 2px #f2d38c;
+  }
+  #score{
+    font-size: 4rem;
+    margin-bottom: 20px;
+  }
 }
 
-@media (min-width: 768px) and (max-width: 1920px) {
+@media (min-width: 768px) and (max-width: 992px) {
   #game-screen {
     margin-top: 150px;
   }
+  .movie{
+    margin-top: 40px;
+  }
+  .title-end {
+    margin-top: 20px;
+    font-size: 5.2rem;
+  }
+  .title-home {
+    font-size: 4.9rem;
+    margin-top: 70px;
+  }
+  .heading {
+  font-size: 2.2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  
+  }
+  .max-score {
+    font-family: Oswald, sans-serif;
+    color: #d51e13;
+    text-align: center;
+    font-weight: 600;
+    font-size: 5rem;
+    text-shadow: 3px 2px #f2d38c;
+    }
+    #score{
+      font-size: 5rem;
+      margin-bottom: 20px;
+    }
+    #movie-quote-end{
+       margin-top: 20px;
+       margin-bottom: -40px;
+      
+     }
 }
 @media (hover: hover) {
   .btn-answer:hover {
