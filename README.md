@@ -4,8 +4,8 @@
 
 ## **Project Goals** 
 
-The goal of this project was to create an app using HTML, CSS and JavaScript, focusing on JavaScript. 
-I've decided to create a movie quiz using an API. The idea was to create a quiz that is fun to play and also contains interesting movie trivia so user can learn something new while playing. 
+The goal of this project was to create an app using HTML, CSS and JavaScript with focus on JavaScript. 
+I've decided to create a movie quiz using the questions from an API. The idea was to create a game that is fun to play and that  contains interesting movie trivia so user can learn something new while playing. 
  
 
 
@@ -120,13 +120,10 @@ I've decided to create a movie quiz using an API. The idea was to create a quiz 
 <a></a>
 # **The Structure Plane**
 
+[Back to Top](#table-of-contents)
 
 # **The Skeleton Plane**
 
-
-[Back to Top](#table-of-contents)
-
---- 
 <a></a>
 
 ## **Wireframes**
@@ -152,8 +149,7 @@ Wireframes were created using [Balsamiq](https://balsamiq.com/wireframes/)
 <a></a>
 ### **Design Choices**
 
-The design was guided by vintage movies and cinema look, inspired by the hero image. 
-
+The design was guided by the vintage movies and cinema look, inspired by the hero image. 
 
 <a></a>
 ### **Typography**
@@ -169,9 +165,9 @@ Color palette was generated from the hero image using [Image Color Picker](https
 
 ![Color Palette](assets/images/color-palette.jpg)
 
-Red color ![Red](assets/images/red.jpg) #d51e13  was used as the question container background image, to contrast the light color of the hero image and also for title and score
+**Red color** ![Red](assets/images/red.jpg) #d51e13  was used as the question container background image, to contrast the light color of the hero image and also for title and score
 
-Cream color ![Cream](assets/images/cream.jpg) #f2d38c  was used for the questions and also for the background of the answer choices in contrast to the red
+**Cream color** ![Cream](assets/images/cream.jpg) #f2d38c  was used for the questions and also for the background of the answer choices in contrast to the red
 
 
 
@@ -205,15 +201,17 @@ Cream color ![Cream](assets/images/cream.jpg) #f2d38c  was used for the question
    
 1. [Git](https://git-scm.com/)
     
-1. [GitHub:](https://github.com/)
+1. [GitHub](https://github.com/)
     
-1. [Balsamiq:](https://balsamiq.com/)
+1. [Balsamiq](https://balsamiq.com/)
    
 1. [TinyPNG](https://tinypng.com/)
    
 1. [Chrome Developer Tools](https://developers.google.com/web/tools/chrome-devtools)
 
 1. [Favicon Maker](https://favicon.io/)
+
+1. [Autoprefixer](https://autoprefixer.github.io)
  
 
 [Back to Top](#table-of-contents)
@@ -228,14 +226,17 @@ Cream color ![Cream](assets/images/cream.jpg) #f2d38c  was used for the question
 
 * [HTML validator](https://validator.w3.org/) 
 
-  - index.html - Document checking completed. No errors or warnings to show.
-  - end.html - Document checking completed. No errors or warnings to show.
+  - index.html - After validating code with the W3 validator, I got the response: Document checking completed. No errors or warnings to show.
+  - end.html - After validating code with the W3 validator, I got two warnings about empty headings on line 39 and 40. These headings are being populated dynamically with javascript - it's a different movie quote depending on the game score. 
 
 * [CSS Validator](https://jigsaw.w3.org/css-validator/) - 
-Passing without errors but giving warnings about vendor extensions.
+Passing without errors but giving warnings about vendor extensions and about imported stylesheets for Google fonts.
 
-* [JSHint](jshint.com) 
-  - app.js\
+* [JSHint](jshint.com)\
+ I've tested both javascript files with the jshint and received warnings about missing semicolons and unused or undefined variables. I also received warnings about arrow function, about declaring let and const variables which are available in ES6.\
+ Once those were dealt with I received the following report: 
+
+  - app.js   
   ![app.js](wireframes/testing/jshint-appjs.jpg)
   - end.js\
   ![end.js](wireframes/testing/jshint-endjs.jpg)
@@ -245,18 +246,18 @@ Passing without errors but giving warnings about vendor extensions.
 ## **User Stories Testing** 
 <p>&nbsp;</p>
 
-### **Rules button**
+### **How to play**
 
 #### As a user, I would like to know the rules before I start playing.
 
 * **Plan**  
-If a user doesn't know how to play the game, they should be able to click a 'Rules' button to read the instructions. 
+If a user doesn't know how to play the game, they should be able to click a **Rules** button to read the instructions. 
 
 * **Implementation**  
-On the welcome screen, I've added a 'Rules' button that triggers a modal. 
+On the welcome screen, I've added a **Rules** button that triggers a modal. 
 When the modal opens you can see the steps on how to play the quiz. 
-When you've read the instructions you can close the modal by clicking the "Got it!" button at the bottom or the "X" button at the top.
-When clicking either button, the modal closes and the user can start playing the game. 
+When you've read the instructions you can close the modal by clicking the **Got it!** button at the bottom or the **X** button at the top.
+
 
 * **Test**  
 I have tested the modal on various browsers and devices. 
@@ -264,23 +265,25 @@ I have tested the modal on various browsers and devices.
    
 * **Result**  
 ![Rules Modal image](wireframes/testing/rules-modal.jpg)
-The modal works as planned and contributes to a better overall user experience.
+The modal opens after the **Rules** button is clicked.\
+When clicking either button inside the modal, it closes and the user can start playing the game. 
+
 
 * **Verdict**  
-The test has passed all the criteria and works as planned.
-
+The modal works as intended and contributes to a better overall user experience.
+Test had passed all criteria.
 <br></br>
 
 ### **Choosing difficulty level**
 
-#### User story:  As a user, I would like to be able to choose the level of difficulty.
+#### User story:  As a user, I would like to be able to choose the level of difficulty before playing the game.
 
 * **Plan**  
 When the page is loaded, the user should have the option to choose the difficulty level they want to play - Easy, Normal or Hard.\
 The user shouldn't be able to proceed if the difficutly level is not chosen.
 
 * **Implementation**  
-I created a dropdown "Difficulty" button on the welcome screen that user can click and select their option. In javascript, I set the default difficulty level to null so the user has to choose the level before proceeding to play.
+I created a dropdown **Difficult** button on the welcome screen that user can click and select their option. In javascript, I set the default difficulty level to null so the user has to choose the level before proceeding to play.
 
 * **Test**  
 I have tested whether the hover is working when you hover over each option.\
@@ -290,29 +293,29 @@ I have checked whether the questions from the selected level are being displayed
     
 
 * **Result**  
-When you hover over each option, the background color changes, so the hover is working. I have disabled hover on touch devices.\
-When you click on each level, the button text changes to that particular level name, so user can see what they've chosen.\
+When you hover over each level option, the background color changes, so the hover is working. I have disabled hover on touch devices.\
+When you select the level, the button text changes to that particular level name, so user can see what they've chosen.\
 When you choose your level, you get the correct questions from the chosen difficulty level.
 
   ![Level Button image](wireframes/testing/level-button.jpg)
 * **Verdict**    
 The test has passed all the criteria and works as planned.
 
-[Back to Top](#table-of-contents)
+
 <br></br>
 
 ### **Question Counter**
 
-#### User story: As a user, I would like to know which question I am on and how many questions are left.
+#### User story: As a user, I would like to know which question I am on, and how many questions I have left.
 
-* **Plan**
+* **Plan**\
 When user starts the quiz they can clearly see what question they are on, out of how many questions.
 
-* **Implementation** 
+* **Implementation**   
 I've added the question counter above the question container so it is easy for user to see it. 
 It is displayed in 1/10 format so user can quickly tell how many questions are left till the end.
 
-* **Test** 
+* **Test**  
 When user answers the first question, the next question appears and the question counter increases by one. 
 Once the user has answered all 10 questions, the end screen appears. 
 
@@ -327,21 +330,44 @@ The test has passed all the criteria and works as planned.
 ## **Bugs**
 
 * **Choosing difficulty level** - 
- The game is intended to be played in portrait mode on mobile devices. Should the user wish to play in landscape mode, it is still possible, but they will need to scroll down to choose level and then back up to play the game which is not user friendly. 
+ The game is intended to be played in the portrait mode on mobile devices. Should the user wish to play in landscape mode, it is still possible, but they will need to scroll down to choose level and then scroll back up to play the game which is not user friendly. 
  
 * **Question Counter** -
  On mobile screen size question 10/10 was overflowing its container and displaying underneath the rest of the row. To avoid that I have reduced font size for the tracking container 
 
 * **Adding quotes from a local json file** - 
-The function works as intended, however the console throws the following error: "Uncaught SyntaxError: Unexpected token ':'".
-I have validated the json file with two different online validators and the result was - valid. Please see images. 
-Application works despite the error. 
+I have created json file with the movie quotes I wanted to display at the end, depending on the user's score.
+The function works as intended, the quotes are being loaded, however the console throws the following error: "Uncaught SyntaxError: Unexpected token ':'".
+I have validated the json file with two different online validators and the result of both was - valid. Please see images. I have also asked for advice from tutors on this issue and they were not able to find a solution.\
+Game works as planned despite the error. 
 
   ![JSON Error](wireframes/testing/json-validator.jpg)
 
   ![JSON Error](wireframes/testing/json-validator-b.jpg)
 
+* **Timer** -
+There is an issue with the timer - If the user waits until 1 second is left on the timer to click the right answer, even if the question was correct and points given, the timer runs out and game finishes.    
+This bug will be solved in future releases.
 
+* **Highlighting correct answer after user choses their answer** - I wanted to add functionality to highlight the correct answer when the user selected an incorrect one.
+I knew I had to select based on the data attribute, however my original solution kept throwing an error.
+After more researching and testing through the browser console, I realized I needed quotes surrounding the value.
+
+  Original code:
+  ```
+  correctAnswerRef = document.querySelectorAll('.btn-answer[data-number=' + currentQuestion.answer + ']')[0];
+  ```
+  Correct code:
+  ```
+  correctAnswerRef = document.querySelectorAll('.btn-answer[data-number="' + currentQuestion.answer + '"]')[0];
+  ```
+
+* **End page was not displaying on the deployed version** - When the user finishes the game, the end page should appear showing the result. However the end page was not displaying. After researching I realized that I need to implement the routing to point to that specific file path, using 
+
+  ```
+  window.location.protocol + "//" +  window.location.host + window.location.pathname + "/" + "end.html";
+  ```
+ 
 [Back to Top](#table-of-contents)
 
 
