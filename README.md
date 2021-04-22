@@ -133,11 +133,11 @@ I've decided to create a movie quiz using an API. The idea was to create a quiz 
 
 Wireframes were created using the wireframing tool [Balsamiq](https://balsamiq.com/wireframes/)
 
-### Home Page Wireframes [Home Page](/workspace/Movie-Quiz/wireframes/home-page.pdf)
+### Home Page Wireframes [Home Page](workspace/Movie-Quiz/wireframes/home-page.pdf)
 
 
 
-### Quiz Page Wireframes [Quiz Page](/workspace/Movie-Quiz/wireframes/quiz-page.pdf)
+### Quiz Page Wireframes [Quiz Page](workspace/Movie-Quiz/wireframes/quiz-page.pdf)
 <br></br>
 
 [Back to Top](#table-of-contents)
