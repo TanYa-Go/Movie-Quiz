@@ -366,7 +366,8 @@ body {
     margin-top: 20px;
   }
   #restart-btn,
-  #start-over-btn {
+  #start-over-btn,
+  #restart-level-btn {
     font-size: smaller;
   }
 
