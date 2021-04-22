@@ -403,6 +403,27 @@ The test has passed all the criteria and works as planned.
 [Back to Top](#table-of-contents)
 <br></br>
 
+### **Tracking the score**
+
+#### User story: As a user, I would like to track my score during the game. 
+
+* **Plan**  
+The plan was to implement a field above the question, displaying the current score of the user which increases when the user selects correct answer. Final result should be displayed on the end screen after completing the game. 
+
+* **Implementation**  
+I've added a score field to index.html and a function in app.js to increase the score by 10 points. When the game starts, the score is set to 0 and only when the answer was correct, the function ** is being executed. I have also added a field on the end page where the total score will be displayed. 
+
+* **Test**  
+I have tested this feature with all difficulty levels and across various browers and devices. 
+Score is incremented correctly when answering correct and stays the same when the answer was wrong. 
+Correct total score is being displayed on the end screen.
+
+* **Result**  
+Score display and total score is working as planned across various browsers and devices and increments when answer is correct. 
+
+* **Verdict**   
+The test has passed all the criteria and works like planned.
+
 ## **Bugs**
 
 * **Choosing difficulty level** - 

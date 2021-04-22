@@ -120,7 +120,7 @@ const difficultyEventListeners = () => {
       const currentQuestion = availableQuestions[questionCounter - 1];
       let correctAnswerRef = null;
 
-      if (currentQuestion.answer == answerChoice) {
+      if (currentQuestion.answer === answerChoice) {
         answerRef.classList.add("correct");
 
         // Update the score
