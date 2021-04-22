@@ -218,7 +218,8 @@ body {
 }
 #restart-btn,
 #musicOn,
-#start-over-btn {
+#start-over-btn,
+#restart-level-btn {
   margin-top: 30px;
   margin-bottom: 30px;
   color: #f2d38c;
