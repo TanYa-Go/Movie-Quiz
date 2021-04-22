@@ -313,7 +313,8 @@ body {
 
 #play-again-btn {
   margin-top: -20px;
-}
+    width: 170px;
+  }
 
 /* =================================== Media Queries ============================================ */
 
@@ -506,8 +507,11 @@ body {
     text-shadow: 3px 2px #f2d38c;
   }
   #score {
-   
     margin-bottom: 20px;
+  }
+
+  #play-again-btn {
+    width: 170px;
   }
   #movie-quote-end {
     margin-top: 20px;

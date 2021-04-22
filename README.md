@@ -424,6 +424,30 @@ Score display and total score is working as planned across various browsers and 
 * **Verdict**   
 The test has passed all the criteria and works like planned.
 
+### **Restart Game** 
+
+#### User story: As a user, I want to be able to restart the game.
+
+* **Plan**  
+The plan was to have a button on screen during the game on which player could click to start the game again. 
+ 
+* **Implementation**   
+First I implemented a **Restart** button that allowed user to return to the home page and choose a different level.
+I've added an event listener in javascript that *listens* to the users' click and then triggers the function that reloads the page and return to the welcome screen.
+After some feedback from friends and family  I've decided to implement another button, the one that will restart the current level. Event listener *listens* to the users click and then returns back to the first question on the same level.  
+
+* **Test**    
+I have tested both buttons on various devices and browsers
+
+
+* **Result**  
+Both buttons function properly, the **Restart Level** button return the user back to the first questions         
+**Restart Game** button returns user to the home page so they can select different level if they wish to do so. 
+
+* **Verdict**   
+The test has passed all the criteria and function as intended.
+
+
 ## **Bugs**
 
 * **Choosing difficulty level** - 
