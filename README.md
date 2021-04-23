@@ -1,13 +1,15 @@
 # **Movie Trivia Extravaganza**
 
+![Mock Up Image](wireframes/mock-up.png)
 
 
 ## **Project Goals** 
 
 The goal of this project was to create an app using HTML, CSS and JavaScript with a focus on JavaScript. 
 I've decided to create a movie quiz using the questions from an API. The idea was to create a game that is fun to play and that  contains interesting movie trivia so user can learn something new while playing. 
+<br></br>
  
-
+Follow the link [Movie Trivia Extravaganza](https://tanya-go.github.io/Movie-Quiz/) to view the live project 
 
 
 ---
@@ -45,7 +47,7 @@ I've decided to create a movie quiz using the questions from an API. The idea wa
 
 ### **Site owners Goals**
 
-* To have an appealing website where users want to go to play 
+* To have an appealing website where users want to go and play the game 
 * For the users to have fun while playing 
 * For the users to learn something new while playing 
 
@@ -54,7 +56,7 @@ I've decided to create a movie quiz using the questions from an API. The idea wa
 * To understand the game easily and to have fun playing
 * To be able to play the game on various devices, tablets, mobile phones and desktops
 * To have the option to choose the level of difficulty 
-* To find out the correct answer if I answer incorrectly
+* To find out the correct answer if they answer incorrectly
 * To be able to track the score and see how many questions are left in the game
 * To be able to see how much time I have to answer the question
 
@@ -63,15 +65,16 @@ I've decided to create a movie quiz using the questions from an API. The idea wa
 
 ### **User Stories**
 
-* As a user, I want the website to be easy to use.
-* As a user, I would like to know the rules before I start playing.
-* As a user, I would like to be able to choose the level of difficulty.
-* As a user, I would like to know which question I am on and how many questions are left.
-* As a user, I would like to know how much time I have to answer the question.
-* As a user, I would like to track my score while playing. 
-* As a user, I expect a variety of questions and no repeated questions.
-* As a user, I would like to know the correct answer when answered incorrectly.
-* As a user, I want to be able to restart the game if Im'm not happy with my answers.
+* As a user, I want the website to be easy to use
+* As a user, I want to be able to play the game on various devices
+* As a user, I would like to know the rules before I start playing
+* As a user, I would like to be able to choose the level of difficulty
+* As a user, I would like to know which question I am on and how many questions are left
+* As a user, I would like to know how much time I have to answer the question
+* As a user, I would like to track my score while playing 
+* As a user, I expect a variety of questions and no repeated questions
+* As a user, I would like to know the correct answer when answered incorrectly
+* As a user, I want to be able to restart the game if Im'm not happy with my answers
 
 <a></a>
 
@@ -115,6 +118,10 @@ I've decided to create a movie quiz using the questions from an API. The idea wa
 
 <a></a>
 ### **Features to be implemented**
+
+* In the future releases I'd like to add an option so user can input their name and be displayed on the best players list 
+* Future releases would have more questions per difficulty level and points will be deducted for the incorrect answer
+* Contact form so user can submit their feedback and report possible bugs or suggest different solutions and ideas
 
 [Back to Top](#table-of-contents)
 
