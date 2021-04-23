@@ -317,10 +317,37 @@ Color palette was generated from the hero image using [Image Color Picker](https
 ### **Verdict** 
 The app works as intened across all tested devices. For smaller devices portrait mode is recommended to play the game for better user experience.
 
+### **Browsers**
 
+I have tested the app in the following browsers
+  * Chrome 
+  * Opera 
+  * Mozilla Firefox 
+  * Microsoft Edge
+  * Safari was tested on mobile phones only and wokrs as intended
+
+### **Verdict**
+
+The app displays properly in all tested browsers, the image is not distorted and all buttons and teskst are clearly visible and accesible
+
+## **Features**
+
+**Buttons** - I have tested all the buttons by clicking them in different browsers and on different devices. All buttons work as intended and bring the user to the designated place.
+
+**Modals** - There are two modals - one that displays the rules when the user clicks the **Rules** button and one that displays a warning when the user clicks **Play** without choosing the preffered difficutly level.    
+Both modals work as intended and open when the respective button is clicked. Both modals properly close when the **Close** or **OK** button is clicked.
+
+**Music** - When the user clicks **Play** and the game starts, the background music will also start playing. The user had the option to pause the music by clicking the button underneath the quiz. The user can also play the music again by clicking the same button.
+I have tested the **Play/Pause** button on different devices and browsers and it works as planned.
+
+**End Score** 
+  * **Quotes** - Depending on the user's score, different movie quote should appear on the screen. 
+ * **Sound Effects** - Depending on the user's score, different sound effect should play
+
+I have tested both by playing the game on different devices and browsers. I tried to reach different score to make sure everything is displaying correctly.    
+Both, the qoutes and the sound effects work as intended.
 
 ## **Code Validation**
-
 
 * [HTML validator](https://validator.w3.org/) 
 
@@ -588,4 +615,4 @@ After more researching and testing through the browser console, I realized I nee
 
 # **Acknowledgements**
 
-I'd like to thank the best mentor ever [Simen Daelin](https://github.com/Eventyret) for his guidance, advice, patience, jokes, and most of all encouragement to contiune and keep pushing when I thought it's impossible. I am so lucky and grateful to have his support on my coding journey. 
+I'd like to thank the best mentor ever [Simen Daelin](https://github.com/Eventyret) for his guidance, advice, patience, as well as jokes and laughs, but most of all the encouragement to contiune and keep pushing when I thought it was impossible. I am so lucky and grateful to have his support on my coding journey. 

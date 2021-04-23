@@ -12,6 +12,7 @@ const alertModalRef = document.getElementById("alertModal");
 const alertModalTextRef = document.getElementById("alert-modal-text");
 const alertModalCancelRef = document.getElementById("alert-modal-close");
 const currentTimerTextRef = document.getElementById("current-timer-text");
+const errorMessageRef = document.getElementById("error-message")
 const dropdownsRef = document.getElementsByClassName("dropdown-content");
 const answersRef = Array.from(document.getElementsByClassName("btn-answer"));
 const backgroundMusic = new Audio("assets/music/background-music.mp3");
@@ -68,16 +69,19 @@ startGameRef.addEventListener("click", function () {
 });
 
 
-// Function that pauses and plays background music 
-musicOnRef.addEventListener("click", function () {
-  if (backgroundMusic.paused) {
-    backgroundMusic.play();
-    musicOnRef.innerHTML = `<i class="fas fa-pause"></i>`;
-  } else {
-    backgroundMusic.pause();
-    musicOnRef.innerHTML = `<i class="fas fa-play"></i>`;
+const playMusic = () => {
+  musicOnRef.addEventListener("click", () => {
+    if (backgroundMusic.paused) {
+      backgroundMusic.play();
+      musicOnRef.innerHTML = `<i class="fas fa-pause"></i>`;
+    } else {
+      backgroundMusic.pause();
+      musicOnRef.innerHTML = `<i class="fas fa-play"></i>`;
+    }
   }
-});
+  )};
+
+  playMusic();
 
 const difficultyEventListeners = () => {
   // Event listeners for choosing difficulty option
@@ -102,7 +106,7 @@ const difficultyEventListeners = () => {
     });
   });
   
-  /*------------------------------------------------------------------------*/
+  
   // Event listeners for selecting answers
   answersRef.forEach((choice) => {
     choice.addEventListener("click", (e) => {
@@ -120,7 +124,7 @@ const difficultyEventListeners = () => {
       const currentQuestion = availableQuestions[questionCounter - 1];
       let correctAnswerRef = null;
 
-      if (currentQuestion.answer === answerChoice) {
+      if (currentQuestion.answer == answerChoice) {
         answerRef.classList.add("correct");
 
         // Update the score
@@ -160,9 +164,10 @@ const difficultyEventListeners = () => {
       $(alertModalRef).modal("hide");
     });
   });
- 
 
+   
   // Event handling for when "Restart Level" button is clicked - Quiz starts over from question 1 of same level
+  
   restartLevelButtonRef.addEventListener("click", (e) => {
     // Reset the score and questionCounter and get the first question again
     score = 0;
@@ -183,6 +188,8 @@ const difficultyEventListeners = () => {
   startOverButtonRef.addEventListener("click", () => {
     window.location.reload();
   });
+  
+
 };
 
 difficultyEventListeners();
@@ -219,8 +226,10 @@ const getQuestions = () => {
       });
     })
     .catch((err) => {
+       errorMessageRef.innerHTML = `Houston, We have a problem! Please refresh the page to try again.`;
       console.error(err);
-    });
+  });;
+    
 };
 // Load the next question from the available questions
 const getNewQuestion = () => {
