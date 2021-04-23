@@ -258,7 +258,7 @@ Color palette was generated from the hero image using [Image Color Picker](https
 ---
 
 
-# **Technologies used**
+# **Technologies Used**
 <a></a>
 
 ### Languages
@@ -335,7 +335,7 @@ I have tested the app in the following browsers
 
 The app displays properly in all tested browsers, the image is not distorted and all buttons and teskst are clearly visible and accesible
 
-## **Features**
+## **Features Testing**
 
 **Buttons** - I have tested all the buttons by clicking them in different browsers and on different devices. All buttons work as intended and bring the user to the designated place.
 
@@ -351,6 +351,11 @@ I have tested the **Play/Pause** button on different devices and browsers and it
 
 I have tested both by playing the game on different devices and browsers. I tried to reach different score to make sure everything is displaying correctly.    
 Both, the qoutes and the sound effects work as intended.
+
+**404 Page** - I have implemented the 404 page to make sure that user comes back to the home page if they encounter a problem. I have added a movie quote to match the game theme, the explanation that this page cannot be found and the button so its easy for user to return to the home page instead of leaving the page alltoghether.  
+I've tested the page by inputting the nonexisting path at the end of the url and the page does appear.   
+The button works as intended and takes the user back to the home page. 
+
 
 ## **Code Validation**
 
