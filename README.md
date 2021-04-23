@@ -375,7 +375,8 @@ Passing without errors but giving warnings about vendor extensions and about imp
   - app.js   
   ![app.js](wireframes/testing/jshint-appjs.jpg)
   - end.js\
-  ![end.js](wireframes/testing/jshint-endjs.jpg)
+   I have two warnings about async functions which are available in ES8
+  ![end.js](wireframes/testing/jhint-endjs.jpg)
 
 <p>&nbsp;</p>
 
