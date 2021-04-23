@@ -299,12 +299,12 @@ Color palette was generated from the hero image using [Image Color Picker](https
 
 # **Testing**
 
-<br></br>
+
 ## **Responsiveness**
 
 ### **Devices**
   * Firstly I was testing responsiveness with Google Chrome developer tools throught the project developement  
-  * I then used the app called **Responsively** to double check how the app looks on different devices. I was able to choose many different devices and see the app in lanscape and portrait mode. The app in intended to be played in the portrait mode on portable devices. Landacape mode can be used however user needs to scroll up and down to play which contributes to bad user experience and its not recommended.
+  * I then used the app called **Responsively** to double check how the app looks on different devices. I was able to choose many different devices and see the app in lanscape and portrait mode. The app in intended to be played in the portrait mode on portable devices. Landacape mode can be used however the user needs to scroll up and down to play which contributes to a bad user experience and its not recommended.
   * I have also tested the app on the following actual devices: 
     * iPhone 6
     * iPhone 11
@@ -341,8 +341,11 @@ Passing without errors but giving warnings about vendor extensions and about imp
 
 <p>&nbsp;</p>
 
+[Back to Top](#table-of-contents)
+
 ## **User Stories Testing** 
 <p>&nbsp;</p>
+
 
 ### **How to play**
 
@@ -371,6 +374,8 @@ When clicking either button inside the modal, it closes and the user can start p
 The modal works as intended and contributes to a better overall user experience.
 Test had passed all criteria.
 <br></br>
+
+[Back to Top](#table-of-contents)
 
 ### **Choosing difficulty level**
 
@@ -401,7 +406,7 @@ When you choose your level, you get the correct questions from the chosen diffic
 * **Verdict**    
 The test has passed all the criteria and works as planned.
 
-
+[Back to Top](#table-of-contents)
 <br></br>
 
 ### **Question Counter**
@@ -434,7 +439,7 @@ The test has passed all the criteria and works as planned.
 #### User story: As a user, I would like to track my score during the game. 
 
 * **Plan**  
-The plan was to implement a field above the question, displaying the current score of the user which increases when the user selects correct answer. Final result should be displayed on the end screen after completing the game. 
+The plan was to implement a field above the question, displaying the current user's score which increases when the user selects correct answer. Final result should be displayed on the end screen after completing the game. 
 
 * **Implementation**  
 I've added a score field to index.html and a function in app.js to increase the score by 10 points. When the game starts, the score is set to 0 and only when the answer was correct, the function ** is being executed. I have also added a field on the end page where the total score will be displayed. 
@@ -448,7 +453,7 @@ Correct total score is being displayed on the end screen.
 Score display and total score is working as planned across various browsers and devices and increments when answer is correct. 
 
 * **Verdict**   
-The test has passed all the criteria and works like planned.
+The test has passed all the criteria and works as planned.
 
 ### **Restart Game** 
 
@@ -485,7 +490,7 @@ The test has passed all the criteria and function as intended.
 * **Adding quotes from a local json file** - 
 I have created json file with the movie quotes I wanted to display at the end, depending on the user's score.
 The function works as intended, the quotes are being loaded, however the console throws the following error: "Uncaught SyntaxError: Unexpected token ':'".
-I have validated the json file with two different online validators and the result of both was - valid. Please see images. I have also asked for advice from tutors on this issue and they were not able to find a solution.\
+I have validated the json file with two different online validators and the result of both was that the json file is valid. Please see images. I have also asked for advice from tutors on this issue and they were not able to find a solution.\
 Game works as planned despite the error. 
 
   ![JSON Error](wireframes/testing/json-validator.jpg)
@@ -509,12 +514,13 @@ After more researching and testing through the browser console, I realized I nee
   correctAnswerRef = document.querySelectorAll('.btn-answer[data-number="' + currentQuestion.answer + '"]')[0];
   ```
 
-* **End page was not displaying on the deployed version** - When the user finishes the game, the end page should appear showing the result. However the end page was not displaying. After researching I realized that I need to implement the routing to point to that specific file path, using 
+* **End page was not displaying on the deployed version** - When the user finishes the game, the end page should appear showing the result. However the end page was not displaying. After researching I realized that I need to implement the routing to point to that specific url path, using the following code:
 
   ```
   window.location.protocol + "//" +  window.location.host + window.location.pathname + "/" + "end.html";
   ```
- 
+   The same issue arouse for the **Play Again** button on the end page and was corrected by adding the specific url path.
+  
 [Back to Top](#table-of-contents)
 
 
