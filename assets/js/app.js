@@ -54,8 +54,11 @@ const customAlert = (message) => {
 };
 
 
-// Function to show game screen and hide welcome screen on "Start button" click 
-startGameRef.addEventListener("click", function () {
+/** 
+ * Hides welcome screen and shows game screen on 
+ * Getch questions from 
+ * */ 
+const startGame = () => {
   if (difficultyLevel == null) {
     customAlert("Please choose difficulty level");
   } else {
@@ -66,7 +69,8 @@ startGameRef.addEventListener("click", function () {
       gameScreenRef.classList.remove("hidden");
     });
   }
-});
+}
+startGameRef.addEventListener("click", startGame);
 
 
 const playMusic = () => {
@@ -107,8 +111,47 @@ const difficultyEventListeners = () => {
   });
   
   
-  // Event listeners for selecting answers
-  answersRef.forEach((choice) => {
+
+};
+
+/**
+ * Returns the game to welcome screen
+ * */
+const startOverEventListeners = () => {
+   startOverButtonRef.addEventListener("click", () => {
+    window.location.reload();
+  });
+}
+
+/**
+ * Returns the game to question 1 of the same level
+ * */
+
+const restartEventListeners = () => {
+   restartLevelButtonRef.addEventListener("click", (e) => {
+    // Reset the score and questionCounter and get the first question again
+    score = 0;
+    questionCounter = 0;
+    // Stop the timer
+    endTimerFlag = true;
+
+    setTimeout(function () {
+      getNewQuestion();
+      // Update the display of the question and score
+      document.getElementById("question-count").innerText =
+        questionCounter + "/" + availableQuestions.length;
+      document.getElementById("score").innerText = score;
+    }, 1000);
+  });
+}
+
+const updateScore = () =>{
+  score += CORRECT_BONUS;
+}
+
+/** Event listeners for selecting answers */
+const answerChoicesEventListeners = () => {
+   answersRef.forEach((choice) => {
     choice.addEventListener("click", (e) => {
       if (!acceptingAnswers) {
         return false;
@@ -128,10 +171,10 @@ const difficultyEventListeners = () => {
         answerRef.classList.add("correct");
 
         // Update the score
-        score += CORRECT_BONUS;
+        updateScore();
       } else {
         answerRef.classList.add("incorrect");
-        // If the user selects the wrong answer, we want the correct answer to show as well
+        // If the user selects the wrong answer, we want the correct answer to flash green
         correctAnswerRef = document.querySelectorAll(
           '.btn-answer[data-number="' + currentQuestion.answer + '"]'
         )[0];
@@ -158,49 +201,26 @@ const difficultyEventListeners = () => {
         acceptingAnswers = true;
       }, 1000);
     });
-    // Event handling for custom alert modal
-    alertModalCancelRef.addEventListener("click", (e) => {
+    
+     //Event handling for custom alert modal
+        alertModalCancelRef.addEventListener("click", (e) => {
       // hidden = true
       $(alertModalRef).modal("hide");
     });
   });
+}
+  // Call functions to initialize event listeners
+  answerChoicesEventListeners();
+  difficultyEventListeners();
+  restartEventListeners();
+  startOverEventListeners();
 
-   
-  // Event handling for when "Restart Level" button is clicked - Quiz starts over from question 1 of same level
-  
-  restartLevelButtonRef.addEventListener("click", (e) => {
-    // Reset the score and questionCounter and get the first question again
-    score = 0;
-    questionCounter = 0;
-    // Stop the timer
-    endTimerFlag = true;
 
-    setTimeout(function () {
-      getNewQuestion();
-      // Update the display of the question and score
-      document.getElementById("question-count").innerText =
-        questionCounter + "/" + availableQuestions.length;
-      document.getElementById("score").innerText = score;
-    }, 1000);
-  });
-
-  //Event handling for when "Restart Game" button is clicked - Quiz goes back to the index page
-  startOverButtonRef.addEventListener("click", () => {
-    window.location.reload();
-  });
-  
-
-};
-
-difficultyEventListeners();
-
-// Fetch questions from API and set available questions variable
+/**
+ * Fetch questions from API and set available questions variable
+ * */
 const getQuestions = () => {
-  return fetch(
-    "https://opentdb.com/api.php?amount=10&category=11&difficulty=" +
-    difficultyLevel +
-    "&type=multiple"
-  )
+  return fetch(`https://opentdb.com/api.php?amount=10&category=11&difficulty=${difficultyLevel}&type=multiple`)
     .then((res) => {
       return res.json();
     })
@@ -228,9 +248,31 @@ const getQuestions = () => {
     .catch((err) => {
        errorMessageRef.innerHTML = `Houston, We have a problem! Please refresh the page to try again.`;
       console.error(err);
-  });;
+  });
     
 };
+
+const increaseQuestionCounter = () => {
+  questionCounter += 1;
+}
+
+const updateQuestionText = (currentQuestion) => {
+  questionRef.innerHTML = currentQuestion.question;
+  // Adjust font size for the possible answers if the text it too long
+  questionsContainerRef.classList.remove("smaller-text");
+  questionsContainerRef.classList.remove("very-small-text");
+  answersRef.forEach((choice) => {
+    const number = choice.dataset.number;
+    const answerString = currentQuestion["choice" + number];
+    choice.innerHTML = answerString;
+
+    if (answerString.length > 70) {
+      questionsContainerRef.classList.add("very-small-text");
+    } else if (answerString.length > 50) {
+      questionsContainerRef.classList.add("smaller-text");
+    }
+  });
+}
 // Load the next question from the available questions
 const getNewQuestion = () => {
   const currentQuestion = availableQuestions[questionCounter];
@@ -238,22 +280,9 @@ const getNewQuestion = () => {
   if (currentQuestion == null) {
     finishQuiz();
   } else {
-    questionCounter += 1;
-    questionRef.innerHTML = currentQuestion.question;
-    // Adjust font size for the possible answers if the text it too long
-    questionsContainerRef.classList.remove("smaller-text");
-    questionsContainerRef.classList.remove("very-small-text");
-    answersRef.forEach((choice) => {
-      const number = choice.dataset.number;
-      const answerString = currentQuestion["choice" + number];
-      choice.innerHTML = answerString;
-
-      if (answerString.length > 70) {
-        questionsContainerRef.classList.add("very-small-text");
-      } else if (answerString.length > 50) {
-        questionsContainerRef.classList.add("smaller-text");
-      }
-    });
+    increaseQuestionCounter();
+    updateQuestionText(currentQuestion);
+    
   }
 
   restartTimer();

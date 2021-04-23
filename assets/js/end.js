@@ -14,42 +14,29 @@ let quotesArray = [];
 
 async function getData() {
    const response = await fetch("assets/data/movieQuotes.json");
-      //.then(res => {
-      console.log(response);
       const loadedQuotes = await response.json();
-      console.log(loadedQuotes);
-   //}).then(loadedQuotes => {
       quotesArray = quotesArray.concat(loadedQuotes.movieQuotes);
-      console.log(quotesArray[2].quote);
-   //});
 }
    window.addEventListener("DOMContentLoaded", async ()=> {
       await getData();      
       if (endScore <= 20) {
-         console.log(quotesArray);
          movieQuoteRef.innerHTML = quotesArray[0].quote;
          movieTitleRef.innerHTML = quotesArray[0].movie;
          loserScoreSound.play();
       } else if (endScore <= 40) {
-         console.log(quotesArray);
          movieQuoteRef.innerHTML = quotesArray[1].quote;
          movieTitleRef.innerHTML = quotesArray[1].movie;
          lowScoreSound.play();
       } else if (endScore <=70) {
-         console.log(quotesArray);
          movieQuoteRef.innerHTML = quotesArray[2].quote;
          movieTitleRef.innerHTML = quotesArray[2].movie;
          midScoreSound.play();
       } else {
-         console.log(quotesArray);
          movieQuoteRef.innerHTML = quotesArray[3].quote;
          movieTitleRef.innerHTML = quotesArray[3].movie;
          highScoreSound.play();
       }
    });
-
-
-   
 
 
 
