@@ -245,8 +245,7 @@ const answerChoicesEventListeners = () => {
     
      //Event handling for custom alert modal
         alertModalCancelRef.addEventListener("click", (e) => {
-      // hidden = true
-      $(alertModalRef).modal("hide");
+           $(alertModalRef).modal("hide");
     });
   });
 };
@@ -303,8 +302,7 @@ const restartTimer = () => {
 const timerCallback = () => {
   currentTimerTextRef.innerText = currentTimer;
   if (currentTimer == 0) {
-    // Finish the game
-    finishQuiz();
+      finishQuiz();
   } else if (endTimerFlag) {
        // The user has selected an answer and gotten to the next question
   } else {
@@ -315,7 +313,9 @@ const timerCallback = () => {
   }
 };
 
-// Finishing the quiz and going to the end page
+/**
+ * Finishing the quiz and going to the end page
+ */
 const finishQuiz = () => {
   localStorage.setItem("mostRecentScore", score);
    
