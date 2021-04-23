@@ -328,6 +328,11 @@ body {
     width: 170px;
   }
 
+  #error-btn {
+    padding: 5px 25px;
+    
+  }
+
 /* =================================== Media Queries ============================= */
 
 @media (min-width: 200px) and (max-width: 576px) {
