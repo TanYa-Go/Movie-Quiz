@@ -1,6 +1,6 @@
 # **Movie Trivia Extravaganza**
 
-![Mock Up Image](wireframes/mock-up.png)
+![Mock Up Image](wireframes/mock-up.jpg)
 
 
 ## **Project Goals** 
