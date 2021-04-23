@@ -90,7 +90,7 @@ Follow the link [Movie Trivia Extravaganza](https://tanya-go.github.io/Movie-Qui
 
 * Appealing homepage
 * Easy to navigate by using only a few buttons
-* Easy to pick a difficulty level and start playing
+* Easy to select a difficulty level and start playing
 * Validate the correct answer
 * Keep the score while playing
 
@@ -98,12 +98,12 @@ Follow the link [Movie Trivia Extravaganza](https://tanya-go.github.io/Movie-Qui
 <a></a>
 #### Expectations
 
-* When a certain level is chosen, that the correct questions appear
+* When a certain difficutly level is chosen, that the correct questions appear
 * Feedback given to the users what stage in the game they are and the total amount of questions
 * Time is displayed so the user knows how much time they have to answer the question
 * To let the user know if their answer was correct 
-* Show correct answer when answered incorrectly
-* To show the final result when game is finished
+* To show correct answer when answered incorrectly
+* To show the final result when game finishes
 
 ### **Existing Features**
 
@@ -134,7 +134,7 @@ Follow the link [Movie Trivia Extravaganza](https://tanya-go.github.io/Movie-Qui
 
 * **Description:**<br>
 The website will contain clear instructions and will be intuitive for the user. There will be a title describing the game and the 
-heading inviting user to play. The buttons will have descriptive names so that the user can easily navigate the site even if 
+heading inviting the user to play. The buttons will have descriptive names so that the user can easily navigate the site even if 
 visiting for the first time.
 
 
@@ -210,14 +210,14 @@ Wireframes were created using [Balsamiq](https://balsamiq.com/wireframes/)
 
 ### **Home Page Wireframes**
 
-[Home Page Desktop](wireframes/home-dektop.png)\
+[Home Page Desktop](wireframes/home-desktop.png)\
 [Home Page Tablet](wireframes/home-tablet.png)\
-[Home Page Desktop](wireframes/home-mobile.png)
+[Home Page Mobile](wireframes/home-mobile.png)
 
 ### **Quiz Page Wireframes** 
 [Quiz Page Desktop](/wireframes/quiz-desktop.png)\
-[Quiz Page Tablet](/wireframes/quiz-desktop.png)\
-[Quiz Page Mobile](/wireframes/quiz-desktop.png)
+[Quiz Page Tablet](/wireframes/quiz-tablet.png)\
+[Quiz Page Mobile](/wireframes/quiz-mobile.png)
 <br></br>
 
 [Back to Top](#table-of-contents)
@@ -268,9 +268,9 @@ Color palette was generated from the hero image using [Image Color Picker](https
 
 1. [Bootstrap](https://getbootstrap.com/docs/4.4/getting-started/introduction/)
     
-1. [Google Fonts:](https://fonts.google.com/)
+1. [Google Fonts](https://fonts.google.com/)
     
-1. [Font Awesome:](https://fontawesome.com/)
+1. [Font Awesome](https://fontawesome.com/)
 
 ### Tools
     
@@ -300,13 +300,32 @@ Color palette was generated from the hero image using [Image Color Picker](https
 # **Testing**
 
 <br></br>
+## **Responsiveness**
+
+### **Devices**
+  * Firstly I was testing responsiveness with Google Chrome developer tools throught the project developement  
+  * I then used the app called **Responsively** to double check how the app looks on different devices. I was able to choose many different devices and see the app in lanscape and portrait mode. The app in intended to be played in the portrait mode on portable devices. Landacape mode can be used however user needs to scroll up and down to play which contributes to bad user experience and its not recommended.
+  * I have also tested the app on the following actual devices: 
+    * iPhone 6
+    * iPhone 11
+    * Samsung A40
+    * Samsung A51
+    * A1 Alpha 20+
+    * Laptop Lenove 17"
+    * LG Screen 23"
+
+### **Verdict** 
+The app works as intened across all tested devices. For smaller devices portrait mode is recommended to play the game for better user experience.
+
+
 
 ## **Code Validation**
+
 
 * [HTML validator](https://validator.w3.org/) 
 
   - index.html - After validating code with the W3 validator, I got the response: Document checking completed. No errors or warnings to show.
-  - end.html - After validating code with the W3 validator, I got two warnings about empty headings on line 39 and 40. These headings are being populated dynamically with javascript - it's a different movie quote depending on the game score. 
+  - end.html - After validating code with the W3 validator, I got two warnings about empty headings on line 39 and 40. These headings are being populated dynamically with javascript - displaying a different movie quote depending on the final score. 
 
 * [CSS Validator](https://jigsaw.w3.org/css-validator/) - 
 Passing without errors but giving warnings about vendor extensions and about imported stylesheets for Google fonts.
