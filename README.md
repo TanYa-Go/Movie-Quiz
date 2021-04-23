@@ -37,7 +37,7 @@ I've decided to create a movie quiz using the questions from an API. The idea wa
 
 
 
-<a name="ux"></a>
+
 # **User Experience Design**
 
 ## **The Strategy Plane**
@@ -246,7 +246,7 @@ Color palette was generated from the hero image using [Image Color Picker](https
 ---
 
 
-## **Technologies used**
+# **Technologies used**
 <a></a>
 
 ### Languages
@@ -494,7 +494,7 @@ After more researching and testing through the browser console, I realized I nee
 
 <br></br>
 
-## **Deployment**
+# **Deployment**
 ### **Project Creation**
 
 1. A local project was created in GitHub with a new repository called 'Movie Trivia'
@@ -522,7 +522,7 @@ After more researching and testing through the browser console, I realized I nee
 <br></br>
 
 
-## **Credits**
+# **Credits**
 
 ### **Images**
 
@@ -552,3 +552,8 @@ After more researching and testing through the browser console, I realized I nee
 
 <br></br>
 [Back to Top](#table-of-contents)
+
+
+# **Acknowledgements**
+
+I'd like to thank the best mentor ever [Simen Daelin](https://github.com/Eventyret) for his guidance, advice, patience, jokes, and most of all encouragement to contiune and keep pushing when I thought it's impossible. I am so lucky and grateful to have his support on my coding journey. 
