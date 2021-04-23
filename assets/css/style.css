@@ -13,6 +13,7 @@ html {
   overflow-y: hidden;
 }
 
+/* Hero image */
 body {
   background-image: url(../images/hero-img.jpg);
   background-repeat: repeat;
@@ -44,7 +45,7 @@ body {
   margin-bottom: 40px;
   text-transform: uppercase;
   color: #212529;
- }
+}
 .quote {
   margin-top: 60px;
   display: -webkit-box;
@@ -121,6 +122,8 @@ body {
   justify-content: center;
 }
 
+/* Control buttons */
+
 .controls {
   background-color: rgb(31, 24, 24, 0.9);
   color: #f2d38c;
@@ -182,6 +185,7 @@ body {
   margin-top: 30px;
 }
 
+/* Answer choices */
 .btn-answer {
   height: 60px;
   width: 95%;
@@ -223,6 +227,7 @@ body {
   padding-top: 30px;
 }
 
+/* Tracking container */
 #time-cont,
 #question-cont,
 #score-cont {
@@ -248,6 +253,8 @@ body {
 .fa-play {
   color: #f2d38c;
 }
+
+/* Game Screen Buttons  */
 #restart-btn,
 #musicOn,
 #start-over-btn,
@@ -261,7 +268,7 @@ body {
   display: none;
 }
 
-/* Modal */
+/* Rules Modal */
 
 .modal-body {
   color: black;
@@ -302,6 +309,7 @@ body {
   text-align: center;
 }
 
+/* Alert Modal */
 #alert-modal-text {
   font-family: Oswald, sans-serif;
   color: black;
@@ -325,15 +333,14 @@ body {
 
 #play-again-btn {
   margin-top: -20px;
-    width: 170px;
-  }
+  width: 170px;
+}
 
-  #error-btn {
-    padding: 5px 25px;
-    
-  }
+#error-btn {
+  padding: 5px 25px;
+}
 
-/* =================================== Media Queries ============================= */
+/*  Media Queries  */
 
 @media (min-width: 200px) and (max-width: 576px) {
   body {
@@ -341,17 +348,17 @@ body {
   }
 
   .sub-title {
-  font-family: Oswald, sans-serif;
-  color: black;
-  text-align: center;
-  font-weight: 600;
-  font-size: 1.9rem;
-  text-shadow: 3px 2px #f2d38c;
-  margin-top: 40px;
-  margin-bottom: 40px;
-  text-transform: uppercase;
-  color: #212529;
- }
+    font-family: Oswald, sans-serif;
+    color: black;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.9rem;
+    text-shadow: 3px 2px #f2d38c;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    color: #212529;
+  }
 
   .title-container {
     margin-top: 10px;
@@ -360,7 +367,7 @@ body {
     margin-top: -18px;
   }
 
-  .controls-container{
+  .controls-container {
     margin-top: -5px;
   }
   .controls {
@@ -397,11 +404,10 @@ body {
   }
 
   #movie-quote-end {
-        margin-top: 20px;
+    margin-top: 20px;
   }
   #movie {
     margin-top: 20px;
-    
   }
 
   #levelChoice {
@@ -449,10 +455,9 @@ body {
     font-size: 4rem;
     text-shadow: 3px 2px #f2d38c;
   }
-   #movie-title {
-     margin-top: 10px;
-   }
-  
+  #movie-title {
+    margin-top: 10px;
+  }
 }
 
 @media (min-width: 577px) and (max-width: 768px) {
@@ -482,7 +487,7 @@ body {
     margin-bottom: 40px;
     text-transform: uppercase;
     color: #212529;
-   }
+  }
   #movie {
     margin-top: 20px;
   }
@@ -517,7 +522,7 @@ body {
     margin-top: 150px;
   }
 
-    .movie {
+  .movie {
     margin-top: 30px;
   }
   .title-end {
@@ -539,7 +544,7 @@ body {
     margin-bottom: 40px;
     text-transform: uppercase;
     color: #212529;
-   }
+  }
   .max-score {
     font-family: Oswald, sans-serif;
     color: #d51e13;

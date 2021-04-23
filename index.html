@@ -20,6 +20,7 @@
 </head>
 
 <body>
+  <!-- Welcome Screen -->
   <div id="welcome-screen">
     <div class="modal fade" id="alertModal" tabindex="-1" role="dialog">
       <div class="modal-dialog" role="document">
@@ -50,38 +51,39 @@
           <h2 class="sub-title">Test your movie knowledge!</h2>
         </div>
       </div>
-      
-    <div class="container controls-container">
-      <div class="row">
-        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-          <button class="controls" data-toggle="modal" data-target="#rulesModal">
-            Rules
-          </button>
-        </div>
-        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-          <div class="dropdown">
-            <button id="drop" class="dropbtn controls">Difficulty</button>
-            <div id="levelChoice" class="dropdown-content">
-              <a class="difficulty-option" data-value="easy">Easy Rider</a>
-              <a class="difficulty-option" data-value="medium">Normal</a>
-              <a class="difficulty-option" data-value="hard">Die Hard</a>
+
+      <div class="container controls-container">
+        <div class="row">
+          <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+            <button class="controls" data-toggle="modal" data-target="#rulesModal">
+              Rules
+            </button>
+          </div>
+          <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+            <div class="dropdown">
+              <button id="drop" class="dropbtn controls">Difficulty</button>
+              <div id="levelChoice" class="dropdown-content">
+                <a class="difficulty-option" data-value="easy">Easy Rider</a>
+                <a class="difficulty-option" data-value="medium">Normal</a>
+                <a class="difficulty-option" data-value="hard">Die Hard</a>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-          <button class="controls" id="start-btn">Play</button>
+          <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+            <button class="controls" id="start-btn">Play</button>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="col-12">
-      <h2 class="quote">May the Force Be With You!</h2>
-      <h3 class="movie">-Star Wars, 1977.</h3>
+    <div class="row">
+      <div class="col-12">
+        <h2 class="quote">May the Force Be With You!</h2>
+        <h3 class="movie">-Star Wars, 1977.</h3>
+      </div>
     </div>
   </div>
-</div>
 
+  <!-- Game Screen -->
   <div id="game-screen" class="hidden">
     <div class="container tracking-container">
       <div class="row">
@@ -203,7 +205,7 @@
       </div>
     </div>
   </div>
-
+  <!-- Scripts -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js"></script>

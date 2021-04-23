@@ -362,8 +362,9 @@ The button works as intended and takes the user back to the home page.
 * [HTML validator](https://validator.w3.org/) 
 
   - index.html - After validating code with the W3 validator, I got the response: Document checking completed. No errors or warnings to show.
-  - end.html - After validating code with the W3 validator, I got two warnings about empty headings on line 39 and 40. These headings are being populated dynamically with javascript - displaying a different movie quote depending on the final score. 
-
+  - end.html - After validating code with the W3 validator, I got two warnings about empty headings on line 37 and 38. These headings are being populated dynamically with javascript - displaying a different movie quote depending on the final score. 
+  - 404.html - After validating code with the W3 validator, I got the response: Document checking completed. No errors or warnings to show.
+  
 * [CSS Validator](https://jigsaw.w3.org/css-validator/) - 
 Passing without errors but giving warnings about vendor extensions and about imported stylesheets for Google fonts.
 
