@@ -480,7 +480,7 @@ The test has passed all the criteria and works as planned.
 The plan was to implement a field above the question, displaying the current user's score which increases when the user selects correct answer. Final result should be displayed on the end screen after completing the game. 
 
 * **Implementation**  
-I've added a score field to index.html and a function in app.js to increase the score by 10 points. When the game starts, the score is set to 0 and only when the answer was correct, the function ** is being executed. I have also added a field on the end page where the total score will be displayed. 
+I've added a score field to index.html and a function in app.js to increase the score by 10 points. When the game starts, the score is set to 0 and only when the answer was correct, the function **updateScore** is being executed. I have also added a field on the end page where the total score will be displayed. 
 
 * **Test**  
 I have tested this feature with all difficulty levels and across various browers and devices. 

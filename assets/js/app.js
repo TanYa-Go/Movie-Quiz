@@ -12,7 +12,7 @@ const alertModalRef = document.getElementById("alertModal");
 const alertModalTextRef = document.getElementById("alert-modal-text");
 const alertModalCancelRef = document.getElementById("alert-modal-close");
 const currentTimerTextRef = document.getElementById("current-timer-text");
-const errorMessageRef = document.getElementById("error-message")
+const errorMessageRef = document.getElementById("error-message");
 const dropdownsRef = document.getElementsByClassName("dropdown-content");
 const answersRef = Array.from(document.getElementsByClassName("btn-answer"));
 const backgroundMusic = new Audio("assets/music/background-music.mp3");
@@ -28,12 +28,16 @@ let questionCounter = 0;
 let availableQuestions = [];
 backgroundMusic.loop = true;
 
-// Function to show difficulty level on button click 
+/**
+ * Function to show difficulty level on button click 
+ */
 chooseLevelRef.addEventListener("click", function () {
   levelChoiceRef.classList.toggle("show");
 });
 
-// Close the dropdown menu if the user clicks outside of it
+/**
+ * Close the dropdown menu if the user clicks outside of it
+ */
 window.onclick = function(event) {
   if (!event.target.matches('.dropbtn')) {
   
@@ -46,7 +50,10 @@ window.onclick = function(event) {
   }
 };
 
-// Modal that shows warning if difficulty level is not chosen
+
+/** 
+ * Modal that shows warning if difficulty level is not chosen
+ */ 
 const customAlert = (message) => {
   // hidden = false
   $(alertModalRef).modal("show");
@@ -54,9 +61,47 @@ const customAlert = (message) => {
 };
 
 
+/**
+ * Fetch questions from API and set available questions variable
+ * */
+ const getQuestions = () => {
+  return fetch(`https://opentdb.com/api.php?amount=10&category=11&difficulty=${difficultyLevel}&type=multiple`)
+    .then((res) => {
+      return res.json();
+    })
+    .then((loadedQuestions) => {
+      availableQuestions = loadedQuestions.results.map((loadedQuestion) => {
+        const formattedQuestion = {
+          question: loadedQuestion.question,
+        };
+
+        const answerChoices = [...loadedQuestion.incorrect_answers];
+        formattedQuestion.answer = Math.floor(Math.random() * 4) + 1;
+        answerChoices.splice(
+          formattedQuestion.answer - 1,
+          0,
+          loadedQuestion.correct_answer
+        );
+
+        answerChoices.forEach((choice, index) => {
+          formattedQuestion["choice" + (index + 1)] = choice;
+        });
+
+        return formattedQuestion;
+      });
+    })
+    .catch((err) => {
+       errorMessageRef.innerHTML = `Houston, We have a problem! Please refresh the page to try again.`;
+      console.error(err);
+  });
+    
+};
+
 /** 
- * Hides welcome screen and shows game screen on 
- * Getch questions from 
+ * Shows modal if preffered difficulty is not chosen
+ * Hides welcome screen and shows game screen
+ * Gets questions from the API
+ * Plays background music
  * */ 
 const startGame = () => {
   if (difficultyLevel == null) {
@@ -69,11 +114,11 @@ const startGame = () => {
       gameScreenRef.classList.remove("hidden");
     });
   }
-}
+};
 startGameRef.addEventListener("click", startGame);
 
 
-const playMusic = () => {
+const playPauseMusic = () => {
   musicOnRef.addEventListener("click", () => {
     if (backgroundMusic.paused) {
       backgroundMusic.play();
@@ -85,7 +130,7 @@ const playMusic = () => {
   }
   )};
 
-  playMusic();
+  playPauseMusic();
 
 const difficultyEventListeners = () => {
   // Event listeners for choosing difficulty option
@@ -110,8 +155,6 @@ const difficultyEventListeners = () => {
     });
   });
   
-  
-
 };
 
 /**
@@ -121,7 +164,7 @@ const startOverEventListeners = () => {
    startOverButtonRef.addEventListener("click", () => {
     window.location.reload();
   });
-}
+};
 
 /**
  * Returns the game to question 1 of the same level
@@ -143,11 +186,11 @@ const restartEventListeners = () => {
       document.getElementById("score").innerText = score;
     }, 1000);
   });
-}
+};
 
 const updateScore = () =>{
   score += CORRECT_BONUS;
-}
+};
 
 /** Event listeners for selecting answers */
 const answerChoicesEventListeners = () => {
@@ -166,10 +209,8 @@ const answerChoicesEventListeners = () => {
       const answerChoice = answerRef.dataset.number;
       const currentQuestion = availableQuestions[questionCounter - 1];
       let correctAnswerRef = null;
-
       if (currentQuestion.answer == answerChoice) {
         answerRef.classList.add("correct");
-
         // Update the score
         updateScore();
       } else {
@@ -208,7 +249,7 @@ const answerChoicesEventListeners = () => {
       $(alertModalRef).modal("hide");
     });
   });
-}
+};
   // Call functions to initialize event listeners
   answerChoicesEventListeners();
   difficultyEventListeners();
@@ -216,45 +257,9 @@ const answerChoicesEventListeners = () => {
   startOverEventListeners();
 
 
-/**
- * Fetch questions from API and set available questions variable
- * */
-const getQuestions = () => {
-  return fetch(`https://opentdb.com/api.php?amount=10&category=11&difficulty=${difficultyLevel}&type=multiple`)
-    .then((res) => {
-      return res.json();
-    })
-    .then((loadedQuestions) => {
-      availableQuestions = loadedQuestions.results.map((loadedQuestion) => {
-        const formattedQuestion = {
-          question: loadedQuestion.question,
-        };
-
-        const answerChoices = [...loadedQuestion.incorrect_answers];
-        formattedQuestion.answer = Math.floor(Math.random() * 4) + 1;
-        answerChoices.splice(
-          formattedQuestion.answer - 1,
-          0,
-          loadedQuestion.correct_answer
-        );
-
-        answerChoices.forEach((choice, index) => {
-          formattedQuestion["choice" + (index + 1)] = choice;
-        });
-
-        return formattedQuestion;
-      });
-    })
-    .catch((err) => {
-       errorMessageRef.innerHTML = `Houston, We have a problem! Please refresh the page to try again.`;
-      console.error(err);
-  });
-    
-};
-
 const increaseQuestionCounter = () => {
   questionCounter += 1;
-}
+};
 
 const updateQuestionText = (currentQuestion) => {
   questionRef.innerHTML = currentQuestion.question;
@@ -272,7 +277,7 @@ const updateQuestionText = (currentQuestion) => {
       questionsContainerRef.classList.add("smaller-text");
     }
   });
-}
+};
 // Load the next question from the available questions
 const getNewQuestion = () => {
   const currentQuestion = availableQuestions[questionCounter];
