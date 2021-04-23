@@ -34,7 +34,7 @@ Follow the link [Movie Trivia Extravaganza](https://tanya-go.github.io/Movie-Qui
     * [Tools](#tools)
 * [Testing](#testing)   
   * [Responsiveness](#responsiveness)
-  * [Features](#features)
+  * [Features Testing](#features-testing)
   * [Code Validation](#code-validation)
   * [User Stories Testing](#user-stories-testing)
   * [Bugs](#bugs)
