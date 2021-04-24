@@ -11,12 +11,18 @@ let endScore = scoreRef.innerText = localStorage.mostRecentScore;
 let quotesArray = [];
 
 
-
+/**
+ * Fectch the data from the local json file
+ * 
+ */
 async function getData() {
    const response = await fetch("assets/data/movieQuotes.json");
       const loadedQuotes = await response.json();
       quotesArray = quotesArray.concat(loadedQuotes.movieQuotes);
 }
+/** 
+ * Gives time for fetch to occur
+ */
    window.addEventListener("DOMContentLoaded", async ()=> {
       await getData();      
       if (endScore <= 20) {
@@ -40,7 +46,9 @@ async function getData() {
 
 
 
-
+ /**
+  * Routing to the index page by clicking Play again button
+  */
    playAgainButtonRef.addEventListener("click", (e) => {
          let playAgainPath = window.location.protocol + "//" + window.location.host + window.location.pathname;
       playAgainPath = playAgainPath.replace('/end.html', '');
