@@ -277,7 +277,9 @@ const updateQuestionText = (currentQuestion) => {
     }
   });
 };
-// Load the next question from the available questions
+/**
+ * Loads the next question from the available questions
+ */ 
 const getNewQuestion = () => {
   const currentQuestion = availableQuestions[questionCounter];
    // If there is no more questions, finish the quiz
