@@ -339,8 +339,13 @@ The app displays properly in all tested browsers, the image is not distorted and
 
 **Buttons** - I have tested all the buttons by clicking them in different browsers and on different devices. All buttons work as intended and bring the user to the designated place.
 
-**Modals** - There are two modals - one that displays the rules when the user clicks the **Rules** button and the other displays a warning when the user clicks **Play** without choosing the preffered difficutly level.    
-Both modals work as intended and open when the respective button is clicked. Both modals properly close when the **Close** or **OK** button is clicked.
+**Modals** - There are two modals - one that displays the rules when the user clicks the **Rules** button and the other displays a warning when the user clicks **Play** without choosing the preffered difficutly level. 
+
+
+Both modals work as intended and open when the respective button is clicked. Both modals properly close when the **Close** or **OK** button is clicked.   
+ * Image for the **Rules** modal in user stories testing - How to play section. 
+* Image for warning modal :
+![Warning Modal](wireframes/testing/warning-modal.jpg)
 
 **Music** - When the user clicks **Play** and the game starts, the background music will also start playing. The user had the option to pause the music by clicking the button underneath the quiz. The user can also play the music again by clicking the same button.
 I have tested the **Play/Pause** button on different devices and browsers and it works as planned.
@@ -356,6 +361,7 @@ Both, the qoutes and the sound effects work as intended.
 I've tested the page by inputting the nonexisting path at the end of the url and the page does appear.   
 The button works as intended and takes the user back to the home page. 
 
+![404 Page](wireframes/testing/404.jpg)
 
 ## **Code Validation**
 
